@@ -1,0 +1,128 @@
+import React, { useState, useEffect } from 'react';
+import { AuthProvider } from './context/AuthContext';
+import { Header } from './components/layout/Header';
+import { Sidebar } from './components/layout/Sidebar';
+import { BottomNav } from './components/layout/BottomNav';
+import { AuthModal } from './components/auth/AuthModal';
+import { HomeDashboard } from './components/dashboard/HomeDashboard';
+import { CpdModule } from './components/cpd/CpdModule';
+import { DriveDocumentBrowser } from './components/cpd/DriveDocumentBrowser';
+import { ToolsHub } from './components/tools/ToolsHub';
+import { CPD_ACTIVITIES, CPD_DRIVE_DOCUMENTS } from './data/mockData';
+import type { ActivityItem, DriveDocument } from './types';
+
+export const AppContent: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>('home');
+  const [selectedTool, setSelectedTool] = useState<string>('forms');
+  const [isAuthOpen, setIsAuthOpen] = useState<boolean>(false);
+
+  // Persistent activities in localStorage
+  const [activities, setActivities] = useState<ActivityItem[]>(() => {
+    const saved = localStorage.getItem('adu_portal_activities');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return CPD_ACTIVITIES;
+      }
+    }
+    return CPD_ACTIVITIES;
+  });
+
+  // Persistent documents
+  const [documents] = useState<DriveDocument[]>(CPD_DRIVE_DOCUMENTS);
+
+  useEffect(() => {
+    localStorage.setItem('adu_portal_activities', JSON.stringify(activities));
+  }, [activities]);
+
+  const handleAddActivity = (newActivity: ActivityItem) => {
+    setActivities(prev => [newActivity, ...prev]);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 flex flex-col text-slate-800">
+      
+      {/* Sticky Header */}
+      <Header
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        onOpenAuth={() => setIsAuthOpen(true)}
+      />
+
+      {/* Main Layout Area */}
+      <div className="max-w-7xl mx-auto w-full flex-1 flex px-3 sm:px-6 lg:px-8 py-4 sm:py-6 gap-6">
+        
+        {/* Desktop Sidebar */}
+        <Sidebar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          selectedTool={selectedTool}
+          setSelectedTool={setSelectedTool}
+        />
+
+        {/* Dynamic Main Body Content */}
+        <main className="flex-1 min-w-0 pb-20 md:pb-6">
+          {activeTab === 'home' && (
+            <HomeDashboard
+              setActiveTab={setActiveTab}
+              setSelectedTool={setSelectedTool}
+              onOpenAuth={() => setIsAuthOpen(true)}
+            />
+          )}
+
+          {activeTab === 'cpd' && (
+            <CpdModule
+              documents={documents}
+              activities={activities}
+              onAddActivity={handleAddActivity}
+              defaultSubTab="activities"
+            />
+          )}
+
+          {activeTab === 'documents' && (
+            <div className="space-y-4">
+              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                <h1 className="text-xl font-black text-slate-900">Google Drive Belge Deposu</h1>
+                <p className="text-xs text-slate-500">
+                  Akademik birimlerin kurumsal Google Drive hiyerarşisi üzerinden paylaşılan evrakları.
+                </p>
+              </div>
+              <DriveDocumentBrowser documents={documents} />
+            </div>
+          )}
+
+          {activeTab === 'tools' && (
+            <ToolsHub
+              selectedTool={selectedTool}
+              setSelectedTool={setSelectedTool}
+            />
+          )}
+        </main>
+
+      </div>
+
+      {/* Mobile Bottom Navigation */}
+      <BottomNav
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        onOpenAuth={() => setIsAuthOpen(true)}
+      />
+
+      {/* Authentication Modal */}
+      <AuthModal
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+      />
+
+    </div>
+  );
+};
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+}

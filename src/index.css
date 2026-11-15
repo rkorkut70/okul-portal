@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --adu-navy: #0f2942;
+    --adu-blue: #1d5b96;
+    --adu-light-blue: #e8f1fa;
+    --adu-gold: #d97706;
+    --adu-gold-light: #fef3c7;
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}

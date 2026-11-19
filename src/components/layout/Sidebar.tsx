@@ -10,7 +10,8 @@ import {
   ExternalLink, 
   HardDrive,
   Sparkles,
-  Layers
+  Layers,
+  Clock
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -146,6 +147,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
             >
               <Calendar className="w-3.5 h-3.5 text-indigo-600" />
               <span>Akademik Takvim</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('tools'); setSelectedTool('schedule'); }}
+              className={`w-full flex items-center space-x-2.5 px-3 py-2 rounded-lg text-xs transition ${
+                activeTab === 'tools' && _selectedTool === 'schedule'
+                  ? 'bg-amber-50 text-amber-900 font-semibold'
+                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+              }`}
+            >
+              <Clock className="w-3.5 h-3.5 text-teal-600" />
+              <span>Ders Programı</span>
             </button>
 
             <button

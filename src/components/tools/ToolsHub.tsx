@@ -1,6 +1,7 @@
 import React from 'react';
 import { TemplatesHub } from './TemplatesHub';
 import { AcademicCalendarView } from './AcademicCalendarView';
+import { CourseScheduleQuery } from './CourseScheduleQuery';
 import { GradeCalculator } from './GradeCalculator';
 import { AssignmentTrackerCard } from './AssignmentTrackerCard';
 import { 
@@ -8,7 +9,8 @@ import {
   Calendar, 
   Calculator, 
   ExternalLink,
-  Wrench
+  Wrench,
+  Clock
 } from 'lucide-react';
 
 interface ToolsHubProps {
@@ -63,6 +65,18 @@ export const ToolsHub: React.FC<ToolsHubProps> = ({ selectedTool, setSelectedToo
           </button>
 
           <button
+            onClick={() => setSelectedTool('schedule')}
+            className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              selectedTool === 'schedule'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            <Clock className="w-3.5 h-3.5 text-teal-600" />
+            <span>Ders Programı</span>
+          </button>
+
+          <button
             onClick={() => setSelectedTool('grade')}
             className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
               selectedTool === 'grade'
@@ -91,6 +105,7 @@ export const ToolsHub: React.FC<ToolsHubProps> = ({ selectedTool, setSelectedToo
       {/* Render active tool */}
       {selectedTool === 'forms' && <TemplatesHub />}
       {selectedTool === 'calendar' && <AcademicCalendarView />}
+      {selectedTool === 'schedule' && <CourseScheduleQuery />}
       {selectedTool === 'grade' && <GradeCalculator />}
       {selectedTool === 'assignment' && <AssignmentTrackerCard />}
 

@@ -122,7 +122,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
               <Building2 className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="font-bold text-base leading-tight">ADÜ Kurumsal Giriş</h3>
+              <h3 className="font-bold text-base leading-tight">ADÜ YDYO Kurumsal Giriş</h3>
               <p className="text-xs text-slate-300">@adu.edu.tr e-posta doğrulama</p>
             </div>
           </div>

@@ -44,13 +44,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAuth, activeTab: _activeTa
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="font-extrabold text-base sm:text-xl tracking-tight text-white">ADÜ AKADEMİK PORTAL</span>
+                <span className="font-extrabold text-base sm:text-xl tracking-tight text-white">ADÜ YDYO PORTAL</span>
                 <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40">
                   Pilot Sürüm v1.0
                 </span>
               </div>
               <p className="text-xs text-slate-300 font-medium hidden sm:block">
-                Aydın Adnan Menderes Üniversitesi • Akademik Birimler ve Belge Merkezi
+                Aydın Adnan Menderes Üniversitesi • Yabancı Diller Yüksekokulu
               </p>
             </div>
           </div>

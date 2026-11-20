@@ -1,6 +1,6 @@
-# 🏛️ ADÜ Akademik Portal
+# 🏛️ ADÜ YDYO Portal
 
-**Aydın Adnan Menderes Üniversitesi (ADÜ)** bünyesindeki akademik birimlerin kurumsal Google Drive belgelerini depolamak, yürütülen faaliyetleri özetlemek ve öğretim elemanlarına faydalı araçlar sunmak amacıyla geliştirilmiş modern, mobil uyumlu akademik portal.
+**Aydın Adnan Menderes Üniversitesi Yabancı Diller Yüksekokulu (ADÜ YDYO)** bünyesindeki akademik birimlerin kurumsal Google Drive belgelerini depolamak, yürütülen faaliyetleri özetlemek ve öğretim elemanlarına faydalı araçlar sunmak amacıyla geliştirilmiş modern, mobil uyumlu akademik portal.
 
 ---
 

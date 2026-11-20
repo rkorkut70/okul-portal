@@ -200,7 +200,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <span>Kurumsal Google Drive</span>
           </div>
           <p className="text-[11px] text-slate-500 leading-snug">
-            Belgeler ortak Drive dizininde arşivlenir. Tüm ADÜ personeli anlık erişebilir.
+            Belgeler ortak Drive dizininde arşivlenir. Tüm YDYO personeli anlık erişebilir.
           </p>
         </div>
       </div>

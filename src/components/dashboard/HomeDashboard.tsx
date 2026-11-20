@@ -43,18 +43,18 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="flex items-center space-x-2">
             <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 uppercase tracking-wider">
-              Akademik Yönetim & Belge Merkezi
+              Yabancı Diller Yüksekokulu
             </span>
             <span className="text-xs text-slate-300">Aydın Adnan Menderes Üniversitesi</span>
           </div>
 
           <h1 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
-            {isAuthenticated && user ? `Hoş Geldiniz, ${user.title} ${user.name}` : 'ADÜ Akademik Portala Hoş Geldiniz'}
+            {isAuthenticated && user ? `Hoş Geldiniz, ${user.title} ${user.name}` : 'ADÜ YDYO Portala Hoş Geldiniz'}
           </h1>
 
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
-            5 akademik birimimizin kurumsal Google Drive belgelerine, yapılan faaliyet özetlerine ve 
-            günlük ders-sınav süreçlerini kolaylaştıran faydalı araçlara tek noktadan ulaşın.
+            Yüksekokulumuz akademik birimlerinin kurumsal Google Drive belgelerine, faaliyet raporlarına, 
+            ders programlarına ve günlük akademik süreçleri hızlandıran faydalı araçlara tek noktadan ulaşın.
           </p>
 
           <div className="pt-2 flex flex-wrap gap-2.5">

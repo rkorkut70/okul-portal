@@ -15,10 +15,10 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const DEFAULT_USER: User = {
   id: 'usr-1',
-  name: 'Doç. Dr. Ahmet Yılmaz',
-  email: 'ahmet.yilmaz@adu.edu.tr',
-  title: 'Doçent Doktor',
-  department: 'Eğitim Fakültesi / Eğitim Bilimleri',
+  name: 'Rıdvan Korkut',
+  email: 'rkorkut@adu.edu.tr',
+  title: 'Öğr. Gör.',
+  department: 'Yabancı Diller Yüksekokulu',
   role: 'cpd_manager'
 };
 
@@ -27,7 +27,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const saved = localStorage.getItem('adu_portal_user');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (parsed.email === 'ahmet.yilmaz@adu.edu.tr') {
+          return DEFAULT_USER;
+        }
+        return parsed;
       } catch {
         return DEFAULT_USER;
       }

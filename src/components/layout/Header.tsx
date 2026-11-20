@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAuth } from '../../context/AuthContext';
-import type { UserRole } from '../../types';
 import { 
   Building2, 
   LogOut, 
-  LogIn, 
-  ShieldCheck, 
-  ChevronDown, 
-  Sparkles,
+  User as UserIcon,
   ExternalLink
 } from 'lucide-react';
 
@@ -18,19 +14,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenAuth, activeTab: _activeTab, setActiveTab: _setActiveTab }) => {
-  const { user, isAuthenticated, logout, switchRole } = useAuth();
-  const [showRoleMenu, setShowRoleMenu] = useState(false);
-
-  const getRoleLabel = (role: UserRole) => {
-    switch (role) {
-      case 'cpd_manager':
-        return { label: 'CPD Birim Sorumlusu', bg: 'bg-amber-100 text-amber-800 border-amber-300' };
-      case 'admin':
-        return { label: 'Sistem Yöneticisi', bg: 'bg-rose-100 text-rose-800 border-rose-300' };
-      default:
-        return { label: 'Öğretim Elemanı', bg: 'bg-blue-100 text-blue-800 border-blue-300' };
-    }
-  };
+  const { user, isAuthenticated, logout } = useAuth();
 
   return (
     <header className="sticky top-0 z-40 bg-[#0f2942] text-white shadow-md border-b border-slate-700/50">
@@ -70,80 +54,34 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAuth, activeTab: _activeTa
               <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
             </a>
 
-            {/* User Auth Info & Role Switcher */}
+            {/* User Auth Info */}
             {isAuthenticated && user ? (
-              <div className="flex items-center space-x-3">
-                
-                {/* Role Switcher (For Demo & Testing) */}
-                <div className="relative">
-                  <button
-                    onClick={() => setShowRoleMenu(!showRoleMenu)}
-                    className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-white/10 hover:bg-white/15 text-white border border-white/20 transition cursor-pointer"
-                    title="Rol Değiştir (Test İçin)"
-                  >
-                    <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                    <span className="hidden lg:inline">{getRoleLabel(user.role).label}</span>
-                    <span className="lg:hidden">{user.role === 'cpd_manager' ? 'CPD Yetkilisi' : 'Hoca'}</span>
-                    <ChevronDown className="w-3 h-3 text-slate-300" />
-                  </button>
-
-                  {/* Dropdown */}
-                  {showRoleMenu && (
-                    <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-slate-200 py-2 z-50 text-slate-800 animate-in fade-in zoom-in-95">
-                      <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider border-b border-slate-100 flex items-center justify-between">
-                        <span>Rol Seçimi (Demo)</span>
-                        <Sparkles className="w-3 h-3 text-amber-500" />
-                      </div>
-                      <button
-                        onClick={() => { switchRole('instructor'); setShowRoleMenu(false); }}
-                        className={`w-full text-left px-3 py-2 text-xs flex flex-col hover:bg-slate-50 transition ${user.role === 'instructor' ? 'bg-blue-50 font-semibold text-blue-700' : ''}`}
-                      >
-                        <span className="font-medium text-slate-900">Öğretim Elemanı</span>
-                        <span className="text-[11px] text-slate-500">Tüm belgelere ve araçlara erişir, salt okur.</span>
-                      </button>
-                      <button
-                        onClick={() => { switchRole('cpd_manager'); setShowRoleMenu(false); }}
-                        className={`w-full text-left px-3 py-2 text-xs flex flex-col hover:bg-slate-50 transition ${user.role === 'cpd_manager' ? 'bg-amber-50 font-semibold text-amber-800' : ''}`}
-                      >
-                        <span className="font-medium text-slate-900">CPD Birim Sorumlusu</span>
-                        <span className="text-[11px] text-slate-500">Faaliyet ekler, özet girer, Drive linki tanımlar.</span>
-                      </button>
-                      <button
-                        onClick={() => { switchRole('admin'); setShowRoleMenu(false); }}
-                        className={`w-full text-left px-3 py-2 text-xs flex flex-col hover:bg-slate-50 transition ${user.role === 'admin' ? 'bg-rose-50 font-semibold text-rose-800' : ''}`}
-                      >
-                        <span className="font-medium text-slate-900">Sistem Yöneticisi</span>
-                        <span className="text-[11px] text-slate-500">Tam yetki ve tüm birimlerin yönetimi.</span>
-                      </button>
-                    </div>
-                  )}
+              <div className="flex items-center space-x-2.5 bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-xl border border-white/20 transition">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shadow-xs flex-shrink-0">
+                  {user.name.charAt(0)}
                 </div>
-
-                {/* Profile Avatar & Name */}
-                <div className="flex items-center space-x-2 pl-2 border-l border-white/20">
-                  <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xs text-white ring-2 ring-white/30">
-                    {user.name.charAt(0)}
+                <div className="text-left">
+                  <div className="text-xs sm:text-sm font-bold text-white leading-tight">
+                    {user.title ? `${user.title} ${user.name}` : user.name}
                   </div>
-                  <div className="hidden sm:block text-left">
-                    <div className="text-xs font-semibold text-white leading-tight truncate max-w-[130px]">{user.name}</div>
-                    <div className="text-[10px] text-slate-300 truncate max-w-[130px]">{user.email}</div>
+                  <div className="text-[10px] text-slate-300 hidden sm:block">
+                    {user.department || 'Yabancı Diller Yüksekokulu'}
                   </div>
-                  <button
-                    onClick={logout}
-                    className="p-1.5 rounded-lg text-slate-300 hover:text-rose-400 hover:bg-white/10 transition"
-                    title="Çıkış Yap"
-                  >
-                    <LogOut className="w-4 h-4" />
-                  </button>
                 </div>
-
+                <button
+                  onClick={logout}
+                  className="p-1.5 rounded-lg text-slate-300 hover:text-rose-300 hover:bg-white/10 transition ml-1 cursor-pointer"
+                  title="Çıkış Yap"
+                >
+                  <LogOut className="w-4 h-4" />
+                </button>
               </div>
             ) : (
               <button
                 onClick={onOpenAuth}
-                className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-md transition active:scale-95"
+                className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-md transition active:scale-95 cursor-pointer"
               >
-                <LogIn className="w-4 h-4" />
+                <UserIcon className="w-4 h-4" />
                 <span>Giriş Yap (@adu.edu.tr)</span>
               </button>
             )}

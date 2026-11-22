@@ -11,7 +11,9 @@ import {
   HardDrive,
   Sparkles,
   Layers,
-  Clock
+  Clock,
+  Globe,
+  Users
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -126,15 +128,39 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
           <div className="space-y-1">
             <button
-              onClick={() => { setActiveTab('tools'); setSelectedTool('forms'); }}
+              onClick={() => { setActiveTab('tools'); setSelectedTool('links'); }}
               className={`w-full flex items-center space-x-2.5 px-3 py-2 rounded-lg text-xs transition ${
-                activeTab === 'tools' && _selectedTool === 'forms'
+                activeTab === 'tools' && _selectedTool === 'links'
                   ? 'bg-amber-50 text-amber-900 font-semibold'
                   : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
               }`}
             >
-              <FileText className="w-3.5 h-3.5 text-amber-600" />
-              <span>Form & Şablonlar</span>
+              <Globe className="w-3.5 h-3.5 text-blue-600" />
+              <span>Faydalı Linkler</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('tools'); setSelectedTool('schedule'); }}
+              className={`w-full flex items-center space-x-2.5 px-3 py-2 rounded-lg text-xs transition ${
+                activeTab === 'tools' && _selectedTool === 'schedule'
+                  ? 'bg-amber-50 text-amber-900 font-semibold'
+                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+              }`}
+            >
+              <Clock className="w-3.5 h-3.5 text-teal-600" />
+              <span>Ders Programı</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('tools'); setSelectedTool('advisors'); }}
+              className={`w-full flex items-center space-x-2.5 px-3 py-2 rounded-lg text-xs transition ${
+                activeTab === 'tools' && _selectedTool === 'advisors'
+                  ? 'bg-amber-50 text-amber-900 font-semibold'
+                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+              }`}
+            >
+              <Users className="w-3.5 h-3.5 text-purple-600" />
+              <span>Şube Danışmanları</span>
             </button>
 
             <button
@@ -150,15 +176,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </button>
 
             <button
-              onClick={() => { setActiveTab('tools'); setSelectedTool('schedule'); }}
+              onClick={() => { setActiveTab('tools'); setSelectedTool('forms'); }}
               className={`w-full flex items-center space-x-2.5 px-3 py-2 rounded-lg text-xs transition ${
-                activeTab === 'tools' && _selectedTool === 'schedule'
+                activeTab === 'tools' && _selectedTool === 'forms'
                   ? 'bg-amber-50 text-amber-900 font-semibold'
                   : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
               }`}
             >
-              <Clock className="w-3.5 h-3.5 text-teal-600" />
-              <span>Ders Programı</span>
+              <FileText className="w-3.5 h-3.5 text-amber-600" />
+              <span>Form & Şablonlar</span>
             </button>
 
             <button

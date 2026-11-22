@@ -4,13 +4,17 @@ import { AcademicCalendarView } from './AcademicCalendarView';
 import { CourseScheduleQuery } from './CourseScheduleQuery';
 import { GradeCalculator } from './GradeCalculator';
 import { AssignmentTrackerCard } from './AssignmentTrackerCard';
+import { UsefulLinksView } from './UsefulLinksView';
+import { AdvisorDirectoryView } from './AdvisorDirectoryView';
 import { 
   FileText, 
   Calendar, 
   Calculator, 
   ExternalLink,
   Wrench,
-  Clock
+  Clock,
+  Globe,
+  Users
 } from 'lucide-react';
 
 interface ToolsHubProps {
@@ -41,32 +45,20 @@ export const ToolsHub: React.FC<ToolsHubProps> = ({ selectedTool, setSelectedToo
         {/* Tools Segmented Buttons */}
         <div className="flex items-center p-1 bg-slate-100 rounded-2xl overflow-x-auto">
           <button
-            onClick={() => setSelectedTool('forms')}
-            className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
-              selectedTool === 'forms'
+            onClick={() => setSelectedTool('links')}
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              selectedTool === 'links'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            <FileText className="w-3.5 h-3.5 text-amber-600" />
-            <span>Formlar</span>
-          </button>
-
-          <button
-            onClick={() => setSelectedTool('calendar')}
-            className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
-              selectedTool === 'calendar'
-                ? 'bg-white text-slate-900 shadow-xs'
-                : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            <Calendar className="w-3.5 h-3.5 text-indigo-600" />
-            <span>Akademik Takvim</span>
+            <Globe className="w-3.5 h-3.5 text-blue-600" />
+            <span>Faydalı Linkler</span>
           </button>
 
           <button
             onClick={() => setSelectedTool('schedule')}
-            className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
               selectedTool === 'schedule'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'
@@ -77,8 +69,44 @@ export const ToolsHub: React.FC<ToolsHubProps> = ({ selectedTool, setSelectedToo
           </button>
 
           <button
+            onClick={() => setSelectedTool('advisors')}
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              selectedTool === 'advisors'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            <Users className="w-3.5 h-3.5 text-purple-600" />
+            <span>Danışmanlar</span>
+          </button>
+
+          <button
+            onClick={() => setSelectedTool('calendar')}
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              selectedTool === 'calendar'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            <Calendar className="w-3.5 h-3.5 text-indigo-600" />
+            <span>Akademik Takvim</span>
+          </button>
+
+          <button
+            onClick={() => setSelectedTool('forms')}
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              selectedTool === 'forms'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            <FileText className="w-3.5 h-3.5 text-amber-600" />
+            <span>Formlar</span>
+          </button>
+
+          <button
             onClick={() => setSelectedTool('grade')}
-            className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
               selectedTool === 'grade'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'
@@ -90,7 +118,7 @@ export const ToolsHub: React.FC<ToolsHubProps> = ({ selectedTool, setSelectedToo
 
           <button
             onClick={() => setSelectedTool('assignment')}
-            className={`flex items-center space-x-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
               selectedTool === 'assignment'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'
@@ -103,9 +131,11 @@ export const ToolsHub: React.FC<ToolsHubProps> = ({ selectedTool, setSelectedToo
       </div>
 
       {/* Render active tool */}
-      {selectedTool === 'forms' && <TemplatesHub />}
-      {selectedTool === 'calendar' && <AcademicCalendarView />}
+      {selectedTool === 'links' && <UsefulLinksView />}
       {selectedTool === 'schedule' && <CourseScheduleQuery />}
+      {selectedTool === 'advisors' && <AdvisorDirectoryView />}
+      {selectedTool === 'calendar' && <AcademicCalendarView />}
+      {selectedTool === 'forms' && <TemplatesHub />}
       {selectedTool === 'grade' && <GradeCalculator />}
       {selectedTool === 'assignment' && <AssignmentTrackerCard />}
 

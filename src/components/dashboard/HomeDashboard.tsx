@@ -1,5 +1,6 @@
 import React from 'react';
 import { ACADEMIC_UNITS, CPD_ACTIVITIES, CPD_DRIVE_DOCUMENTS } from '../../data/mockData';
+import { USEFUL_LINKS } from '../../data/schoolData';
 import { 
   GraduationCap, 
   HardDrive, 
@@ -8,7 +9,8 @@ import {
   FileText, 
   Clock,
   ExternalLink, 
-  ChevronRight
+  ChevronRight,
+  Globe
 } from 'lucide-react';
 
 interface HomeDashboardProps {
@@ -253,6 +255,46 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                   </a>
                 ))
               )}
+            </div>
+          </div>
+
+          {/* Sık Kullanılan Hızlı Portallar */}
+          <div className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Globe className="w-4 h-4 text-blue-700" />
+                <h4 className="font-bold text-xs uppercase tracking-wider text-slate-700">
+                  Hızlı Portallar & Linkler
+                </h4>
+              </div>
+              <button
+                onClick={() => { setActiveTab('tools'); setSelectedTool('links'); }}
+                className="text-xs text-blue-700 hover:underline font-bold cursor-pointer"
+              >
+                Tümü ({USEFUL_LINKS.length})
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2">
+              {USEFUL_LINKS.slice(0, 6).map((item) => (
+                <a
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition group flex flex-col justify-between"
+                >
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[10px] font-bold text-blue-800 bg-blue-100/70 px-1.5 py-0.2 rounded">
+                      {item.title.split(' - ')[0]}
+                    </span>
+                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-blue-700" />
+                  </div>
+                  <span className="text-[11px] font-semibold text-slate-800 group-hover:text-blue-700 truncate">
+                    {item.title.split(' - ')[1] || item.title}
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
 

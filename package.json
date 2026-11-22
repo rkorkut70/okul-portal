@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "sync:data": "py scripts/sync_school_data.py",
     "lint": "oxlint",
     "preview": "vite preview"
   },

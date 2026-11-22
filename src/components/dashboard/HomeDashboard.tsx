@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ACADEMIC_UNITS, CPD_ACTIVITIES, CPD_DRIVE_DOCUMENTS } from '../../data/mockData';
-import { USEFUL_LINKS } from '../../data/schoolData';
+import { USEFUL_LINKS, ACADEMIC_UNITS_DATA, UNIT_DUTIES } from '../../data/schoolData';
 import { 
   GraduationCap, 
   HardDrive, 
@@ -10,7 +10,10 @@ import {
   Clock,
   ExternalLink, 
   ChevronRight,
-  Globe
+  Globe,
+  X,
+  Users,
+  Info
 } from 'lucide-react';
 
 interface HomeDashboardProps {
@@ -23,8 +26,21 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
   setActiveTab,
   setSelectedTool,
 }) => {
+  const [selectedUnitCode, setSelectedUnitCode] = useState<string | null>(null);
+
   const recentActivities = CPD_ACTIVITIES.slice(0, 3);
   const pinnedDocs = CPD_DRIVE_DOCUMENTS.filter(d => d.isPinned).slice(0, 3);
+
+  const unitCodeMap: Record<string, string> = {
+    'exam': 'Testing',
+    'material': 'Materyal',
+    'curriculum': 'Program',
+    'cpd': 'CPD',
+    'quality': 'KAB'
+  };
+
+  const activeUnitDuty = UNIT_DUTIES.find(d => d.code === selectedUnitCode);
+  const activeUnitData = ACADEMIC_UNITS_DATA.find(u => u.code === selectedUnitCode);
 
   return (
     <div className="space-y-6">
@@ -116,28 +132,25 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
           <div className="space-y-3">
             {ACADEMIC_UNITS.map((unit) => {
               const isCpd = unit.id === 'cpd';
+              const targetCode = unitCodeMap[unit.id] || unit.code;
 
               return (
                 <div
                   key={unit.id}
-                  onClick={() => {
-                    if (isCpd) setActiveTab('cpd');
-                  }}
-                  className={`p-4 rounded-2xl border transition flex items-center justify-between ${
-                    isCpd
-                      ? 'border-blue-300 bg-blue-50/30 hover:bg-blue-50/60 cursor-pointer shadow-xs'
-                      : 'border-slate-200 bg-slate-50/50 opacity-70 cursor-not-allowed'
-                  }`}
+                  onClick={() => setSelectedUnitCode(targetCode)}
+                  className="p-4 rounded-2xl border border-slate-200/90 bg-white hover:border-blue-400 hover:shadow-md transition cursor-pointer flex items-center justify-between group"
                 >
                   <div className="flex items-center space-x-3.5 truncate">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold flex-shrink-0 ${
-                      isCpd ? 'bg-blue-800 text-white' : 'bg-slate-200 text-slate-500'
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold flex-shrink-0 transition ${
+                      isCpd 
+                        ? 'bg-blue-800 text-white group-hover:scale-105' 
+                        : 'bg-blue-50 text-blue-800 border border-blue-200 group-hover:scale-105'
                     }`}>
                       {unit.code.split('-')[0]}
                     </div>
                     <div className="truncate">
                       <div className="flex items-center space-x-2">
-                        <span className="font-bold text-xs sm:text-sm text-slate-900 truncate">
+                        <span className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-blue-700 transition truncate">
                           {unit.name}
                         </span>
                         {isCpd && (
@@ -153,16 +166,10 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                   </div>
 
                   <div className="flex items-center space-x-2 flex-shrink-0 pl-3">
-                    {isCpd ? (
-                      <span className="inline-flex items-center text-xs font-bold text-blue-700 group">
-                        <span>Görüntüle</span>
-                        <ChevronRight className="w-4 h-4 ml-0.5" />
-                      </span>
-                    ) : (
-                      <span className="text-[10px] font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-lg">
-                        Planlama
-                      </span>
-                    )}
+                    <span className="text-xs font-bold text-blue-700 group-hover:translate-x-0.5 transition flex items-center">
+                      <span>Görev & Bilgi</span>
+                      <ChevronRight className="w-4 h-4 ml-0.5" />
+                    </span>
                   </div>
                 </div>
               );
@@ -301,6 +308,119 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
         </div>
 
       </div>
+
+      {/* Academic Unit Detail Modal */}
+      {selectedUnitCode && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-150">
+          <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 space-y-5">
+            {/* Modal Header */}
+            <div className="flex items-start justify-between pb-4 border-b border-slate-100">
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-mono">
+                  {activeUnitDuty?.code || selectedUnitCode}
+                </span>
+                <h3 className="text-lg font-black text-slate-900">
+                  {activeUnitDuty?.name || activeUnitData?.name || selectedUnitCode}
+                </h3>
+                <p className="text-xs text-slate-500">
+                  Birim Sorumlusu: <strong className="text-slate-900">{activeUnitDuty?.head || activeUnitData?.head}</strong>
+                </p>
+              </div>
+
+              <button
+                onClick={() => setSelectedUnitCode(null)}
+                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 transition cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Kalite El Kitabı Notice Banner */}
+            <div className="bg-blue-50 border border-blue-200/80 rounded-2xl p-3.5 flex items-start space-x-2.5 text-blue-900 text-xs">
+              <Info className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5" />
+              <div className="space-y-0.5">
+                <span className="font-bold">Kalite Güvencesi ve Görev Tanımı Notu:</span>
+                <p className="text-blue-800/90 leading-snug">
+                  Görev ve sorumluluklar <strong>YDYO Kalite El Kitabı</strong>'ndan özetlenmiştir. Tam ve detaylı görev tanımları ile yönergeler için Kalite El Kitabı'na başvurunuz.
+                </p>
+              </div>
+            </div>
+
+            {/* Misyon & Vizyon */}
+            {activeUnitDuty && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                <div className="space-y-1">
+                  <span className="font-bold text-slate-700 uppercase tracking-wider text-[10px]">Misyon</span>
+                  <p className="text-slate-600 leading-relaxed">{activeUnitDuty.mission}</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="font-bold text-slate-700 uppercase tracking-wider text-[10px]">Vizyon</span>
+                  <p className="text-slate-600 leading-relaxed">{activeUnitDuty.vision}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Summary Duties */}
+            {activeUnitDuty && (
+              <div className="space-y-2">
+                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                  Özet Görev ve Sorumluluklar:
+                </h4>
+                <div className="text-xs text-slate-600 whitespace-pre-line leading-relaxed bg-slate-50/60 p-3.5 rounded-xl border border-slate-100">
+                  {activeUnitDuty.summary}
+                </div>
+              </div>
+            )}
+
+            {/* Unit Members */}
+            {activeUnitData && activeUnitData.members.length > 0 && (
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2 text-xs font-bold text-slate-800 uppercase tracking-wider">
+                  <Users className="w-3.5 h-3.5 text-blue-700" />
+                  <span>Birim Komisyon Üyeleri ({activeUnitData.members.length})</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {activeUnitData.members.map((m, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200"
+                    >
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Modal Actions */}
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+              {selectedUnitCode === 'CPD' ? (
+                <button
+                  onClick={() => {
+                    setSelectedUnitCode(null);
+                    setActiveTab('cpd');
+                  }}
+                  className="px-4 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer"
+                >
+                  <span>CPD Modülüne Git</span>
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              ) : (
+                <span className="text-[11px] text-slate-400 italic">
+                  Bu birimin dijital modülü hazırlık aşamasındadır.
+                </span>
+              )}
+
+              <button
+                onClick={() => setSelectedUnitCode(null)}
+                className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition cursor-pointer"
+              >
+                Kapat
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

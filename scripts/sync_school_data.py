@@ -121,12 +121,28 @@ def sync_school_data():
                     "id": row[0],
                     "name": str(row[1]).strip(),
                     "role": str(row[2]).strip() if row[2] else "",
-                    "duty": str(row[3]).strip() if row[3] else ""
+                    "startDate": str(row[3]).strip() if len(row) > 3 and row[3] else ""
                 })
         return items
 
     management_board = parse_board('Yönetim Kurulu')
     school_board = parse_board('Yüksekokul Kurulu')
+
+    # 7. Birim Görev Tanımları (Kalite El Kitabı Özeti)
+    ws_duties = wb['Birim Görev Tanımları'] if 'Birim Görev Tanımları' in wb.sheetnames else None
+    unit_duties = []
+    if ws_duties:
+        for row in list(ws_duties.iter_rows(values_only=True))[1:]:
+            if row and row[0]:
+                unit_duties.append({
+                    "code": str(row[0]).strip(),
+                    "name": str(row[1]).strip(),
+                    "head": str(row[2]).strip(),
+                    "mission": str(row[3]).strip(),
+                    "vision": str(row[4]).strip(),
+                    "summary": str(row[5]).strip(),
+                    "note": str(row[6]).strip()
+                })
 
     # 7. Sık Kullanılan Bağlantılar
     ws_l = wb['Sık Kullanılan Bağlantılar']
@@ -192,7 +208,17 @@ export interface BoardMemberInfo {{
   id: number;
   name: string;
   role: string;
-  duty: string;
+  startDate: string;
+}}
+
+export interface UnitDutyInfo {{
+  code: string;
+  name: string;
+  head: string;
+  mission: string;
+  vision: string;
+  summary: string;
+  note: string;
 }}
 
 export interface UsefulLinkInfo {{
@@ -216,6 +242,8 @@ export const BRANCH_ADVISORS: BranchAdvisorInfo[] = {json.dumps(advisors, ensure
 export const MANAGEMENT_BOARD: BoardMemberInfo[] = {json.dumps(management_board, ensure_ascii=False, indent=2)};
 
 export const SCHOOL_BOARD: BoardMemberInfo[] = {json.dumps(school_board, ensure_ascii=False, indent=2)};
+
+export const UNIT_DUTIES: UnitDutyInfo[] = {json.dumps(unit_duties, ensure_ascii=False, indent=2)};
 
 export const USEFUL_LINKS: UsefulLinkInfo[] = {json.dumps(useful_links, ensure_ascii=False, indent=2)};
 """

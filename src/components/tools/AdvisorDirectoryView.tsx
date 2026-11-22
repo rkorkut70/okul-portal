@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ACADEMIC_STAFF, BRANCH_ADVISORS, MANAGEMENT_BOARD, SCHOOL_BOARD } from '../../data/schoolData';
+import { ACADEMIC_STAFF, BRANCH_ADVISORS, MANAGEMENT_BOARD, SCHOOL_BOARD, UNIT_DUTIES } from '../../data/schoolData';
 import { 
   Users, 
   Search, 
@@ -10,11 +10,14 @@ import {
   ExternalLink,
   GraduationCap,
   MapPin,
-  Building2
+  Building2,
+  FileText,
+  Info,
+  Layers
 } from 'lucide-react';
 
 export const AdvisorDirectoryView: React.FC = () => {
-  const [activeSubTab, setActiveSubTab] = useState<'staff' | 'advisors' | 'boards'>('staff');
+  const [activeSubTab, setActiveSubTab] = useState<'staff' | 'advisors' | 'duties' | 'boards'>('staff');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
   const [filterDuty, setFilterDuty] = useState<'all' | 'ydyo' | 'external'>('all');
@@ -78,7 +81,7 @@ export const AdvisorDirectoryView: React.FC = () => {
               Akademik Kadro, Danışmanlık ve Kurullar
             </h2>
             <p className="text-xs text-blue-200/80 max-w-xl leading-relaxed">
-              Yabancı Diller Yüksekokulu tüm öğretim elemanları, dış birim görevlendirmeleri, şube danışmanları ve yönetim kurulları.
+              Yabancı Diller Yüksekokulu öğretim elemanları, dış birim görevlendirmeleri, birim görev tanımları ve resmi kurullar.
             </p>
           </div>
 
@@ -86,7 +89,7 @@ export const AdvisorDirectoryView: React.FC = () => {
           <div className="flex items-center p-1 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 overflow-x-auto">
             <button
               onClick={() => setActiveSubTab('staff')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
                 activeSubTab === 'staff'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
@@ -96,17 +99,27 @@ export const AdvisorDirectoryView: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveSubTab('advisors')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
                 activeSubTab === 'advisors'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
               }`}
             >
-              Şube Danışmanları ({BRANCH_ADVISORS.length})
+              Danışmanlar ({BRANCH_ADVISORS.length})
+            </button>
+            <button
+              onClick={() => setActiveSubTab('duties')}
+              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+                activeSubTab === 'duties'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              Birim Görev Tanımları
             </button>
             <button
               onClick={() => setActiveSubTab('boards')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
                 activeSubTab === 'boards'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
@@ -135,7 +148,6 @@ export const AdvisorDirectoryView: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-              {/* Duty filter */}
               <div className="flex items-center p-0.5 bg-slate-100 rounded-xl">
                 <button
                   onClick={() => setFilterDuty('all')}
@@ -163,7 +175,6 @@ export const AdvisorDirectoryView: React.FC = () => {
                 </button>
               </div>
 
-              {/* Language filter */}
               <div className="flex items-center p-0.5 bg-slate-100 rounded-xl">
                 {['all', 'İngilizce', 'Fransızca', 'Almanca'].map((lang) => (
                   <button
@@ -195,7 +206,6 @@ export const AdvisorDirectoryView: React.FC = () => {
                   }`}
                 >
                   <div className="space-y-3">
-                    {/* Top Row: Title & Badges */}
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
@@ -224,7 +234,6 @@ export const AdvisorDirectoryView: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Duty Place */}
                     <div className="pt-2 border-t border-slate-100">
                       <div className="flex items-center space-x-1.5 text-xs">
                         {isExternal ? (
@@ -242,7 +251,6 @@ export const AdvisorDirectoryView: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Contact Info & AKBİS */}
                   <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
                     {staff.email ? (
                       <a
@@ -372,30 +380,115 @@ export const AdvisorDirectoryView: React.FC = () => {
         </div>
       )}
 
-      {/* Subtab 3: Kurullar */}
+      {/* Subtab 3: Birim Görev Tanımları (Kalite El Kitabı Özeti) */}
+      {activeSubTab === 'duties' && (
+        <div className="space-y-6">
+          {/* Official Disclaimer Banner */}
+          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex items-start space-x-3 text-blue-900">
+            <Info className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
+            <div className="space-y-0.5">
+              <h4 className="font-bold text-xs">Resmi Görev Tanımları Bilgi Notu</h4>
+              <p className="text-xs text-blue-800/90 leading-relaxed">
+                Aşağıdaki görev ve sorumluluklar <strong>YDYO Kalite El Kitabı</strong> esas alınarak özetlenmiştir. 
+                Süreçlerin eksiksiz işleyişi, yönergeler ve detaylı görev tanımları için lütfen <strong>YDYO Kalite El Kitabı</strong> dokümanına başvurunuz.
+              </p>
+            </div>
+          </div>
+
+          {/* Unit Duties Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {UNIT_DUTIES.map((duty) => (
+              <div 
+                key={duty.code}
+                className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4 hover:border-blue-300 transition"
+              >
+                <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-mono">
+                      {duty.code}
+                    </span>
+                    <h3 className="font-extrabold text-base text-slate-900">
+                      {duty.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 font-medium">
+                      Birim Sorumlusu: <strong className="text-slate-800">{duty.head}</strong>
+                    </p>
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center flex-shrink-0">
+                    <Layers className="w-5 h-5 text-blue-700" />
+                  </div>
+                </div>
+
+                {/* Misyon & Vizyon */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-slate-50/70 p-3.5 rounded-2xl border border-slate-100">
+                  <div className="space-y-1">
+                    <span className="font-bold text-slate-700 block uppercase tracking-wider text-[10px]">
+                      Misyon
+                    </span>
+                    <p className="text-slate-600 leading-snug">
+                      {duty.mission}
+                    </p>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="font-bold text-slate-700 block uppercase tracking-wider text-[10px]">
+                      Vizyon
+                    </span>
+                    <p className="text-slate-600 leading-snug">
+                      {duty.vision}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Özet Görevler */}
+                <div className="space-y-2">
+                  <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                    Özet Görev ve Sorumluluklar:
+                  </h4>
+                  <div className="text-xs text-slate-600 whitespace-pre-line leading-relaxed bg-white p-3 rounded-xl border border-slate-100 font-sans">
+                    {duty.summary}
+                  </div>
+                </div>
+
+                {/* Footer Note */}
+                <div className="pt-2 border-t border-slate-100 flex items-center space-x-1.5 text-[11px] text-amber-800 font-medium">
+                  <FileText className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
+                  <span>{duty.note}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Subtab 4: Kurullar */}
       {activeSubTab === 'boards' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Yönetim Kurulu */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4">
-            <div className="flex items-center space-x-3 pb-3 border-b border-slate-100">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-blue-700" />
-              </div>
-              <div>
-                <h3 className="font-bold text-base text-slate-900">Yönetim Kurulu</h3>
-                <p className="text-xs text-slate-500">Yüksekokul Yönetim Kurulu Üyeleri</p>
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
+                  <ShieldCheck className="w-5 h-5 text-blue-700" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base text-slate-900">Yüksekokul Yönetim Kurulu</h3>
+                  <p className="text-xs text-slate-500">yönetim.docx Tablo 25 Esas Alınmıştır ({MANAGEMENT_BOARD.length} Üye)</p>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {MANAGEMENT_BOARD.map((member) => (
-                <div key={member.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                <div key={member.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between gap-3">
                   <div>
                     <h4 className="font-bold text-xs text-slate-900">{member.name}</h4>
-                    <p className="text-[11px] text-slate-500">{member.duty}</p>
+                    <p className="text-[11px] text-slate-500 mt-0.5">
+                      {member.role} {member.startDate ? `• Başlama: ${member.startDate}` : ''}
+                    </p>
                   </div>
-                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                    member.role === 'Başkan'
-                      ? 'bg-amber-100 text-amber-900'
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${
+                    member.role === 'Müdür'
+                      ? 'bg-amber-100 text-amber-900 border border-amber-200'
                       : member.role === 'Raportör'
                       ? 'bg-slate-200 text-slate-700'
                       : 'bg-blue-100 text-blue-800'
@@ -407,27 +500,32 @@ export const AdvisorDirectoryView: React.FC = () => {
             </div>
           </div>
 
+          {/* Yüksekokul Kurulu */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4">
-            <div className="flex items-center space-x-3 pb-3 border-b border-slate-100">
-              <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center">
-                <Building className="w-5 h-5 text-indigo-700" />
-              </div>
-              <div>
-                <h3 className="font-bold text-base text-slate-900">Yüksekokul Kurulu</h3>
-                <p className="text-xs text-slate-500">Yüksekokul Akademik Genel Kurulu</p>
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center">
+                  <Building className="w-5 h-5 text-indigo-700" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base text-slate-900">Yüksekokul Kurulu</h3>
+                  <p className="text-xs text-slate-500">yönetim.docx Tablo 24 Esas Alınmıştır ({SCHOOL_BOARD.length} Üye)</p>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {SCHOOL_BOARD.map((member) => (
-                <div key={member.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                <div key={member.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between gap-3">
                   <div>
                     <h4 className="font-bold text-xs text-slate-900">{member.name}</h4>
-                    <p className="text-[11px] text-slate-500">{member.duty}</p>
+                    <p className="text-[11px] text-slate-500 mt-0.5">
+                      {member.role} {member.startDate ? `• Başlama: ${member.startDate}` : ''}
+                    </p>
                   </div>
-                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                    member.role === 'Başkan'
-                      ? 'bg-amber-100 text-amber-900'
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${
+                    member.role === 'Müdür'
+                      ? 'bg-amber-100 text-amber-900 border border-amber-200'
                       : member.role === 'Raportör'
                       ? 'bg-slate-200 text-slate-700'
                       : 'bg-indigo-100 text-indigo-800'

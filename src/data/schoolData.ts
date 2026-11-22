@@ -49,7 +49,17 @@ export interface BoardMemberInfo {
   id: number;
   name: string;
   role: string;
-  duty: string;
+  startDate: string;
+}
+
+export interface UnitDutyInfo {
+  code: string;
+  name: string;
+  head: string;
+  mission: string;
+  vision: string;
+  summary: string;
+  note: string;
 }
 
 export interface UsefulLinkInfo {
@@ -1056,54 +1066,168 @@ export const BRANCH_ADVISORS: BranchAdvisorInfo[] = [
 export const MANAGEMENT_BOARD: BoardMemberInfo[] = [
   {
     "id": 1,
-    "name": "Prof. Dr. Bertan AKYOL",
-    "role": "Başkan",
-    "duty": "Yüksekokul Müdürü"
+    "name": "Prof.Dr.Bertan AKYOL",
+    "role": "Müdür",
+    "startDate": "26/04/2023"
   },
   {
     "id": 2,
-    "name": "Öğr. Gör. Rıdvan KORKUT",
-    "role": "Üye",
-    "duty": "Müdür Yardımcısı"
+    "name": "Doç.Dr.Bilgen KIRAL",
+    "role": "Öğretim Üyesi",
+    "startDate": "13/12/2024"
   },
   {
     "id": 3,
-    "name": "Öğr. Gör. Dr. Hasan Ulvi EVREN",
-    "role": "Üye",
-    "duty": "Müdür Yardımcısı"
+    "name": "Dr.Öğretim Üyesi Faruk KALAY",
+    "role": "Öğretim Üyesi",
+    "startDate": "22/05/2023"
   },
   {
     "id": 4,
+    "name": "Dr.Öğretim Üyesi Tahir YILMAZ",
+    "role": "Öğretim Üyesi",
+    "startDate": "22/05/2023"
+  },
+  {
+    "id": 5,
+    "name": "Dr.Öğretim Üyesi Barış ÇAVUŞ",
+    "role": "Öğretim Üyesi",
+    "startDate": "22/05/2026"
+  },
+  {
+    "id": 6,
+    "name": "Öğr.Gör.Rıdvan KORKUT",
+    "role": "Öğretim Elemanı",
+    "startDate": "26/04/2023"
+  },
+  {
+    "id": 7,
+    "name": "Öğr.Gör.Dr.Hasan Ulvi EVREN",
+    "role": "Öğretim Elemanı",
+    "startDate": "26/04/2023"
+  },
+  {
+    "id": 8,
     "name": "Recep KARASULU",
     "role": "Raportör",
-    "duty": "Yüksekokul Sekreteri"
+    "startDate": "29/04/2010"
   }
 ];
 
 export const SCHOOL_BOARD: BoardMemberInfo[] = [
   {
     "id": 1,
-    "name": "Prof. Dr. Bertan AKYOL",
-    "role": "Başkan",
-    "duty": "Yüksekokul Müdürü"
+    "name": "Prof.Dr.Bertan AKYOL",
+    "role": "Müdür",
+    "startDate": "26/04/2023"
   },
   {
     "id": 2,
-    "name": "Öğr. Gör. Rıdvan KORKUT",
-    "role": "Üye",
-    "duty": "Müdür Yardımcısı"
+    "name": "Öğr.Gör.Rıdvan KORKUT",
+    "role": "Öğretim Elemanı",
+    "startDate": "26/04/2023"
   },
   {
     "id": 3,
-    "name": "Öğr. Gör. Dr. Hasan Ulvi EVREN",
-    "role": "Üye",
-    "duty": "Müdür Yardımcısı"
+    "name": "Öğr.Gör.Dr. Hasan Ulvi EVREN",
+    "role": "Öğretim Elemanı",
+    "startDate": "26/04/2023"
   },
   {
     "id": 4,
+    "name": "Öğr.Gör.Ulviye KARACA",
+    "role": "Öğretim Elemanı",
+    "startDate": "03/01/2020"
+  },
+  {
+    "id": 5,
+    "name": "Öğr.Gör.Gül TECİMER",
+    "role": "Öğretim Elemanı",
+    "startDate": "05/10/2023"
+  },
+  {
+    "id": 6,
+    "name": "Öğr.Gör.Göksel TURAN",
+    "role": "Öğretim Elemanı",
+    "startDate": "05/10/2023"
+  },
+  {
+    "id": 7,
+    "name": "Öğr.Gör.Hayri ARGUNAT",
+    "role": "Öğretim Elemanı",
+    "startDate": "24/01/2024"
+  },
+  {
+    "id": 8,
+    "name": "Öğr.Gör.Dile ATEŞ",
+    "role": "Öğretim Elemanı",
+    "startDate": "10/06/2024"
+  },
+  {
+    "id": 9,
+    "name": "Öğr.Gör.Pınar UĞUR",
+    "role": "Öğretim Elemanı",
+    "startDate": "26/06/2024"
+  },
+  {
+    "id": 10,
+    "name": "Öğr.Gör.Bilge Sevim SOYKUT",
+    "role": "Öğretim Elemanı",
+    "startDate": "12/09/2024"
+  },
+  {
+    "id": 11,
     "name": "Recep KARASULU",
     "role": "Raportör",
-    "duty": "Yüksekokul Sekreteri"
+    "startDate": "29/04/2010"
+  }
+];
+
+export const UNIT_DUTIES: UnitDutyInfo[] = [
+  {
+    "code": "Testing",
+    "name": "SINAV BİRİMİ",
+    "head": "Öğr. Gör. Göksel TURAN",
+    "mission": "Öğrencilerin lisans eğitimine başlamak için gerekli yabancı dil yeterliliklerini ölçmek ve ileri seviye bilişsel yeteneklerini değerlendiren ölçme araçları oluşturmak.",
+    "vision": "Dil ölçme ve değerlendirme alanında ulusal ve uluslararası standartlarda yenilikçi, güvenilir ve adil uygulamalarla öncü bir merkez olmak.",
+    "summary": "1. Hazırlık YDYS, Yaz Okulu Sonu YDYS, Erasmus YDYS, Lisansüstü YDYS, Quiz, Ara Sınav, Final ve Mazeret sınavlarını hazırlamak, organize etmek ve değerlendirme ölçütlerini yönetmek.\n2. Soru tipleri taslakları, değerlendirme rubrikleri ve bilgilendirme metinlerini yayımlamak.\n3. Sınav takvimini Program ve Materyal birimleriyle koordineli belirlemek; gözetmenlik ve değerlendirme görevlendirmelerini yürütmek.\n4. Sınav evraklarının baskı/çoğaltma güvenliğini sağlamak, sınav itiraz dilekçelerini inceleyip karara bağlamak.",
+    "note": "Tam ve detaylı bilgi YDYO Kalite El Kitabı Bölüm 7'de yer almaktadır."
+  },
+  {
+    "code": "Materyal",
+    "name": "MATERYAL SEÇME ve GELİŞTİRME BİRİMİ",
+    "head": "Öğr. Gör. Dilek ATEŞ",
+    "mission": "Eğitim programındaki amaçlara, içeriğe ve öğrenci seviyelerine uygun ders kaynaklarının, materyallerinin seçilmesini, düzenlenmesini ve erişilebilir olmasını sağlamak.",
+    "vision": "Öğrenci ve öğretim elemanlarının ihtiyaçlarına en uygun ders kitaplarını/ek materyalleri seçmek, özgün çalışma kâğıtları geliştirmek ve dönem boyunca materyalleri güncel tutmak.",
+    "summary": "1. Her akademik yıl müfredatı için ders kitaplarının analiz ve seçim sürecini koordine etmek.\n2. Dört beceriye dayalı özgün çalışma kâğıtları, ses dosyaları ve ELT ek paketleri derlemek ve geliştirmek.\n3. Ders materyallerini, çalışma kâğıtlarını ve cevap anahtarlarını kurumsal Drive (O-Drive) üzerinde erişilebilir kılmak.\n4. Materyal verimliliği anketleri düzenleyerek geri bildirim toplamak ve materyal havuzunu güncellemek.",
+    "note": "Tam ve detaylı bilgi YDYO Kalite El Kitabı Bölüm 7'de yer almaktadır."
+  },
+  {
+    "code": "Program",
+    "name": "PROGRAM GELİŞTİRME BİRİMİ",
+    "head": "Öğr. Gör. Hayri ARGUNAT",
+    "mission": "CEFR ve uluslararası standartlara dayalı, öğrencilerin dil ihtiyaçlarına uygun yüksek kaliteli eğitim programlarını yenilikçi yöntemlerle tasarlamak ve geliştirmek.",
+    "vision": "Öğrencilerin yabancı dil engelini ortadan kaldıran, seviyelere göre en kusursuz ve dengeli müfredatı hazırlamak.",
+    "summary": "1. Hazırlık sınıflarının seviyelere göre ana ders ve yazma (Main Course & Writing) ders izlencelerini (syllabus) ve haftalık konu dağılımını (pacing) hazırlamak.\n2. Sınav ve Materyal birimleriyle koordineli çalışarak sınav haftalarında ders yoğunluğunu dengelemek; Writing Portfolio konularını ve takvimini belirlemek.\n3. Müfredatın planlandığı gibi takip edilmesini sağlamak için sınıf dosyalarını kontrol etmek ve şube danışmanlarıyla iletişimde olmak.\n4. Müfredattaki iyileştirme alanlarını belirlemek için geri bildirim toplamak ve revizyonları uygulamak.",
+    "note": "Tam ve detaylı bilgi YDYO Kalite El Kitabı Bölüm 7'de yer almaktadır."
+  },
+  {
+    "code": "CPD",
+    "name": "SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+    "head": "Öğr. Gör. Pınar UĞUR",
+    "mission": "İhtiyaç analizleri, kurum öncelikleri, sınıf içi öz ve akran gözlemlerine dayalı olarak kolektif ve bireysel mesleki gelişim faaliyetlerini teşvik etmek ve organize etmek.",
+    "vision": "CEFR ilkelerine dayalı, YDYO'lar arasında en kapsayıcı, destekleyici ve iş birliğine dayalı hizmet içi eğitim ve gelişim süreçlerini sunmak.",
+    "summary": "1. Öğrenciler ve öğretim elemanları için Oryantasyon Programlarını hazırlamak ve koordine etmek (TR/EN).\n2. Öğrenci El Kitabı ve Öğretim Elemanı El Kitabı'nı hazırlamak ve güncel tutmak (TR/EN).\n3. Hizmet içi gelişim ihtiyaç analizi anketlerini uygulamak; çalıştaylar, seminerler ve atölyeler organize etmek.\n4. Öz değerlendirme, akran sınıf gözlemi (peer observation) ve idari gözlem faaliyetlerini planlamak ve yürütmek.\n5. Ulusal/uluslararası TESOL konferans, çalıştay ve gelişim kaynaklarını duyurmak ve kayıtlarını arşivlemek.",
+    "note": "Tam ve detaylı bilgi YDYO Kalite El Kitabı Bölüm 7'de yer almaktadır."
+  },
+  {
+    "code": "KAB",
+    "name": "KALİTE VE AKREDİTASYON BİRİMİ",
+    "head": "Öğr. Gör. Bilge Sevim SOYKUT",
+    "mission": "YDYO'nun etkili bir dil öğretim ve öğrenim ortamına yönelik yüksek kalite standartlarına ulaşmasını ve bu standartları sürdürmesini desteklemek.",
+    "vision": "Dil öğretiminde mükemmeliyet merkezi olarak tanınmak; yenilikçi, sürdürülebilir ve uluslararası standartlarda akredite bir dil eğitimi anlayışını yerleştirmek.",
+    "summary": "1. YDYO bünyesindeki tüm akademik ve idari birimler için kalite güvence çerçeveleri ve iş akışları oluşturmak.\n2. Yüksekokulun ulusal ve uluslararası akreditasyon alma süreçlerini koordine etmek ve rehberlik sağlamak.\n3. Ders gözlemleri, veri analizi, kayıt tutma ve kurumsal iç değerlendirme raporlama prosedürlerini koordine etmek.\n4. YÖKAK usul ve esaslarına uygun olarak yıllık iç değerlendirme raporunu hazırlayıp Yüksekokul Kurulu'na sunmak ve kamuoyuyla paylaşmak.\n5. Değerlendirme sonuçlarına göre gerekli iyileştirme ve revizyonların ilgili birimlerce uygulanmasını takip etmek.",
+    "note": "Tam ve detaylı bilgi YDYO Kalite El Kitabı Bölüm 7'de yer almaktadır."
   }
 ];
 

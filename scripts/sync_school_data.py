@@ -144,7 +144,7 @@ def sync_school_data():
                     "note": str(row[6]).strip()
                 })
 
-    # 7. Sık Kullanılan Bağlantılar
+    # 8. Sık Kullanılan Bağlantılar
     ws_l = wb['Sık Kullanılan Bağlantılar']
     useful_links = []
     for row in list(ws_l.iter_rows(values_only=True))[1:]:
@@ -156,6 +156,21 @@ def sync_school_data():
                 "url": str(row[3]).strip() if row[3] else "#",
                 "description": str(row[4]).strip() if row[4] else ""
             })
+
+    # 9. Telefon Rehberi
+    ws_phone = wb['Telefon Rehberi'] if 'Telefon Rehberi' in wb.sheetnames else None
+    phone_directory = []
+    if ws_phone:
+        for row in list(ws_phone.iter_rows(values_only=True))[1:]:
+            if row and row[1]:
+                phone_directory.append({
+                    "id": row[0],
+                    "name": str(row[1]).strip(),
+                    "role": str(row[2]).strip() if row[2] else "",
+                    "extension": str(row[3]).strip() if row[3] else "",
+                    "externalPhone": str(row[4]).strip() if row[4] else "",
+                    "email": str(row[5]).strip() if row[5] and str(row[5]) != '-' else None
+                })
 
     ts_content = f"""// Bu dosya docs/okul_bilgi.xlsx dosyasından scripts/sync_school_data.py ile otomatik üretilmiştir.
 // Manuel düzenleme yapmayınız.
@@ -229,6 +244,15 @@ export interface UsefulLinkInfo {{
   description: string;
 }}
 
+export interface PhoneDirectoryItem {{
+  id: number;
+  name: string;
+  role: string;
+  extension: string;
+  externalPhone: string;
+  email: string | null;
+}}
+
 export const ACADEMIC_STAFF: AcademicStaff[] = {json.dumps(academic_staff, ensure_ascii=False, indent=2)};
 
 export const ADMINISTRATIVE_STAFF: AdministrativeStaff[] = {json.dumps(admin_staff, ensure_ascii=False, indent=2)};
@@ -246,6 +270,8 @@ export const SCHOOL_BOARD: BoardMemberInfo[] = {json.dumps(school_board, ensure_
 export const UNIT_DUTIES: UnitDutyInfo[] = {json.dumps(unit_duties, ensure_ascii=False, indent=2)};
 
 export const USEFUL_LINKS: UsefulLinkInfo[] = {json.dumps(useful_links, ensure_ascii=False, indent=2)};
+
+export const PHONE_DIRECTORY: PhoneDirectoryItem[] = {json.dumps(phone_directory, ensure_ascii=False, indent=2)};
 """
 
     with open('src/data/schoolData.ts', 'w', encoding='utf-8') as f:

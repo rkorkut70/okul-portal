@@ -1,23 +1,32 @@
 import React, { useState, useMemo } from 'react';
-import { ACADEMIC_STAFF, BRANCH_ADVISORS, MANAGEMENT_BOARD, SCHOOL_BOARD, UNIT_DUTIES } from '../../data/schoolData';
+import { 
+  ACADEMIC_STAFF, 
+  BRANCH_ADVISORS, 
+  MANAGEMENT_BOARD, 
+  SCHOOL_BOARD, 
+  UNIT_DUTIES, 
+  PHONE_DIRECTORY 
+} from '../../data/schoolData';
 import { 
   Users, 
   Search, 
   UserCheck, 
   Building, 
-  ShieldCheck,
-  Mail,
-  ExternalLink,
-  GraduationCap,
-  MapPin,
-  Building2,
-  FileText,
-  Info,
-  Layers
+  ShieldCheck, 
+  Mail, 
+  ExternalLink, 
+  GraduationCap, 
+  MapPin, 
+  Building2, 
+  FileText, 
+  Info, 
+  Layers,
+  Phone,
+  PhoneCall
 } from 'lucide-react';
 
 export const AdvisorDirectoryView: React.FC = () => {
-  const [activeSubTab, setActiveSubTab] = useState<'staff' | 'advisors' | 'duties' | 'boards'>('staff');
+  const [activeSubTab, setActiveSubTab] = useState<'staff' | 'advisors' | 'phones' | 'duties' | 'boards'>('staff');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
   const [filterDuty, setFilterDuty] = useState<'all' | 'ydyo' | 'external'>('all');
@@ -30,6 +39,7 @@ export const AdvisorDirectoryView: React.FC = () => {
         item.name.toLowerCase().includes(q) ||
         item.title.toLowerCase().includes(q) ||
         item.dutyPlace.toLowerCase().includes(q) ||
+        (item.phone && item.phone.includes(q)) ||
         (item.email && item.email.toLowerCase().includes(q));
 
       const matchesLang = 
@@ -63,6 +73,20 @@ export const AdvisorDirectoryView: React.FC = () => {
     });
   }, [searchQuery, selectedLanguage]);
 
+  // Filter Phone Directory
+  const filteredPhones = useMemo(() => {
+    return PHONE_DIRECTORY.filter(item => {
+      const q = searchQuery.toLowerCase();
+      return (
+        item.name.toLowerCase().includes(q) ||
+        item.role.toLowerCase().includes(q) ||
+        item.extension.includes(q) ||
+        item.externalPhone.toLowerCase().includes(q) ||
+        (item.email && item.email.toLowerCase().includes(q))
+      );
+    });
+  }, [searchQuery]);
+
   const externalCount = useMemo(() => {
     return ACADEMIC_STAFF.filter(s => !s.dutyPlace.includes('YDYO') && s.dutyPlace !== 'Yabancı Diller Yüksekokulu').length;
   }, []);
@@ -75,13 +99,13 @@ export const AdvisorDirectoryView: React.FC = () => {
           <div className="space-y-1">
             <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-blue-800/80 text-[11px] font-bold text-blue-200 border border-blue-700/50">
               <Users className="w-3.5 h-3.5 text-blue-300" />
-              <span>Akademik Personel ve Rehber</span>
+              <span>Akademik Personel, Dahili Rehber ve Kurullar</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white">
-              Akademik Kadro, Danışmanlık ve Kurullar
+              Kadro, Telefon Rehberi ve Kurullar
             </h2>
             <p className="text-xs text-blue-200/80 max-w-xl leading-relaxed">
-              Yabancı Diller Yüksekokulu öğretim elemanları, dış birim görevlendirmeleri, birim görev tanımları ve resmi kurullar.
+              Öğretim elemanları, santral/idari dahili telefonlar, şube danışmanları, birim görev tanımları ve kurullar.
             </p>
           </div>
 
@@ -96,6 +120,16 @@ export const AdvisorDirectoryView: React.FC = () => {
               }`}
             >
               Akademik Kadro ({ACADEMIC_STAFF.length})
+            </button>
+            <button
+              onClick={() => setActiveSubTab('phones')}
+              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+                activeSubTab === 'phones'
+                  ? 'bg-white text-slate-900 shadow-xs'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              Telefon Rehberi ({PHONE_DIRECTORY.length})
             </button>
             <button
               onClick={() => setActiveSubTab('advisors')}
@@ -142,7 +176,7 @@ export const AdvisorDirectoryView: React.FC = () => {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Öğretim elemanı, e-posta veya görev yeri..."
+                placeholder="Öğretim elemanı, dahili no veya görev yeri..."
                 className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition"
               />
             </div>
@@ -234,20 +268,30 @@ export const AdvisorDirectoryView: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="pt-2 border-t border-slate-100">
+                    <div className="pt-2 border-t border-slate-100 space-y-1.5">
                       <div className="flex items-center space-x-1.5 text-xs">
                         {isExternal ? (
                           <MapPin className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
                         ) : (
                           <Building2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
                         )}
-                        <span className="text-slate-400 font-medium">Görev Yeri:</span>
+                        <span className="text-slate-400 font-medium">Görev:</span>
                         <span className={`font-semibold truncate ${
                           isExternal ? 'text-amber-800 bg-amber-50 px-1.5 py-0.2 rounded' : 'text-slate-800'
                         }`}>
                           {staff.dutyPlace}
                         </span>
                       </div>
+
+                      {staff.phone && (
+                        <div className="flex items-center space-x-1.5 text-xs">
+                          <Phone className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                          <span className="text-slate-400 font-medium">Dahili Tel:</span>
+                          <span className="font-mono font-bold text-slate-900 bg-emerald-50 text-emerald-800 px-1.5 py-0.2 rounded border border-emerald-200/60">
+                            {staff.phone}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -291,7 +335,88 @@ export const AdvisorDirectoryView: React.FC = () => {
         </div>
       )}
 
-      {/* Subtab 2: Şube Danışmanları */}
+      {/* Subtab 2: Telefon Rehberi (Dahili & Dış Hatlar) */}
+      {activeSubTab === 'phones' && (
+        <div className="space-y-4">
+          <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-center justify-between gap-3">
+            <div className="relative w-full md:w-80">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="İsim, birim, dahili no veya telefon ara..."
+                className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition"
+              />
+            </div>
+
+            <div className="text-xs text-slate-500 font-medium">
+              Toplam <strong>{filteredPhones.length}</strong> telefon kaydı listeleniyor.
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredPhones.map((p) => (
+              <div 
+                key={p.id}
+                className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-emerald-400 hover:shadow-md transition space-y-3"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <h3 className="font-extrabold text-sm sm:text-base text-slate-900">
+                      {p.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-0.5 font-medium">
+                      {p.role}
+                    </p>
+                  </div>
+                  <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center font-bold flex-shrink-0">
+                    <PhoneCall className="w-4 h-4 text-emerald-700" />
+                  </div>
+                </div>
+
+                <div className="pt-2 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
+                  <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      Dahili No
+                    </span>
+                    <span className="font-mono font-black text-sm text-emerald-700">
+                      {p.extension}
+                    </span>
+                  </div>
+
+                  <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      Harici Hat
+                    </span>
+                    <span className="font-mono font-bold text-xs text-slate-800 truncate block">
+                      {p.externalPhone}
+                    </span>
+                  </div>
+                </div>
+
+                {p.email && (
+                  <div className="pt-2 border-t border-slate-100 flex items-center space-x-1.5 text-xs text-blue-700 truncate">
+                    <Mail className="w-3.5 h-3.5 flex-shrink-0" />
+                    <a href={`mailto:${p.email}`} className="truncate hover:underline">
+                      {p.email}
+                    </a>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {filteredPhones.length === 0 && (
+            <div className="bg-white p-12 text-center rounded-3xl border border-slate-200 text-slate-400 space-y-2">
+              <Phone className="w-8 h-8 mx-auto text-slate-300" />
+              <p className="text-sm font-semibold">Aranan kritere uygun telefon kaydı bulunamadı.</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Subtab 3: Şube Danışmanları */}
       {activeSubTab === 'advisors' && (
         <div className="space-y-4">
           <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-center justify-between gap-3">
@@ -380,10 +505,9 @@ export const AdvisorDirectoryView: React.FC = () => {
         </div>
       )}
 
-      {/* Subtab 3: Birim Görev Tanımları (Kalite El Kitabı Özeti) */}
+      {/* Subtab 4: Birim Görev Tanımları (Kalite El Kitabı Özeti) */}
       {activeSubTab === 'duties' && (
         <div className="space-y-6">
-          {/* Official Disclaimer Banner */}
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex items-start space-x-3 text-blue-900">
             <Info className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
             <div className="space-y-0.5">
@@ -395,7 +519,6 @@ export const AdvisorDirectoryView: React.FC = () => {
             </div>
           </div>
 
-          {/* Unit Duties Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {UNIT_DUTIES.map((duty) => (
               <div 
@@ -419,7 +542,6 @@ export const AdvisorDirectoryView: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Misyon & Vizyon */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-slate-50/70 p-3.5 rounded-2xl border border-slate-100">
                   <div className="space-y-1">
                     <span className="font-bold text-slate-700 block uppercase tracking-wider text-[10px]">
@@ -439,7 +561,6 @@ export const AdvisorDirectoryView: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Özet Görevler */}
                 <div className="space-y-2">
                   <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                     Özet Görev ve Sorumluluklar:
@@ -449,7 +570,6 @@ export const AdvisorDirectoryView: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Footer Note */}
                 <div className="pt-2 border-t border-slate-100 flex items-center space-x-1.5 text-[11px] text-amber-800 font-medium">
                   <FileText className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
                   <span>{duty.note}</span>
@@ -460,10 +580,9 @@ export const AdvisorDirectoryView: React.FC = () => {
         </div>
       )}
 
-      {/* Subtab 4: Kurullar */}
+      {/* Subtab 5: Kurullar */}
       {activeSubTab === 'boards' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Yönetim Kurulu */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center space-x-3">
@@ -500,7 +619,6 @@ export const AdvisorDirectoryView: React.FC = () => {
             </div>
           </div>
 
-          {/* Yüksekokul Kurulu */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center space-x-3">

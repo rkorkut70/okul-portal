@@ -70,6 +70,15 @@ export interface UsefulLinkInfo {
   description: string;
 }
 
+export interface PhoneDirectoryItem {
+  id: number;
+  name: string;
+  role: string;
+  extension: string;
+  externalPhone: string;
+  email: string | null;
+}
+
 export const ACADEMIC_STAFF: AcademicStaff[] = [
   {
     "id": 1,
@@ -79,7 +88,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": "Müdür",
     "dutyPlace": "Yabancı Diller Yüksekokulu",
     "email": "bertan.akyol@adu.edu.tr",
-    "phone": null,
+    "phone": "4602 / 4603",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0565"
   },
@@ -91,7 +100,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": "Müdür Yardımcısı",
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "hasan.evren@adu.edu.tr",
-    "phone": null,
+    "phone": "4604",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1567"
   },
@@ -103,7 +112,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": "Müdür Yardımcısı",
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ridvan.korkut@adu.edu.tr",
-    "phone": null,
+    "phone": "4605",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1350"
   },
@@ -127,7 +136,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "bsezer@adu.edu.tr",
-    "phone": null,
+    "phone": "4624",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0015"
   },
@@ -151,7 +160,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "bsahin@adu.edu.tr",
-    "phone": null,
+    "phone": "4616",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0139"
   },
@@ -187,7 +196,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ckarci@adu.edu.tr",
-    "phone": null,
+    "phone": "4625",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1368"
   },
@@ -199,7 +208,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "cansin.caliskan@adu.edu.tr",
-    "phone": null,
+    "phone": "4647",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1798"
   },
@@ -211,7 +220,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "dilekcelik@adu.edu.tr",
-    "phone": null,
+    "phone": "4647",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1917"
   },
@@ -235,7 +244,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ercan.yilmaz@adu.edu.tr",
-    "phone": null,
+    "phone": "4641",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2379"
   },
@@ -247,7 +256,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ersin.samur@adu.edu.tr",
-    "phone": null,
+    "phone": "4625",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2245"
   },
@@ -259,7 +268,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "eacun@adu.edu.tr",
-    "phone": null,
+    "phone": "4631 / 4649",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1494"
   },
@@ -295,7 +304,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "fethiye.efendi@adu.edu.tr",
-    "phone": null,
+    "phone": "4645",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1713"
   },
@@ -319,7 +328,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "goksel.turan@adu.edu.tr",
-    "phone": null,
+    "phone": "4639",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2060"
   },
@@ -331,7 +340,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "gultecimer@adu.edu.tr",
-    "phone": null,
+    "phone": "4616",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1915"
   },
@@ -343,7 +352,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "gulsun.poyraz@adu.edu.tr",
-    "phone": null,
+    "phone": "4645",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1805"
   },
@@ -355,7 +364,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "hatice.kurt@adu.edu.tr",
-    "phone": null,
+    "phone": "4641",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1520"
   },
@@ -367,7 +376,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "hayriargunat@adu.edu.tr",
-    "phone": null,
+    "phone": "4638",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1709"
   },
@@ -379,7 +388,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "lsarac@adu.edu.tr",
-    "phone": null,
+    "phone": "4628",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1515"
   },
@@ -415,7 +424,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "mnyagmur@adu.edu.tr",
-    "phone": null,
+    "phone": "4625",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0103"
   },
@@ -439,7 +448,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "murat.madak@adu.edu.tr",
-    "phone": null,
+    "phone": "4627",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2218"
   },
@@ -463,7 +472,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "pinar.ugur@adu.edu.tr",
-    "phone": null,
+    "phone": "4638",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1470"
   },
@@ -475,7 +484,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "saim.ozkan@adu.edu.tr",
-    "phone": null,
+    "phone": "4624",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1710"
   },
@@ -487,7 +496,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "seher.ozdemir@adu.edu.tr",
-    "phone": null,
+    "phone": "4616",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1821"
   },
@@ -499,7 +508,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "sevim.top@adu.edu.tr",
-    "phone": null,
+    "phone": "4645",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1711"
   },
@@ -511,7 +520,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "sibel.karasulu@adu.edu.tr",
-    "phone": null,
+    "phone": "4641 / 4649",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1496"
   },
@@ -535,7 +544,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "sibelkozan@adu.edu.tr",
-    "phone": null,
+    "phone": "4616",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1914"
   },
@@ -559,7 +568,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ulviye.berak@adu.edu.tr",
-    "phone": null,
+    "phone": "4650",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-3148"
   },
@@ -571,7 +580,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "yasir.yaren@adu.edu.tr",
-    "phone": null,
+    "phone": "4631",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2411"
   },
@@ -607,7 +616,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ozlem.dilaver@adu.edu.tr",
-    "phone": null,
+    "phone": "4647",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2059"
   },
@@ -619,7 +628,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ozlem.madak@adu.edu.tr",
-    "phone": null,
+    "phone": "4631 / 4649",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2217"
   },
@@ -678,50 +687,50 @@ export const ADMINISTRATIVE_STAFF: AdministrativeStaff[] = [
     "id": 1,
     "name": "Recep KARASULU",
     "role": "Yüksekokul Sekreteri",
-    "email": null,
-    "phone": null
+    "email": "rkarasulu@adu.edu.tr",
+    "phone": "4606"
   },
   {
     "id": 2,
     "name": "Şenay KANYILMAZ",
     "role": "Yazı İşleri",
-    "email": null,
-    "phone": null
+    "email": "skanyilmaz@adu.edu.tr",
+    "phone": "4608"
   },
   {
     "id": 3,
     "name": "Suat TÜRKOĞLU",
     "role": "Taşınır Kayıt Kontrol Yetkilisi",
-    "email": null,
-    "phone": null
+    "email": "sturkoglu@adu.edu.tr",
+    "phone": "4621"
   },
   {
     "id": 4,
     "name": "Derya AKBULUT GÖRGÜLÜ",
     "role": "İdari Mali İşler",
-    "email": null,
-    "phone": null
+    "email": "dgorgulu@adu.edu.tr",
+    "phone": "4607"
   },
   {
     "id": 5,
     "name": "Emrah YAVUZ",
     "role": "Öğrenci İşleri",
-    "email": null,
-    "phone": null
+    "email": "eyavuz@adu.edu.tr",
+    "phone": "4611"
   },
   {
     "id": 6,
     "name": "Elvan BEKER",
     "role": "Yardımcı Personel",
-    "email": null,
-    "phone": null
+    "email": "elveda.beker@adu.edu.tr",
+    "phone": "4600"
   },
   {
     "id": 7,
     "name": "Esra BARBA",
     "role": "Yardımcı Personel",
-    "email": null,
-    "phone": null
+    "email": "esra.barba@adu.edu.tr",
+    "phone": "4600"
   }
 ];
 
@@ -1308,5 +1317,376 @@ export const USEFUL_LINKS: UsefulLinkInfo[] = [
     "category": "Sınav",
     "url": "https://gis.osym.gov.tr/",
     "description": "ÖSYM sınav görevlendirme ve sonuç sistemi"
+  }
+];
+
+export const PHONE_DIRECTORY: PhoneDirectoryItem[] = [
+  {
+    "id": 1,
+    "name": "ESRA BARBA",
+    "role": "DESTEK HİZMETLERİ",
+    "extension": "4600",
+    "externalPhone": "0 256 220 4600",
+    "email": "esra.barba@adu.edu.tr"
+  },
+  {
+    "id": 2,
+    "name": "ELVAN BEKER",
+    "role": "DESTEK HİZMETLERİ",
+    "extension": "4600",
+    "externalPhone": "0 256 220 4600",
+    "email": "elveda.beker@adu.edu.tr"
+  },
+  {
+    "id": 3,
+    "name": "BERTAN AKYOL",
+    "role": "MÜDÜR",
+    "extension": "4602",
+    "externalPhone": "0 256 220 4602",
+    "email": "bertan.akyol@adu.edu.tr"
+  },
+  {
+    "id": 4,
+    "name": "BERTAN AKYOL",
+    "role": "MÜDÜR (IP)",
+    "extension": "4603",
+    "externalPhone": "0 256 220 4603",
+    "email": "bertan.akyol@adu.edu.tr"
+  },
+  {
+    "id": 5,
+    "name": "HASAN ULVİ EVREN",
+    "role": "MÜDÜR YARDIMCISI",
+    "extension": "4604",
+    "externalPhone": "0 256 220 4604",
+    "email": "hasan.evren@adu.edu.tr"
+  },
+  {
+    "id": 6,
+    "name": "RIDVAN KORKUT",
+    "role": "MÜDÜR YARDIMCISI",
+    "extension": "4605",
+    "externalPhone": "0 256 220 4605",
+    "email": "ridvan.korkut@adu.edu.tr"
+  },
+  {
+    "id": 7,
+    "name": "RECEP KARASULU",
+    "role": "YÜKSEKOKUL SEKRETERİ",
+    "extension": "4606",
+    "externalPhone": "0 256 220 4606",
+    "email": "rkarasulu@adu.edu.tr"
+  },
+  {
+    "id": 8,
+    "name": "DERYA AKBULUT GÖRGÜLÜ",
+    "role": "İDARİ MALİ İŞLER BİRİMİ",
+    "extension": "4607",
+    "externalPhone": "0 256 220 4607",
+    "email": "dgorgulu@adu.edu.tr"
+  },
+  {
+    "id": 9,
+    "name": "ŞENAY KANYILMAZ",
+    "role": "YAZI İŞLERİ BİRİMİ",
+    "extension": "4608",
+    "externalPhone": "0 256 220 4608",
+    "email": "skanyilmaz@adu.edu.tr"
+  },
+  {
+    "id": 10,
+    "name": "EMRAH YAVUZ",
+    "role": "ÖĞRENCİ İŞLERİ",
+    "extension": "4611",
+    "externalPhone": "0 256 220 4611",
+    "email": "eyavuz@adu.edu.tr"
+  },
+  {
+    "id": 11,
+    "name": "ÖĞRENCİ İŞLERİ SANTRAL",
+    "role": "0256-2140682-02562140683",
+    "extension": "4611",
+    "externalPhone": "0 256 220 4611",
+    "email": null
+  },
+  {
+    "id": 12,
+    "name": "46110 256 220 4611",
+    "role": "GÜVENLİK",
+    "extension": "4614",
+    "externalPhone": "0 256 220 4614",
+    "email": null
+  },
+  {
+    "id": 13,
+    "name": "46140 256 220 4614",
+    "role": "TOPLANTI SALONU",
+    "extension": "4615",
+    "externalPhone": "0 256 220 4615",
+    "email": null
+  },
+  {
+    "id": 14,
+    "name": "SİBEL YILDIZ",
+    "role": "FRANSIZCA ÖĞRETİM GÖREVLİSİ",
+    "extension": "4616",
+    "externalPhone": "0 256 220 4616",
+    "email": "sibelkozan@adu.edu.tr"
+  },
+  {
+    "id": 15,
+    "name": "BUKET ŞAHİN",
+    "role": "FRANSIZCA ÖĞRETİM GÖREVLİSİ",
+    "extension": "4616",
+    "externalPhone": "0 256 220 4616",
+    "email": "bsahin@adu.edu.tr"
+  },
+  {
+    "id": 16,
+    "name": "SEHER ÖZDEMİR YAVUZ",
+    "role": "FRANSIZCA ÖĞRETİM GÖREVLİSİ",
+    "extension": "4616",
+    "externalPhone": "0 256 220 4616",
+    "email": "seher.ozdemir@adu.edu.tr"
+  },
+  {
+    "id": 17,
+    "name": "GÜL TECİMER",
+    "role": "FRANSIZCA ÖĞRETİM GÖREVLİSİ",
+    "extension": "4616",
+    "externalPhone": "0 256 220 4616",
+    "email": "gultecimer@adu.edu.tr"
+  },
+  {
+    "id": 18,
+    "name": "46160 256 220 4616",
+    "role": "FRANSIZCA ÖĞRETİM GÖREVLİSİ",
+    "extension": "4616",
+    "externalPhone": "0 256 220 4616",
+    "email": null
+  },
+  {
+    "id": 19,
+    "name": "SUAT TÜRKOĞLU",
+    "role": "AYNİYAT BİRİMİ",
+    "extension": "4621",
+    "externalPhone": "0 256 220 4621",
+    "email": "sturkoglu@adu.edu.tr"
+  },
+  {
+    "id": 20,
+    "name": "BEYHAN SEZER",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4624",
+    "externalPhone": "0 256 220 4624",
+    "email": "bsezer@adu.edu.tr"
+  },
+  {
+    "id": 21,
+    "name": "SAİM ÖZKAN",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4624",
+    "externalPhone": "0 256 220 4624",
+    "email": "saim.ozkan@adu.edu.tr"
+  },
+  {
+    "id": 22,
+    "name": "MEHMET NİYAZİ YAĞMUR",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4625",
+    "externalPhone": "0 256 220 4625",
+    "email": "mnyagmur@adu.edu.tr"
+  },
+  {
+    "id": 23,
+    "name": "CANAY KARCI AKTAŞ",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4625",
+    "externalPhone": "0 256 220 4625",
+    "email": "ckarci@adu.edu.tr"
+  },
+  {
+    "id": 24,
+    "name": "ERSİN SAMUR",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4625",
+    "externalPhone": "0 256 220 4625",
+    "email": "ersin.samur@adu.edu.tr"
+  },
+  {
+    "id": 25,
+    "name": "46250 256 220 4625",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4627",
+    "externalPhone": "0 256 220 4627",
+    "email": null
+  },
+  {
+    "id": 26,
+    "name": "MURAT MADAK",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4627",
+    "externalPhone": "0 256 220 4627",
+    "email": "murat.madak@adu.edu.tr"
+  },
+  {
+    "id": 27,
+    "name": "LÜTFİ SARAÇ",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4628",
+    "externalPhone": "0 256 220 4628",
+    "email": "lsarac@adu.edu.tr"
+  },
+  {
+    "id": 28,
+    "name": "YASİR YAREN",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4631",
+    "externalPhone": "0 256 220 4631",
+    "email": "yasir.yaren@adu.edu.tr"
+  },
+  {
+    "id": 29,
+    "name": "ESMA ACUN",
+    "role": "İNGİLİZCE ÖĞR. GÖR.",
+    "extension": "4631",
+    "externalPhone": "0 256 220 4631",
+    "email": "eacun@adu.edu.tr"
+  },
+  {
+    "id": 30,
+    "name": "ÖZLEM MADAK",
+    "role": "İNGİLİZCE ÖĞR. GÖR.",
+    "extension": "4631",
+    "externalPhone": "0 256 220 4631",
+    "email": "ozlem.madak@adu.edu.tr"
+  },
+  {
+    "id": 31,
+    "name": "PINAR UĞUR",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4638",
+    "externalPhone": "0 256 220 4638",
+    "email": "pinar.ugur@adu.edu.tr"
+  },
+  {
+    "id": 32,
+    "name": "HAYRİ ARGUNAT",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4638",
+    "externalPhone": "0 256 220 4638",
+    "email": "hayriargunat@adu.edu.tr"
+  },
+  {
+    "id": 33,
+    "name": "GÖKSEL TURAN",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4639",
+    "externalPhone": "0 256 220 4639",
+    "email": "goksel.turan@adu.edu.tr"
+  },
+  {
+    "id": 34,
+    "name": "HATİCE KURT",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4641",
+    "externalPhone": "0 256 220 4641",
+    "email": "hatice.kurt@adu.edu.tr"
+  },
+  {
+    "id": 35,
+    "name": "SİBEL ARABACI",
+    "role": "İNGİLİZCE ÖĞR. GÖR.",
+    "extension": "4641",
+    "externalPhone": "0 256 220 4641",
+    "email": "sibel.karasulu@adu.edu.tr"
+  },
+  {
+    "id": 36,
+    "name": "ERCAN YILMAZ",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4641",
+    "externalPhone": "0 256 220 4641",
+    "email": "ercan.yilmaz@adu.edu.tr"
+  },
+  {
+    "id": 37,
+    "name": "GÜLSÜN POYRAZ SOFRACI",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4645",
+    "externalPhone": "0 256 220 4645",
+    "email": "gulsun.poyraz@adu.edu.tr"
+  },
+  {
+    "id": 38,
+    "name": "FETHİYE EFENDİ KIR",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4645",
+    "externalPhone": "0 256 220 4645",
+    "email": "fethiye.efendi@adu.edu.tr"
+  },
+  {
+    "id": 39,
+    "name": "SEVİM EVREN",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4645",
+    "externalPhone": "0 256 220 4645",
+    "email": "sevim.top@adu.edu.tr"
+  },
+  {
+    "id": 40,
+    "name": "CANSIN ÇALIŞKAN",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4647",
+    "externalPhone": "0 256 220 4647",
+    "email": "cansin.caliskan@adu.edu.tr"
+  },
+  {
+    "id": 41,
+    "name": "DİLEK ATEŞ",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4647",
+    "externalPhone": "0 256 220 4647",
+    "email": "dilekcelik@adu.edu.tr"
+  },
+  {
+    "id": 42,
+    "name": "ÖZLEM DİLAVER",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4647",
+    "externalPhone": "0 256 220 4647",
+    "email": "ozlem.dilaver@adu.edu.tr"
+  },
+  {
+    "id": 43,
+    "name": "ESMA ACUN",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4649",
+    "externalPhone": "0 256 220 4649",
+    "email": "eacun@adu.edu.tr"
+  },
+  {
+    "id": 44,
+    "name": "SİBEL ARABACI",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4649",
+    "externalPhone": "0 256 220 4649",
+    "email": "sibel.karasulu@adu.edu.tr"
+  },
+  {
+    "id": 45,
+    "name": "ÖZLEM MADAK",
+    "role": "İNGİLİZCE ÖĞRETİM GÖREVLİSİ",
+    "extension": "4649",
+    "externalPhone": "0 256 220 4649",
+    "email": "ozlem.madak@adu.edu.tr"
+  },
+  {
+    "id": 46,
+    "name": "ULVİYE KARACA",
+    "role": "ALMANCA BÖLÜMÜ",
+    "extension": "4650",
+    "externalPhone": "0 256 220 4650",
+    "email": "ulviye.berak@adu.edu.tr"
   }
 ];

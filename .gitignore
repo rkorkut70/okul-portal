@@ -12,7 +12,10 @@ dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Office temporary lock files
+~$*
+*.tmp
+
 .vscode/*
 !.vscode/extensions.json
 .idea

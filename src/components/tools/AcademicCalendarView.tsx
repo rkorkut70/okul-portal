@@ -6,12 +6,14 @@ import {
   Search, 
   Star, 
   Clock, 
-  Download, 
+  ExternalLink, 
   CalendarCheck 
 } from 'lucide-react';
 
+const OFFICIAL_CALENDAR_URL = 'https://idari.adu.edu.tr/db/ogrenciisleri/tr/page-810';
+
 export const AcademicCalendarView: React.FC = () => {
-  const [selectedTerm, setSelectedTerm] = useState<string>('2025-2026 Güz');
+  const [selectedTerm, setSelectedTerm] = useState<string>('all');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [search, setSearch] = useState<string>('');
 
@@ -43,26 +45,61 @@ export const AcademicCalendarView: React.FC = () => {
     <div className="space-y-6">
 
       {/* Header Banner */}
-      <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold">
-            <CalendarCheck className="w-5 h-5" />
+      <div className="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center space-x-3.5">
+          <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold border border-indigo-100 flex-shrink-0">
+            <CalendarCheck className="w-6 h-6 text-indigo-700" />
           </div>
           <div>
-            <h3 className="font-bold text-base text-slate-900">2025-2026 ADÜ Akademik Takvimi</h3>
-            <p className="text-xs text-slate-500">
+            <div className="flex items-center space-x-2">
+              <h3 className="font-bold text-base sm:text-lg text-slate-900">ADÜ Akademik Takvimi</h3>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-50 text-indigo-800 border border-indigo-200">
+                Resmi Bağlantı
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 mt-0.5">
               Ders başlangıçları, kayıt haftaları, vize, final ve bütünleme sınav tarihleri.
             </p>
           </div>
         </div>
 
-        <button
-          onClick={() => alert('Resmi Akademik Takvim PDF olarak Google Drive üzerinden indiriliyor.')}
-          className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-900 text-white transition self-start sm:self-auto cursor-pointer"
+        <a
+          href={OFFICIAL_CALENDAR_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-700 hover:bg-indigo-800 text-white shadow-sm transition active:scale-95 cursor-pointer self-start sm:self-auto"
+          title="Öğrenci İşleri Daire Başkanlığı Akademik Takvim Sayfasını Aç"
         >
-          <Download className="w-3.5 h-3.5" />
-          <span>Resmi Takvim (PDF)</span>
-        </button>
+          <span>Resmi Takvim Sayfası</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      </div>
+
+      {/* Direct Official Link Callout Box */}
+      <div className="bg-gradient-to-r from-indigo-50/80 via-blue-50/50 to-slate-50 p-4 sm:p-5 rounded-2xl border border-indigo-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+        <div className="flex items-start sm:items-center space-x-3">
+          <div className="p-2 rounded-xl bg-indigo-100 text-indigo-800 flex-shrink-0 mt-0.5 sm:mt-0">
+            <ExternalLink className="w-4 h-4" />
+          </div>
+          <div className="space-y-0.5">
+            <span className="font-bold text-indigo-950 text-xs sm:text-sm">
+              ADÜ Öğrenci İşleri Daire Başkanlığı Akademik Takvimi
+            </span>
+            <p className="text-slate-600 text-[11px] sm:text-xs leading-relaxed">
+              Senato tarafından onaylanan güncel önlisans, lisans ve lisansüstü akademik takvim belgelerine doğrudan resmi web sayfasından ulaşabilirsiniz.
+            </p>
+          </div>
+        </div>
+
+        <a
+          href={OFFICIAL_CALENDAR_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-white border border-indigo-300 font-bold text-indigo-800 hover:bg-indigo-50 shadow-2xs transition whitespace-nowrap self-start sm:self-auto cursor-pointer"
+        >
+          <span>idari.adu.edu.tr'de Aç</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
       </div>
 
       {/* Toolbar: Term Tabs, Search & Category Filters */}

@@ -160,7 +160,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               }`}
             >
               <Users className="w-3.5 h-3.5 text-purple-600" />
-              <span>Şube Danışmanları</span>
+              <span>Kadro & Danışmanlar</span>
             </button>
 
             <button

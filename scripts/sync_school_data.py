@@ -9,15 +9,18 @@ def sync_school_data():
     ws_ap = wb['Akademik Personel']
     academic_staff = []
     for row in list(ws_ap.iter_rows(values_only=True))[1:]:
-        if row and row[1]:
+        if row and row[2]:
             academic_staff.append({
                 "id": row[0],
-                "name": str(row[1]).strip(),
-                "language": str(row[2]).strip() if row[2] else "",
-                "role": str(row[3]).strip() if row[3] else None,
-                "email": str(row[4]).strip() if row[4] else None,
-                "phone": str(row[5]).strip() if row[5] else None,
-                "officeHour": str(row[6]).strip() if row[6] else None,
+                "title": str(row[1]).strip() if row[1] else "",
+                "name": str(row[2]).strip(),
+                "language": str(row[3]).strip() if row[3] else "",
+                "role": str(row[4]).strip() if row[4] else None,
+                "dutyPlace": str(row[5]).strip() if row[5] else "YDYO",
+                "email": str(row[6]).strip() if row[6] else None,
+                "phone": str(row[7]).strip() if row[7] else None,
+                "officeHour": str(row[8]).strip() if row[8] else None,
+                "akbisUrl": str(row[9]).strip() if len(row) > 9 and row[9] else None,
             })
 
     # 2. İdari Personel
@@ -143,12 +146,15 @@ def sync_school_data():
 
 export interface AcademicStaff {{
   id: number;
+  title: string;
   name: string;
   language: string;
   role: string | null;
+  dutyPlace: string;
   email: string | null;
   phone: string | null;
   officeHour: string | null;
+  akbisUrl: string | null;
 }}
 
 export interface AdministrativeStaff {{

@@ -3,12 +3,15 @@
 
 export interface AcademicStaff {
   id: number;
+  title: string;
   name: string;
   language: string;
   role: string | null;
+  dutyPlace: string;
   email: string | null;
   phone: string | null;
   officeHour: string | null;
+  akbisUrl: string | null;
 }
 
 export interface AdministrativeStaff {
@@ -60,372 +63,603 @@ export interface UsefulLinkInfo {
 export const ACADEMIC_STAFF: AcademicStaff[] = [
   {
     "id": 1,
-    "name": "Prof. Dr. Bertan AKYOL",
+    "title": "Prof. Dr.",
+    "name": "Bertan AKYOL",
     "language": "İngilizce",
     "role": "Müdür",
-    "email": null,
+    "dutyPlace": "Yabancı Diller Yüksekokulu",
+    "email": "bertan.akyol@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0565"
   },
   {
     "id": 2,
-    "name": "Öğr. Gör. Rıdvan KORKUT",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Hasan Ulvi Evren",
     "language": "İngilizce",
     "role": "Müdür Yardımcısı",
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "hasan.evren@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1567"
   },
   {
     "id": 3,
-    "name": "Öğr. Gör. Dr. Hasan Ulvi EVREN",
+    "title": "Öğr. Gör.",
+    "name": "Rıdvan Korkut",
     "language": "İngilizce",
     "role": "Müdür Yardımcısı",
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "ridvan.korkut@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1350"
   },
   {
     "id": 4,
-    "name": "Öğr. Gör. Beyhan SEZER",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Barış ÇAVUŞ",
     "language": "İngilizce",
     "role": null,
+    "dutyPlace": "Eğitim Fakültesi",
     "email": null,
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/"
   },
   {
     "id": 5,
-    "name": "Öğr. Gör. M. Niyazi YAĞMUR",
+    "title": "Öğr. Gör.",
+    "name": "Beyhan Sezer",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "bsezer@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0015"
   },
   {
     "id": 6,
-    "name": "Öğr. Gör. İrem GÜL OKŞAR",
+    "title": "Öğr. Gör.",
+    "name": "Bilge Sevim Soykut",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "bilge.soykut@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2197"
   },
   {
     "id": 7,
-    "name": "Öğr. Gör. Dr. Canay KARCI AKTAŞ",
-    "language": "İngilizce",
+    "title": "Öğr. Gör.",
+    "name": "Buket Şahin",
+    "language": "Fransızca",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "bsahin@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0139"
   },
   {
     "id": 8,
-    "name": "Öğr. Gör. Mehmet Burak OKŞAR",
-    "language": "İngilizce",
+    "title": "Öğr. Gör.",
+    "name": "Buse Arasıler",
+    "language": "Almanca",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "busecosar@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1712"
   },
   {
     "id": 9,
-    "name": "Öğr. Gör. Pınar UĞUR",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Büşra Hafçı Yorulmaz",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "Turizm Fakültesi - İngilizce",
+    "email": "busrahafci@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2393"
   },
   {
     "id": 10,
-    "name": "Öğr. Gör. Dr. Emre DİNÇER",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Canay Karcı Aktaş",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "ckarci@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1368"
   },
   {
     "id": 11,
-    "name": "Öğr. Gör. Esma ACUN",
+    "title": "Öğr. Gör.",
+    "name": "Cansın Çalışkan",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "cansin.caliskan@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1798"
   },
   {
     "id": 12,
-    "name": "Öğr. Gör. Dr. Sibel ARABACI",
+    "title": "Öğr. Gör.",
+    "name": "Dilek Ateş",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "dilekcelik@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1917"
   },
   {
     "id": 13,
-    "name": "Öğr. Gör. Lütfi SARAÇ",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Emre Dinçer",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "Dış İlişkiler Ofisi - İngilizce",
+    "email": "edincer@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1475"
   },
   {
     "id": 14,
-    "name": "Öğr. Gör. Hatice KURT",
+    "title": "Öğr. Gör.",
+    "name": "Ercan Yılmaz",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "ercan.yilmaz@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2379"
   },
   {
     "id": 15,
-    "name": "Öğr. Gör. Hayri ARGUNAT",
+    "title": "Öğr. Gör.",
+    "name": "Ersin Samur",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "ersin.samur@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2245"
   },
   {
     "id": 16,
-    "name": "Öğr. Gör. Saim ÖZKAN",
+    "title": "Öğr. Gör.",
+    "name": "Esma Acun",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "eacun@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1494"
   },
   {
     "id": 17,
-    "name": "Öğr. Gör. Sevim EVREN",
+    "title": "Öğr. Gör.",
+    "name": "Esra Erenoğlu Aksoy",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "eaksoy@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-4091"
   },
   {
     "id": 18,
-    "name": "Öğr. Gör. Fethiye EFENDİ KIR",
-    "language": "İngilizce",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Fatma Başkaya",
+    "language": "Almanca",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "fatma.baskaya@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-4104"
   },
   {
     "id": 19,
-    "name": "Öğr. Gör. Cansın ÇALIŞKAN",
+    "title": "Öğr. Gör.",
+    "name": "Fethiye Efendi Kır",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "fethiye.efendi@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1713"
   },
   {
     "id": 20,
-    "name": "Öğr. Gör. Gülsün POYRAZ SOFRACI",
-    "language": "İngilizce",
+    "title": "Öğr. Gör.",
+    "name": "Fisun Karaburun",
+    "language": "Almanca",
     "role": null,
-    "email": null,
+    "dutyPlace": "Turizm Fakültesi - Almanca",
+    "email": "fcengel@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0642"
   },
   {
     "id": 21,
-    "name": "Öğr. Gör. Soner SOFRACI",
+    "title": "Öğr. Gör.",
+    "name": "Göksel Turan",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "goksel.turan@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2060"
   },
   {
     "id": 22,
-    "name": "Öğr. Gör. Dilek ATEŞ",
-    "language": "İngilizce",
+    "title": "Öğr. Gör.",
+    "name": "Gül Tecimer",
+    "language": "Fransızca",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "gultecimer@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1915"
   },
   {
     "id": 23,
-    "name": "Öğr. Gör. Özlem DİLAVER",
+    "title": "Öğr. Gör.",
+    "name": "Gülsün Poyraz Sofracı",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "gulsun.poyraz@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1805"
   },
   {
     "id": 24,
-    "name": "Öğr. Gör. Göksel TURAN",
+    "title": "Öğr. Gör.",
+    "name": "Hatice Kurt",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "hatice.kurt@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1520"
   },
   {
     "id": 25,
-    "name": "Öğr. Gör. Bilge Sevim SOYKUT",
+    "title": "Öğr. Gör.",
+    "name": "Hayri Argunat",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "hayriargunat@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1709"
   },
   {
     "id": 26,
-    "name": "Öğr. Gör. Özlem MADAK",
+    "title": "Öğr. Gör.",
+    "name": "Lütfi Saraç",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "lsarac@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1515"
   },
   {
     "id": 27,
-    "name": "Öğr. Gör. Murat MADAK",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Mehmet Birgün",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "mehmet.birgun@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-3831"
   },
   {
     "id": 28,
-    "name": "Öğr. Gör. Ersin SAMUR",
+    "title": "Öğr. Gör.",
+    "name": "Mehmet Burak Okşar",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "Didim MYO - İngilizce",
+    "email": "burak.oksar@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1411"
   },
   {
     "id": 29,
-    "name": "Öğr. Gör. Ercan YILMAZ",
+    "title": "Öğr. Gör.",
+    "name": "Mehmet Niyazi Yağmur",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "mnyagmur@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0103"
   },
   {
     "id": 30,
-    "name": "Öğr. Gör. Yasir YAREN",
+    "title": "Öğr. Gör.",
+    "name": "Mine Gergün",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "Söke MYO - İngilizce",
+    "email": "mbozdag@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1505"
   },
   {
     "id": 31,
-    "name": "Öğr. Gör. Dr. Mehmet BİRGÜN",
+    "title": "Öğr. Gör.",
+    "name": "Murat Madak",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "murat.madak@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2218"
   },
   {
     "id": 32,
-    "name": "Öğr. Gör. Sibel KATIRCI",
+    "title": "Öğr. Gör.",
+    "name": "Nursel Özen",
     "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "Davutlar MYO - İngilizce",
+    "email": "nozen@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0027"
   },
   {
     "id": 33,
-    "name": "Öğr. Gör. Buket ŞAHİN",
-    "language": "Fransızca",
+    "title": "Öğr. Gör.",
+    "name": "Pınar Uğur",
+    "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "pinar.ugur@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1470"
   },
   {
     "id": 34,
-    "name": "Öğr. Gör. Seher ÖZDEMİR YAVUZ",
-    "language": "Fransızca",
+    "title": "Öğr. Gör.",
+    "name": "Saim Özkan",
+    "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "saim.ozkan@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1710"
   },
   {
     "id": 35,
-    "name": "Öğr. Gör. Dr. Sibel YILDIZ",
-    "language": "İngilizce",
+    "title": "Öğr. Gör.",
+    "name": "Seher Özdemir Yavuz",
+    "language": "Fransızca",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "seher.ozdemir@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1821"
   },
   {
     "id": 36,
-    "name": "Öğr. Gör. Gül TECİMER",
-    "language": "Fransızca",
+    "title": "Öğr. Gör.",
+    "name": "Sevim Evren",
+    "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "sevim.top@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1711"
   },
   {
     "id": 37,
-    "name": "Öğr. Gör. Ulviye KARACA",
-    "language": "Fransızca",
+    "title": "Öğr. Gör.",
+    "name": "Sibel Arabacı",
+    "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "sibel.karasulu@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1496"
   },
   {
     "id": 38,
-    "name": "Öğr. Gör. Buse ARASILER",
-    "language": "Almanca",
+    "title": "Öğr. Gör.",
+    "name": "Sibel Katırcı",
+    "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "s.katirci@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-4094"
   },
   {
     "id": 39,
-    "name": "Öğr. Gör. Dr. Fatma BAŞKAYA",
-    "language": "Almanca",
+    "title": "Öğr. Gör. Dr.",
+    "name": "Sibel Yıldız",
+    "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "sibelkozan@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1914"
   },
   {
     "id": 40,
-    "name": "Misafir.Öğr.Elm. Pelin GÜRLER",
-    "language": "Almanca",
+    "title": "Öğr. Gör.",
+    "name": "Soner Sofracı",
+    "language": "İngilizce",
     "role": null,
-    "email": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "sonersofraci@adu.edu.tr",
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1912"
   },
   {
     "id": 41,
-    "name": "Misafir.Öğr.Elm. Beyzasu KÜÇÜKDANACI",
+    "title": "Öğr. Gör.",
+    "name": "Ulviye Karaca",
+    "language": "Fransızca",
+    "role": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "ulviye.berak@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-3148"
+  },
+  {
+    "id": 42,
+    "title": "Öğr. Gör.",
+    "name": "Yasir Yaren",
+    "language": "İngilizce",
+    "role": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "yasir.yaren@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2411"
+  },
+  {
+    "id": 43,
+    "title": "Öğr. Gör.",
+    "name": "Çimen Atay",
     "language": "Almanca",
     "role": null,
+    "dutyPlace": "Turizm Fakültesi - Almanca",
+    "email": "cimen.sarikaya@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2925"
+  },
+  {
+    "id": 44,
+    "title": "Öğr. Gör. Dr.",
+    "name": "Özgür Esen",
+    "language": "İngilizce",
+    "role": null,
+    "dutyPlace": "Fen Edebiyat Fakültesi - İngilizce",
+    "email": "ozgur.esen@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1799"
+  },
+  {
+    "id": 45,
+    "title": "Öğr. Gör.",
+    "name": "Özlem Dilaver",
+    "language": "İngilizce",
+    "role": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "ozlem.dilaver@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2059"
+  },
+  {
+    "id": 46,
+    "title": "Öğr. Gör.",
+    "name": "Özlem Madak",
+    "language": "İngilizce",
+    "role": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": "ozlem.madak@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2217"
+  },
+  {
+    "id": 47,
+    "title": "Öğr. Gör.",
+    "name": "İrem Gül Okşar",
+    "language": "İngilizce",
+    "role": null,
+    "dutyPlace": "Didim MYO - İngilizce",
+    "email": "igoksar@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1353"
+  },
+  {
+    "id": 48,
+    "title": "Öğr. Gör.",
+    "name": "Şebnem Günaydın",
+    "language": "İngilizce",
+    "role": null,
+    "dutyPlace": "Turizm Fakültesi - İngilizce",
+    "email": "sgunaydin@adu.edu.tr",
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1171"
+  },
+  {
+    "id": 49,
+    "title": "Misafir Öğr. Elm.",
+    "name": "Beyzasu KÜÇÜKDANACI",
+    "language": "Almanca",
+    "role": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": null,
     "phone": null,
-    "officeHour": null
+    "officeHour": null,
+    "akbisUrl": null
+  },
+  {
+    "id": 50,
+    "title": "Misafir Öğr. Elm.",
+    "name": "Pelin GÜRLER",
+    "language": "Almanca",
+    "role": null,
+    "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
+    "email": null,
+    "phone": null,
+    "officeHour": null,
+    "akbisUrl": null
   }
 ];
 

@@ -16,12 +16,17 @@ export const AppContent: React.FC = () => {
   const [selectedTool, setSelectedTool] = useState<string>('forms');
   const [isAuthOpen, setIsAuthOpen] = useState<boolean>(false);
 
-  // Persistent activities in localStorage
+  // Persistent activities in localStorage (ensure official 2026-2027 workshops are included)
   const [activities, setActivities] = useState<ActivityItem[]>(() => {
     const saved = localStorage.getItem('adu_portal_activities');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const existingIds = new Set(parsed.map((a: ActivityItem) => a.id));
+          const missing = CPD_ACTIVITIES.filter(a => !existingIds.has(a.id));
+          return [...missing, ...parsed];
+        }
       } catch {
         return CPD_ACTIVITIES;
       }

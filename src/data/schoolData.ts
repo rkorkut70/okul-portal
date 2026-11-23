@@ -726,7 +726,7 @@ export const ACADEMIC_UNITS_DATA: AcademicUnitInfo[] = [
   {
     "academicYear": "2026-2027",
     "name": "SINAV BİRİMİ",
-    "code": "Testing",
+    "code": "SB",
     "head": "Öğr. Gör. Göksel TURAN",
     "members": [
       "Öğr. Gör. Cansın ÇALIŞKAN",
@@ -742,7 +742,7 @@ export const ACADEMIC_UNITS_DATA: AcademicUnitInfo[] = [
   {
     "academicYear": "2026-2027",
     "name": "MATERYAL SEÇME ve GELİŞTİRME BİRİMİ",
-    "code": "Materyal",
+    "code": "MB",
     "head": "Öğr. Gör. Dilek ATEŞ",
     "members": [
       "Öğr. Gör. Beyhan SEZER",
@@ -757,7 +757,7 @@ export const ACADEMIC_UNITS_DATA: AcademicUnitInfo[] = [
   {
     "academicYear": "2026-2027",
     "name": "PROGRAM GELİŞTİRME BİRİMİ",
-    "code": "Program",
+    "code": "PB",
     "head": "Öğr. Gör. Hayri ARGUNAT",
     "members": [
       "Öğr. Gör. Dr. Canay KARCI AKTAŞ",

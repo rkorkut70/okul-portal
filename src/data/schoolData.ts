@@ -1248,7 +1248,7 @@ export const USEFUL_LINKS: UsefulLinkInfo[] = [
     "id": 4,
     "title": "ADÜ Kurumsal E-Posta (Webmail)",
     "category": "İletişim",
-    "url": "https://posta.adu.edu.tr/",
+    "url": "https://www.adu.edu.tr/tr/eposta",
     "description": "Personel kurumsal e-posta arayüzü"
   },
   {
@@ -1262,7 +1262,7 @@ export const USEFUL_LINKS: UsefulLinkInfo[] = [
     "id": 6,
     "title": "ADÜ Personel Bilgi Sistemi",
     "category": "İdari & Akademik",
-    "url": "https://personel.adu.edu.tr/",
+    "url": "https://perbis.adu.edu.tr/",
     "description": "Personel özlük, izin ve kimlik bilgileri"
   },
   {
@@ -1276,7 +1276,7 @@ export const USEFUL_LINKS: UsefulLinkInfo[] = [
     "id": 8,
     "title": "ADÜ SKS Yemekhane Menüsü",
     "category": "Kampüs Yaşamı",
-    "url": "https://sks.adu.edu.tr/",
+    "url": "https://www.adu.edu.tr/tr/yemek-listesi",
     "description": "Günlük ve aylık yemek listesi"
   },
   {

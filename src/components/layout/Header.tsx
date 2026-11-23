@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { GOOGLE_DRIVE_FOLDER_URL } from '../../data/mockData';
 import { 
   Building2, 
   LogOut, 
@@ -44,11 +45,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAuth, activeTab: _activeTa
             
             {/* Quick Google Drive Link */}
             <a
-              href="https://drive.google.com"
+              href={GOOGLE_DRIVE_FOLDER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-600 transition"
-              title="Kurumsal Ortak Google Drive'ı Yeni Sekmede Aç"
+              title="Kurumsal Ortak Google Drive Paylaşım Klasörünü Yeni Sekmede Aç"
             >
               <span>Ortak Drive</span>
               <ExternalLink className="w-3.5 h-3.5 text-slate-400" />

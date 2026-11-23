@@ -88,15 +88,7 @@ export const AppContent: React.FC = () => {
           )}
 
           {activeTab === 'documents' && (
-            <div className="space-y-4">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-                <h1 className="text-xl font-black text-slate-900">Google Drive Belge Deposu</h1>
-                <p className="text-xs text-slate-500">
-                  Akademik birimlerin kurumsal Google Drive hiyerarşisi üzerinden paylaşılan evrakları.
-                </p>
-              </div>
-              <DriveDocumentBrowser documents={documents} />
-            </div>
+            <DriveDocumentBrowser documents={documents} />
           )}
 
           {activeTab === 'tools' && (

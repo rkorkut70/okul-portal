@@ -1,5 +1,9 @@
 import type { AcademicUnit, DriveDocument, ActivityItem, TemplateDocument, CalendarEvent } from '../types';
 
+export const GOOGLE_DRIVE_FOLDER_ID = '12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z';
+export const GOOGLE_DRIVE_FOLDER_URL = `https://drive.google.com/drive/folders/${GOOGLE_DRIVE_FOLDER_ID}`;
+export const GOOGLE_DRIVE_EMBED_URL = `https://drive.google.com/embeddedfolderview?id=${GOOGLE_DRIVE_FOLDER_ID}#list`;
+
 export const ACADEMIC_UNITS: AcademicUnit[] = [
   {
     id: 'cpd',

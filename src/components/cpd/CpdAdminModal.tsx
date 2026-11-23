@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { ActivityItem } from '../../types';
+import { GOOGLE_DRIVE_FOLDER_URL } from '../../data/mockData';
 import { 
   X, 
   Calendar, 
@@ -47,7 +48,7 @@ export const CpdAdminModal: React.FC<CpdAdminModalProps> = ({ isOpen, onClose, o
       status,
       location,
       driveDocTitle: driveDocTitle || undefined,
-      driveDocUrl: driveDocUrl || (driveDocTitle ? 'https://drive.google.com' : undefined),
+      driveDocUrl: driveDocUrl || (driveDocTitle ? GOOGLE_DRIVE_FOLDER_URL : undefined),
       organizer: 'CPD Koordinatörlüğü'
     };
 

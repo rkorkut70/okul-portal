@@ -25,8 +25,18 @@ import {
   PhoneCall
 } from 'lucide-react';
 
-export const AdvisorDirectoryView: React.FC = () => {
-  const [activeSubTab, setActiveSubTab] = useState<'staff' | 'advisors' | 'phones' | 'duties' | 'boards'>('staff');
+interface AdvisorDirectoryViewProps {
+  initialTab?: 'staff' | 'advisors' | 'phones' | 'duties' | 'boards';
+}
+
+export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ initialTab = 'staff' }) => {
+  const [activeSubTab, setActiveSubTab] = useState<'staff' | 'advisors' | 'phones' | 'duties' | 'boards'>(initialTab);
+
+  React.useEffect(() => {
+    if (initialTab) {
+      setActiveSubTab(initialTab);
+    }
+  }, [initialTab]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
   const [filterDuty, setFilterDuty] = useState<'all' | 'ydyo' | 'external'>('all');

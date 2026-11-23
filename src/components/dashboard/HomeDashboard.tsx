@@ -32,10 +32,13 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
   const pinnedDocs = CPD_DRIVE_DOCUMENTS.filter(d => d.isPinned).slice(0, 3);
 
   const unitCodeMap: Record<string, string> = {
-    'exam': 'Testing',
+    'testing': 'Testing',
     'material': 'Materyal',
-    'curriculum': 'Program',
+    'program': 'Program',
     'cpd': 'CPD',
+    'kab': 'KAB',
+    'exam': 'Testing',
+    'curriculum': 'Program',
     'quality': 'KAB'
   };
 
@@ -153,9 +156,13 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                         <span className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-blue-700 transition truncate">
                           {unit.name}
                         </span>
-                        {isCpd && (
+                        {isCpd ? (
                           <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 uppercase">
                             Pilot Modül
+                          </span>
+                        ) : (
+                          <span className="text-[9px] font-medium px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">
+                            {unit.managerName ? `Sorumlu: ${unit.managerName}` : ''}
                           </span>
                         )}
                       </div>

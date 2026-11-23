@@ -133,7 +133,9 @@ export const ToolsHub: React.FC<ToolsHubProps> = ({ selectedTool, setSelectedToo
       {/* Render active tool */}
       {selectedTool === 'links' && <UsefulLinksView />}
       {selectedTool === 'schedule' && <CourseScheduleQuery />}
-      {selectedTool === 'advisors' && <AdvisorDirectoryView />}
+      {(selectedTool === 'advisors' || selectedTool === 'duties') && (
+        <AdvisorDirectoryView initialTab={selectedTool === 'duties' ? 'duties' : 'staff'} />
+      )}
       {selectedTool === 'calendar' && <AcademicCalendarView />}
       {selectedTool === 'forms' && <TemplatesHub />}
       {selectedTool === 'grade' && <GradeCalculator />}

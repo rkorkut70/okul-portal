@@ -90,15 +90,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     if (isCpd) {
                       setActiveTab('cpd');
                     } else {
-                      alert(`${unit.name} biriminin modülü şu anda planlama aşamasındadır. İlk aşamada CPD Birimi prototipi üzerinde çalışıyoruz.`);
+                      setActiveTab('tools');
+                      setSelectedTool('duties');
                     }
                   }}
-                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs transition text-left ${
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs transition text-left cursor-pointer ${
                     isSelected
                       ? 'bg-blue-50 text-blue-800 font-semibold border-l-4 border-blue-700'
                       : isCpd
                       ? 'text-slate-700 hover:bg-slate-100'
-                      : 'text-slate-400 hover:bg-slate-50 cursor-pointer opacity-75'
+                      : 'text-slate-600 hover:bg-slate-50'
                   }`}
                 >
                   <div className="truncate pr-2">

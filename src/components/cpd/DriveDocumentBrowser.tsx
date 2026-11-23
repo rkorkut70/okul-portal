@@ -27,13 +27,15 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [previewDoc, setPreviewDoc] = useState<DriveDocument | null>(null);
 
-  // Folders list
+  // Dynamic folders list from documents
+  const uniqueFolderNames = Array.from(new Set(documents.map(d => d.folderName).filter(Boolean)));
   const folders = [
     { id: 'all', name: 'Tüm Klasörler ve Belgeler', count: documents.length },
-    { id: '01_Etkinlikler_ve_Egitimler', name: '📁 01_Etkinlikler_ve_Egitimler', count: documents.filter(d => d.folderName.includes('01_')).length },
-    { id: '02_Raporlar_ve_Faaliyet_Ozetleri', name: '📁 02_Raporlar_ve_Faaliyet_Ozetleri', count: documents.filter(d => d.folderName.includes('02_')).length },
-    { id: '03_Komisyon_ve_Kararlar', name: '📁 03_Komisyon_ve_Kararlar', count: documents.filter(d => d.folderName.includes('03_')).length },
-    { id: '04_Materyaller_ve_Rehberler', name: '📁 04_Materyaller_ve_Rehberler', count: documents.filter(d => d.folderName.includes('04_')).length },
+    ...uniqueFolderNames.map(fName => ({
+      id: fName,
+      name: `📁 ${fName}`,
+      count: documents.filter(d => d.folderName === fName).length
+    }))
   ];
 
   // All unique tags

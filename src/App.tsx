@@ -23,9 +23,11 @@ export const AppContent: React.FC = () => {
       try {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          const existingIds = new Set(parsed.map((a: ActivityItem) => a.id));
+          // Remove old mock/dummy activity items if previously stored in browser
+          const cleanSaved = parsed.filter((a: ActivityItem) => !['act-1', 'act-2', 'act-3', 'act-4', 'act-5'].includes(a.id));
+          const existingIds = new Set(cleanSaved.map((a: ActivityItem) => a.id));
           const missing = CPD_ACTIVITIES.filter(a => !existingIds.has(a.id));
-          return [...missing, ...parsed];
+          return [...missing, ...cleanSaved];
         }
       } catch {
         return CPD_ACTIVITIES;

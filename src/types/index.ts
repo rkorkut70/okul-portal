@@ -59,8 +59,8 @@ export interface ActivityItem {
 export interface TemplateDocument {
   id: string;
   title: string;
-  category: 'Dilekçe & İzin' | 'Ders & Sınav' | 'Kurumsal Kimlik' | 'Komisyon & Tutanak';
-  format: 'DOCX' | 'PDF' | 'XLSX';
+  category: 'Dilekçe & İzin' | 'Ders & Sınav' | 'Kurumsal Kimlik' | 'Komisyon & Tutanak' | 'Genel' | string;
+  format: 'DOCX' | 'PDF' | 'XLSX' | 'PPTX' | 'DİĞER' | string;
   size: string;
   updatedAt: string;
   driveUrl: string;
@@ -72,7 +72,7 @@ export interface CalendarEvent {
   title: string;
   startDate: string;
   endDate?: string;
-  category: 'Ders Dönemi' | 'Sınavlar' | 'Kayıt & Harç' | 'Resmi Tatil' | 'Senato & Kurul';
-  term: '2025-2026 Güz' | '2025-2026 Bahar' | 'Yaz Okulu';
+  category: 'Ders Dönemi' | 'Sınavlar' | 'Kayıt & Harç' | 'Resmi Tatil' | 'Senato & Kurul' | string;
+  term: string;
   isImportant?: boolean;
 }

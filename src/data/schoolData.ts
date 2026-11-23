@@ -88,7 +88,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "role": "Müdür",
     "dutyPlace": "Yabancı Diller Yüksekokulu",
     "email": "bertan.akyol@adu.edu.tr",
-    "phone": "4602 / 4603",
+    "phone": "4603",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0565"
   },
@@ -118,18 +118,6 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
   },
   {
     "id": 4,
-    "title": "Öğr. Gör. Dr.",
-    "name": "Barış ÇAVUŞ",
-    "language": "İngilizce",
-    "role": null,
-    "dutyPlace": "Eğitim Fakültesi",
-    "email": null,
-    "phone": null,
-    "officeHour": null,
-    "akbisUrl": "https://akbis.adu.edu.tr/"
-  },
-  {
-    "id": 5,
     "title": "Öğr. Gör.",
     "name": "Beyhan Sezer",
     "language": "İngilizce",
@@ -141,19 +129,19 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0015"
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "Öğr. Gör.",
     "name": "Bilge Sevim Soykut",
     "language": "İngilizce",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "bilge.soykut@adu.edu.tr",
-    "phone": null,
+    "phone": "4641",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2197"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "Öğr. Gör.",
     "name": "Buket Şahin",
     "language": "Fransızca",
@@ -165,19 +153,19 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0139"
   },
   {
-    "id": 8,
+    "id": 7,
     "title": "Öğr. Gör.",
     "name": "Buse Arasıler",
     "language": "Almanca",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "busecosar@adu.edu.tr",
-    "phone": null,
+    "phone": "4650",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1712"
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "Öğr. Gör. Dr.",
     "name": "Büşra Hafçı Yorulmaz",
     "language": "İngilizce",
@@ -189,7 +177,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2393"
   },
   {
-    "id": 10,
+    "id": 9,
     "title": "Öğr. Gör. Dr.",
     "name": "Canay Karcı Aktaş",
     "language": "İngilizce",
@@ -201,7 +189,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1368"
   },
   {
-    "id": 11,
+    "id": 10,
     "title": "Öğr. Gör.",
     "name": "Cansın Çalışkan",
     "language": "İngilizce",
@@ -213,7 +201,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1798"
   },
   {
-    "id": 12,
+    "id": 11,
     "title": "Öğr. Gör.",
     "name": "Dilek Ateş",
     "language": "İngilizce",
@@ -225,7 +213,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1917"
   },
   {
-    "id": 13,
+    "id": 12,
     "title": "Öğr. Gör. Dr.",
     "name": "Emre Dinçer",
     "language": "İngilizce",
@@ -237,7 +225,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1475"
   },
   {
-    "id": 14,
+    "id": 13,
     "title": "Öğr. Gör.",
     "name": "Ercan Yılmaz",
     "language": "İngilizce",
@@ -249,7 +237,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2379"
   },
   {
-    "id": 15,
+    "id": 14,
     "title": "Öğr. Gör.",
     "name": "Ersin Samur",
     "language": "İngilizce",
@@ -261,19 +249,19 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2245"
   },
   {
-    "id": 16,
+    "id": 15,
     "title": "Öğr. Gör.",
     "name": "Esma Acun",
     "language": "İngilizce",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "eacun@adu.edu.tr",
-    "phone": "4631 / 4649",
+    "phone": "4647",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1494"
   },
   {
-    "id": 17,
+    "id": 16,
     "title": "Öğr. Gör.",
     "name": "Esra Erenoğlu Aksoy",
     "language": "İngilizce",
@@ -285,19 +273,19 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-4091"
   },
   {
-    "id": 18,
+    "id": 17,
     "title": "Öğr. Gör. Dr.",
     "name": "Fatma Başkaya",
     "language": "Almanca",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "fatma.baskaya@adu.edu.tr",
-    "phone": null,
+    "phone": "4650",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-4104"
   },
   {
-    "id": 19,
+    "id": 18,
     "title": "Öğr. Gör.",
     "name": "Fethiye Efendi Kır",
     "language": "İngilizce",
@@ -309,7 +297,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1713"
   },
   {
-    "id": 20,
+    "id": 19,
     "title": "Öğr. Gör.",
     "name": "Fisun Karaburun",
     "language": "Almanca",
@@ -321,7 +309,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0642"
   },
   {
-    "id": 21,
+    "id": 20,
     "title": "Öğr. Gör.",
     "name": "Göksel Turan",
     "language": "İngilizce",
@@ -333,7 +321,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2060"
   },
   {
-    "id": 22,
+    "id": 21,
     "title": "Öğr. Gör.",
     "name": "Gül Tecimer",
     "language": "Fransızca",
@@ -345,7 +333,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1915"
   },
   {
-    "id": 23,
+    "id": 22,
     "title": "Öğr. Gör.",
     "name": "Gülsün Poyraz Sofracı",
     "language": "İngilizce",
@@ -357,7 +345,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1805"
   },
   {
-    "id": 24,
+    "id": 23,
     "title": "Öğr. Gör.",
     "name": "Hatice Kurt",
     "language": "İngilizce",
@@ -369,7 +357,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1520"
   },
   {
-    "id": 25,
+    "id": 24,
     "title": "Öğr. Gör.",
     "name": "Hayri Argunat",
     "language": "İngilizce",
@@ -381,7 +369,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1709"
   },
   {
-    "id": 26,
+    "id": 25,
     "title": "Öğr. Gör.",
     "name": "Lütfi Saraç",
     "language": "İngilizce",
@@ -393,19 +381,19 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1515"
   },
   {
-    "id": 27,
+    "id": 26,
     "title": "Öğr. Gör. Dr.",
     "name": "Mehmet Birgün",
     "language": "İngilizce",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "mehmet.birgun@adu.edu.tr",
-    "phone": null,
+    "phone": "4631",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-3831"
   },
   {
-    "id": 28,
+    "id": 27,
     "title": "Öğr. Gör.",
     "name": "Mehmet Burak Okşar",
     "language": "İngilizce",
@@ -417,7 +405,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1411"
   },
   {
-    "id": 29,
+    "id": 28,
     "title": "Öğr. Gör.",
     "name": "Mehmet Niyazi Yağmur",
     "language": "İngilizce",
@@ -429,7 +417,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0103"
   },
   {
-    "id": 30,
+    "id": 29,
     "title": "Öğr. Gör.",
     "name": "Mine Gergün",
     "language": "İngilizce",
@@ -441,7 +429,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1505"
   },
   {
-    "id": 31,
+    "id": 30,
     "title": "Öğr. Gör.",
     "name": "Murat Madak",
     "language": "İngilizce",
@@ -453,7 +441,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2218"
   },
   {
-    "id": 32,
+    "id": 31,
     "title": "Öğr. Gör.",
     "name": "Nursel Özen",
     "language": "İngilizce",
@@ -465,7 +453,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-0027"
   },
   {
-    "id": 33,
+    "id": 32,
     "title": "Öğr. Gör.",
     "name": "Pınar Uğur",
     "language": "İngilizce",
@@ -477,7 +465,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1470"
   },
   {
-    "id": 34,
+    "id": 33,
     "title": "Öğr. Gör.",
     "name": "Saim Özkan",
     "language": "İngilizce",
@@ -489,7 +477,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1710"
   },
   {
-    "id": 35,
+    "id": 34,
     "title": "Öğr. Gör.",
     "name": "Seher Özdemir Yavuz",
     "language": "Fransızca",
@@ -501,7 +489,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1821"
   },
   {
-    "id": 36,
+    "id": 35,
     "title": "Öğr. Gör.",
     "name": "Sevim Evren",
     "language": "İngilizce",
@@ -513,31 +501,31 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1711"
   },
   {
-    "id": 37,
+    "id": 36,
     "title": "Öğr. Gör.",
     "name": "Sibel Arabacı",
     "language": "İngilizce",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "sibel.karasulu@adu.edu.tr",
-    "phone": "4641 / 4649",
+    "phone": "4628",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1496"
   },
   {
-    "id": 38,
+    "id": 37,
     "title": "Öğr. Gör.",
     "name": "Sibel Katırcı",
     "language": "İngilizce",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "s.katirci@adu.edu.tr",
-    "phone": null,
+    "phone": "4624",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-4094"
   },
   {
-    "id": 39,
+    "id": 38,
     "title": "Öğr. Gör. Dr.",
     "name": "Sibel Yıldız",
     "language": "İngilizce",
@@ -549,22 +537,22 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1914"
   },
   {
-    "id": 40,
+    "id": 39,
     "title": "Öğr. Gör.",
     "name": "Soner Sofracı",
     "language": "İngilizce",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "sonersofraci@adu.edu.tr",
-    "phone": null,
+    "phone": "4639",
     "officeHour": null,
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1912"
   },
   {
-    "id": 41,
+    "id": 40,
     "title": "Öğr. Gör.",
     "name": "Ulviye Karaca",
-    "language": "Fransızca",
+    "language": "Almanca",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": "ulviye.berak@adu.edu.tr",
@@ -573,7 +561,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-3148"
   },
   {
-    "id": 42,
+    "id": 41,
     "title": "Öğr. Gör.",
     "name": "Yasir Yaren",
     "language": "İngilizce",
@@ -585,7 +573,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2411"
   },
   {
-    "id": 43,
+    "id": 42,
     "title": "Öğr. Gör.",
     "name": "Çimen Atay",
     "language": "Almanca",
@@ -597,7 +585,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2925"
   },
   {
-    "id": 44,
+    "id": 43,
     "title": "Öğr. Gör. Dr.",
     "name": "Özgür Esen",
     "language": "İngilizce",
@@ -609,7 +597,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1799"
   },
   {
-    "id": 45,
+    "id": 44,
     "title": "Öğr. Gör.",
     "name": "Özlem Dilaver",
     "language": "İngilizce",
@@ -621,7 +609,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2059"
   },
   {
-    "id": 46,
+    "id": 45,
     "title": "Öğr. Gör.",
     "name": "Özlem Madak",
     "language": "İngilizce",
@@ -633,7 +621,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-2217"
   },
   {
-    "id": 47,
+    "id": 46,
     "title": "Öğr. Gör.",
     "name": "İrem Gül Okşar",
     "language": "İngilizce",
@@ -645,7 +633,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1353"
   },
   {
-    "id": 48,
+    "id": 47,
     "title": "Öğr. Gör.",
     "name": "Şebnem Günaydın",
     "language": "İngilizce",
@@ -657,10 +645,10 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": "https://akbis.adu.edu.tr/personel_detay.asp?sno=A-1171"
   },
   {
-    "id": 49,
+    "id": 48,
     "title": "Misafir Öğr. Elm.",
     "name": "Beyzasu KÜÇÜKDANACI",
-    "language": "Almanca",
+    "language": "Fransızca",
     "role": null,
     "dutyPlace": "YDYO (Yabancı Diller Yüksekokulu)",
     "email": null,
@@ -669,7 +657,7 @@ export const ACADEMIC_STAFF: AcademicStaff[] = [
     "akbisUrl": null
   },
   {
-    "id": 50,
+    "id": 49,
     "title": "Misafir Öğr. Elm.",
     "name": "Pelin GÜRLER",
     "language": "Almanca",
@@ -1088,12 +1076,6 @@ export const MANAGEMENT_BOARD: BoardMemberInfo[] = [
   {
     "id": 3,
     "name": "Dr.Öğretim Üyesi Faruk KALAY",
-    "role": "Öğretim Üyesi",
-    "startDate": "22/05/2023"
-  },
-  {
-    "id": 4,
-    "name": "Dr.Öğretim Üyesi Tahir YILMAZ",
     "role": "Öğretim Üyesi",
     "startDate": "22/05/2023"
   },

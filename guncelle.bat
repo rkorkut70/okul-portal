@@ -1,9 +1,13 @@
 @echo off
 chcp 65001 >nul
+title OKUL PORTAL VERI SENKRONIZASYONU
+cls
 echo ========================================================
 echo   OKUL PORTAL - EXCEL VERI SENKRONIZASYONU
 echo ========================================================
 echo.
+
+:: 1. Python ile Excel okunuyor
 echo 1. Excel dosyasindaki degisiklikler okunuyor...
 py scripts/sync_school_data.py
 if %ERRORLEVEL% NEQ 0 (
@@ -12,14 +16,34 @@ if %ERRORLEVEL% NEQ 0 (
 if %ERRORLEVEL% NEQ 0 (
     echo.
     echo [HATA] Python senkronizasyonu calistirilamadi!
-    echo Lutfen Excel dosyasinin acik olup olmadigini kontrol edip kapatin.
+    echo Lutfen acik ise Excel dosyasini kaydedip kapatin.
     pause
     exit /b 1
 )
 
 echo.
-echo 2. Degisiklikler GitHub'a yukleniyor (Git commit & push)...
+echo 2. Degisiklikler kontrol ediliyor...
 git add docs/okul_bilgi.xlsx src/data/schoolData.ts
+
+:: Degisiklik var mi kontrol et
+git diff --cached --quiet
+if %ERRORLEVEL% EQU 0 (
+    echo.
+    echo ========================================================
+    echo   [BILGI] HER SEY GUNCEL!
+    echo   Excel dosyanizdaki degisiklikler zaten daha once portala
+    echo   aktarilmis ve GitHub'a gonderilmis durumdadir.
+    echo.
+    echo   Canli siteyi kontrol etmek icin:
+    echo   https://rkorkut70.github.io/okul-portal/
+    echo ========================================================
+    echo.
+    pause
+    exit /b 0
+)
+
+echo.
+echo 3. Yeni degisiklikler GitHub'a yukleniyor (Git commit & push)...
 git commit -m "chore: Excel verileri portala senkronize edildi"
 git push origin main
 
@@ -33,7 +57,8 @@ if %ERRORLEVEL% EQU 0 (
     echo ========================================================
 ) else (
     echo.
-    echo [UYARI] Git push sirasinda bir sorun olustu. Internet baglantinizi kontrol ediniz.
+    echo [UYARI] Git yuklemesinde bir sorun olustu.
+    echo Lutfen internet baglantinizi kontrol edip tekrar deneyin.
 )
 
 echo.

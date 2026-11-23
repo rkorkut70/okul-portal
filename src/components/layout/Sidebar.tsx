@@ -91,7 +91,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       setActiveTab('cpd');
                     } else {
                       setActiveTab('tools');
-                      setSelectedTool('duties');
+                      setSelectedTool('advisors');
                     }
                   }}
                   className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs transition text-left cursor-pointer ${
@@ -102,9 +102,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       : 'text-slate-600 hover:bg-slate-50'
                   }`}
                 >
-                  <div className="truncate pr-2">
-                    <div className="font-medium truncate">{unit.shortName}</div>
-                    <div className="text-[10px] text-slate-400 truncate">{unit.code}</div>
+                  <div className="flex items-center space-x-2 truncate pr-2">
+                    <span className="font-bold text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200 flex-shrink-0">
+                      {unit.code}
+                    </span>
+                    <span className="font-medium truncate">{unit.name.split(' (')[0]}</span>
                   </div>
                   {isCpd ? (
                     <span className="text-[10px] text-blue-600 font-bold bg-blue-100 px-1.5 py-0.5 rounded">

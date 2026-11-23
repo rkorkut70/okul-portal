@@ -32,18 +32,61 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
   const pinnedDocs = CPD_DRIVE_DOCUMENTS.filter(d => d.isPinned).slice(0, 3);
 
   const unitCodeMap: Record<string, string> = {
-    'testing': 'Testing',
-    'material': 'Materyal',
-    'program': 'Program',
+    'testing': 'SB',
+    'material': 'MB',
+    'program': 'PB',
     'cpd': 'CPD',
     'kab': 'KAB',
-    'exam': 'Testing',
-    'curriculum': 'Program',
-    'quality': 'KAB'
+    'sb': 'SB',
+    'mb': 'MB',
+    'pb': 'PB',
+    'SB': 'SB',
+    'MB': 'MB',
+    'PB': 'PB',
+    'CPD': 'CPD',
+    'KAB': 'KAB',
+    'Testing': 'SB',
+    'Materyal': 'MB',
+    'Program': 'PB'
   };
 
-  const activeUnitDuty = UNIT_DUTIES.find(d => d.code === selectedUnitCode);
-  const activeUnitData = ACADEMIC_UNITS_DATA.find(u => u.code === selectedUnitCode);
+  const activeUnitDuty = UNIT_DUTIES.find(d => 
+    d.code === selectedUnitCode || 
+    unitCodeMap[d.code] === selectedUnitCode ||
+    (selectedUnitCode === 'SB' && (d.code === 'SB' || d.code === 'Testing' || d.name.includes('SINAV'))) ||
+    (selectedUnitCode === 'MB' && (d.code === 'MB' || d.code === 'Materyal' || d.name.includes('MATERYAL'))) ||
+    (selectedUnitCode === 'PB' && (d.code === 'PB' || d.code === 'Program' || d.name.includes('PROGRAM'))) ||
+    (selectedUnitCode === 'CPD' && (d.code === 'CPD' || d.name.includes('MESLEKİ'))) ||
+    (selectedUnitCode === 'KAB' && (d.code === 'KAB' || d.name.includes('KALİTE')))
+  );
+
+  const activeUnitData = ACADEMIC_UNITS_DATA.find(u => 
+    u.code === selectedUnitCode || 
+    unitCodeMap[u.code] === selectedUnitCode ||
+    (selectedUnitCode === 'SB' && (u.code === 'SB' || u.name.includes('SINAV'))) ||
+    (selectedUnitCode === 'MB' && (u.code === 'MB' || u.name.includes('MATERYAL'))) ||
+    (selectedUnitCode === 'PB' && (u.code === 'PB' || u.name.includes('PROGRAM'))) ||
+    (selectedUnitCode === 'CPD' && (u.code === 'CPD' || u.name.includes('MESLEKİ'))) ||
+    (selectedUnitCode === 'KAB' && (u.code === 'KAB' || u.name.includes('KALİTE')))
+  );
+
+  const getUnitBadgeStyle = (code: string, isCpd: boolean) => {
+    if (isCpd) {
+      return 'bg-blue-900 text-white shadow-sm ring-1 ring-blue-950';
+    }
+    switch (code) {
+      case 'SB':
+        return 'bg-purple-100 text-purple-900 border border-purple-300 font-black';
+      case 'MB':
+        return 'bg-amber-100 text-amber-950 border border-amber-300 font-black';
+      case 'PB':
+        return 'bg-teal-100 text-teal-950 border border-teal-300 font-black';
+      case 'KAB':
+        return 'bg-emerald-100 text-emerald-950 border border-emerald-300 font-black';
+      default:
+        return 'bg-blue-50 text-blue-800 border border-blue-200 font-black';
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -143,7 +186,17 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
           <div className="space-y-2.5 sm:space-y-3">
             {ACADEMIC_UNITS.map((unit) => {
               const isCpd = unit.id === 'cpd';
-              const targetCode = unitCodeMap[unit.id] || unit.code;
+              const excelUnit = ACADEMIC_UNITS_DATA.find(u => 
+                u.code === unit.code ||
+                (unit.id === 'testing' && (u.code === 'SB' || u.name.includes('SINAV'))) ||
+                (unit.id === 'material' && (u.code === 'MB' || u.name.includes('MATERYAL'))) ||
+                (unit.id === 'program' && (u.code === 'PB' || u.name.includes('PROGRAM'))) ||
+                (unit.id === 'cpd' && (u.code === 'CPD' || u.name.includes('MESLEKİ'))) ||
+                (unit.id === 'kab' && (u.code === 'KAB' || u.name.includes('KALİTE')))
+              );
+              const displayCode = excelUnit?.code || unit.code;
+              const targetCode = displayCode;
+              const managerTitle = excelUnit?.head || unit.managerName;
 
               return (
                 <div
@@ -152,12 +205,8 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                   className="p-3 sm:p-4 rounded-2xl border border-slate-200/90 bg-white hover:border-blue-400 hover:shadow-md transition active:scale-[0.99] cursor-pointer flex items-center justify-between group"
                 >
                   <div className="flex items-center space-x-3 truncate">
-                    <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0 transition ${
-                      isCpd 
-                        ? 'bg-blue-800 text-white group-hover:scale-105' 
-                        : 'bg-blue-50 text-blue-800 border border-blue-200 group-hover:scale-105'
-                    }`}>
-                      {unit.code.split('-')[0]}
+                    <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center font-black text-xs sm:text-sm tracking-wider flex-shrink-0 transition group-hover:scale-105 shadow-2xs ${getUnitBadgeStyle(displayCode, isCpd)}`}>
+                      {displayCode}
                     </div>
                     <div className="truncate">
                       <div className="flex items-center space-x-2">
@@ -168,9 +217,9 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                           <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 uppercase flex-shrink-0">
                             Pilot
                           </span>
-                        ) : unit.managerName ? (
+                        ) : managerTitle ? (
                           <span className="text-[9px] font-medium px-1.5 py-0.2 rounded bg-slate-100 text-slate-600 hidden sm:inline-block">
-                            {unit.managerName.split(' ')[0]}
+                            {managerTitle.split(' ')[0]}
                           </span>
                         ) : null}
                       </div>

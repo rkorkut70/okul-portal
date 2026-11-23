@@ -1176,7 +1176,7 @@ export const SCHOOL_BOARD: BoardMemberInfo[] = [
 
 export const UNIT_DUTIES: UnitDutyInfo[] = [
   {
-    "code": "Testing",
+    "code": "SB",
     "name": "SINAV BİRİMİ",
     "head": "Öğr. Gör. Göksel TURAN",
     "mission": "Öğrencilerin lisans eğitimine başlamak için gerekli yabancı dil yeterliliklerini ölçmek ve ileri seviye bilişsel yeteneklerini değerlendiren ölçme araçları oluşturmak.",
@@ -1185,7 +1185,7 @@ export const UNIT_DUTIES: UnitDutyInfo[] = [
     "note": "Tam ve detaylı bilgi YDYO Kalite El Kitabı Bölüm 7'de yer almaktadır."
   },
   {
-    "code": "Materyal",
+    "code": "MB",
     "name": "MATERYAL SEÇME ve GELİŞTİRME BİRİMİ",
     "head": "Öğr. Gör. Dilek ATEŞ",
     "mission": "Eğitim programındaki amaçlara, içeriğe ve öğrenci seviyelerine uygun ders kaynaklarının, materyallerinin seçilmesini, düzenlenmesini ve erişilebilir olmasını sağlamak.",
@@ -1194,7 +1194,7 @@ export const UNIT_DUTIES: UnitDutyInfo[] = [
     "note": "Tam ve detaylı bilgi YDYO Kalite El Kitabı Bölüm 7'de yer almaktadır."
   },
   {
-    "code": "Program",
+    "code": "PB",
     "name": "PROGRAM GELİŞTİRME BİRİMİ",
     "head": "Öğr. Gör. Hayri ARGUNAT",
     "mission": "CEFR ve uluslararası standartlara dayalı, öğrencilerin dil ihtiyaçlarına uygun yüksek kaliteli eğitim programlarını yenilikçi yöntemlerle tasarlamak ve geliştirmek.",

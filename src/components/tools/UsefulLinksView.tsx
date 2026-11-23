@@ -50,7 +50,7 @@ export const UsefulLinksView: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-3xl p-6 text-white shadow-md relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-3xl p-4 sm:p-6 text-white shadow-md relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
@@ -58,7 +58,7 @@ export const UsefulLinksView: React.FC = () => {
               <BookmarkCheck className="w-3.5 h-3.5 text-amber-400" />
               <span>Hızlı Erişim Portalları</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white">
+            <h2 className="text-lg sm:text-2xl font-black tracking-tight text-white">
               Sık Kullanılan Üniversite Bağlantıları
             </h2>
             <p className="text-xs text-blue-200/80 max-w-xl leading-relaxed">
@@ -66,7 +66,7 @@ export const UsefulLinksView: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/15 text-center min-w-[130px]">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/15 text-center min-w-[130px] self-start md:self-auto">
             <div className="text-2xl font-black text-amber-400">{USEFUL_LINKS.length}</div>
             <div className="text-[11px] text-blue-200 font-semibold">Kayıtlı Portal</div>
           </div>
@@ -87,19 +87,19 @@ export const UsefulLinksView: React.FC = () => {
           />
         </div>
 
-        {/* Category Pills */}
-        <div className="flex items-center space-x-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+        {/* Category Pills (Pusula & Piksel Mobil Ergonomi) */}
+        <div className="flex items-center space-x-1.5 overflow-x-auto no-scrollbar -mx-1 px-1 w-full md:w-auto pb-1 md:pb-0">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
+              className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer active:scale-95 ${
                 selectedCategory === cat
-                  ? 'bg-blue-900 text-white shadow-xs'
+                  ? 'bg-blue-900 text-white shadow-xs font-bold'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
               }`}
             >
-              {cat === 'all' ? 'Tümü' : cat}
+              {cat === 'all' ? 'Tüm Kategoriler' : cat}
             </button>
           ))}
         </div>
@@ -113,7 +113,7 @@ export const UsefulLinksView: React.FC = () => {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between space-y-4"
+            className="group bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-blue-500 hover:shadow-md transition active:scale-[0.98] flex flex-col justify-between space-y-4"
           >
             <div className="space-y-2">
               <div className="flex items-start justify-between">

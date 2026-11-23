@@ -41,24 +41,24 @@ export const CpdModule: React.FC<CpdModuleProps> = ({
     <div className="space-y-6">
       
       {/* CPD Birimi Header Card */}
-      <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs relative overflow-hidden">
+      <div className="bg-white rounded-3xl p-4 sm:p-6 border border-slate-200/80 shadow-xs relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           
-          <div className="flex items-start space-x-4">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-700 to-indigo-900 flex items-center justify-center text-white shadow-lg flex-shrink-0">
-              <GraduationCap className="w-8 h-8" />
+          <div className="flex items-start space-x-3 sm:space-x-4">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-blue-700 to-indigo-900 flex items-center justify-center text-white shadow-lg flex-shrink-0">
+              <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
             <div className="space-y-1">
               <div className="flex items-center space-x-2">
-                <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 tracking-wide uppercase">
+                <span className="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 tracking-wide uppercase">
                   Akademik Birim 01 (Pilot)
                 </span>
-                <span className="inline-flex items-center text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                <span className="inline-flex items-center text-[10px] sm:text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
                   <UserCheck className="w-3 h-3 mr-1" />
                   Aktif Modül
                 </span>
               </div>
-              <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              <h1 className="text-lg sm:text-2xl font-black text-slate-900 tracking-tight">
                 Sürekli Mesleki Gelişim Birimi (CPD)
               </h1>
               <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
@@ -69,7 +69,7 @@ export const CpdModule: React.FC<CpdModuleProps> = ({
 
           {/* Manager Info & Quick Action */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100">
-            <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80 text-xs text-slate-600 space-y-0.5">
+            <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200/80 text-xs text-slate-600 space-y-0.5 w-full sm:w-auto">
               <div className="font-semibold text-slate-900 flex items-center space-x-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-700" />
                 <span>Birim Sorumlusu:</span>
@@ -100,11 +100,11 @@ export const CpdModule: React.FC<CpdModuleProps> = ({
 
         </div>
 
-        {/* Sub Navigation Tabs */}
-        <div className="flex items-center space-x-2 border-t border-slate-100 mt-6 pt-4 overflow-x-auto">
+        {/* Sub Navigation Tabs (Pusula & Piksel Mobil Ergonomi) */}
+        <div className="flex items-center space-x-1.5 sm:space-x-2 border-t border-slate-100 mt-4 sm:mt-6 pt-3 sm:pt-4 overflow-x-auto no-scrollbar -mx-1 px-1 sm:mx-0">
           <button
             onClick={() => setActiveSubTab('activities')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 min-h-[40px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
               activeSubTab === 'activities'
                 ? 'bg-blue-900 text-white shadow-xs'
                 : 'text-slate-600 hover:bg-slate-100'
@@ -116,38 +116,38 @@ export const CpdModule: React.FC<CpdModuleProps> = ({
 
           <button
             onClick={() => setActiveSubTab('workshops')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 min-h-[40px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
               activeSubTab === 'workshops'
                 ? 'bg-blue-900 text-white shadow-xs'
                 : 'text-slate-600 hover:bg-slate-100'
             }`}
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>2026–2027 Workshop Programı (4 Öncelik)</span>
+            <span>2026–2027 Workshop Programı</span>
           </button>
 
           <button
             onClick={() => setActiveSubTab('documents')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 min-h-[40px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
               activeSubTab === 'documents'
                 ? 'bg-blue-900 text-white shadow-xs'
                 : 'text-slate-600 hover:bg-slate-100'
             }`}
           >
             <HardDrive className="w-3.5 h-3.5" />
-            <span>Google Drive Belge Deposu ({documents.length})</span>
+            <span>Belge Deposu ({documents.length})</span>
           </button>
 
           <button
             onClick={() => setActiveSubTab('about')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+            className={`flex items-center space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 min-h-[40px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
               activeSubTab === 'about'
                 ? 'bg-blue-900 text-white shadow-xs'
                 : 'text-slate-600 hover:bg-slate-100'
             }`}
           >
             <Info className="w-3.5 h-3.5" />
-            <span>Birim Yönergesi & Misyon</span>
+            <span>Birim Yönergesi</span>
           </button>
         </div>
 

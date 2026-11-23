@@ -48,71 +48,79 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
   return (
     <div className="space-y-6">
 
-      {/* Fast Shortcuts: 4 Pillars */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* Fast Shortcuts: 4 Pillars (Pusula & Piksel 2x2 Mobile / 4x1 Desktop Grid) */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         
         {/* Shortcut 1 - CPD */}
         <div 
           onClick={() => setActiveTab('cpd')}
-          className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-blue-400 hover:shadow-md transition cursor-pointer space-y-2 group"
+          className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-blue-400 hover:shadow-md transition active:scale-95 cursor-pointer space-y-1.5 sm:space-y-2 group flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
-            <GraduationCap className="w-5 h-5 text-blue-700" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-50 text-blue-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
+            <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700" />
           </div>
-          <h4 className="font-bold text-sm text-slate-900 group-hover:text-blue-700 transition">
-            CPD Birimi Faaliyetleri
-          </h4>
-          <p className="text-xs text-slate-500 leading-snug">
-            Sürekli mesleki gelişim çalıştayları, eğitim özetleri ve katılım belgeleri.
-          </p>
+          <div>
+            <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-blue-700 transition line-clamp-1">
+              CPD Faaliyetleri
+            </h4>
+            <p className="text-[11px] sm:text-xs text-slate-500 leading-snug line-clamp-2 mt-0.5">
+              Çalıştaylar, seminerler ve katılım belgeleri.
+            </p>
+          </div>
         </div>
 
         {/* Shortcut 2 - Drive */}
         <div 
           onClick={() => setActiveTab('documents')}
-          className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-amber-400 hover:shadow-md transition cursor-pointer space-y-2 group"
+          className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-amber-400 hover:shadow-md transition active:scale-95 cursor-pointer space-y-1.5 sm:space-y-2 group flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
-            <HardDrive className="w-5 h-5 text-amber-700" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
+            <HardDrive className="w-4 h-4 sm:w-5 sm:h-5 text-amber-700" />
           </div>
-          <h4 className="font-bold text-sm text-slate-900 group-hover:text-amber-700 transition">
-            Ortak Google Drive Arşivi
-          </h4>
-          <p className="text-xs text-slate-500 leading-snug">
-            Birimlerin hiyerarşik resmi evrakları, yönergeler ve sunum dosyaları.
-          </p>
+          <div>
+            <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-amber-700 transition line-clamp-1">
+              Ortak Drive
+            </h4>
+            <p className="text-[11px] sm:text-xs text-slate-500 leading-snug line-clamp-2 mt-0.5">
+              Birimlerin resmi belge arşivi ve yönergeler.
+            </p>
+          </div>
         </div>
 
         {/* Shortcut 3 - Ders Programı */}
         <div 
           onClick={() => { setActiveTab('tools'); setSelectedTool('schedule'); }}
-          className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-teal-400 hover:shadow-md transition cursor-pointer space-y-2 group"
+          className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-teal-400 hover:shadow-md transition active:scale-95 cursor-pointer space-y-1.5 sm:space-y-2 group flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
-            <Clock className="w-5 h-5 text-teal-700" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-teal-50 text-teal-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-teal-700" />
           </div>
-          <h4 className="font-bold text-sm text-slate-900 group-hover:text-teal-700 transition">
-            Ders Programı Sorgu
-          </h4>
-          <p className="text-xs text-slate-500 leading-snug">
-            Hoca, şube ve derslik bazlı anlık canlı ders saatleri ve durum sorgusu.
-          </p>
+          <div>
+            <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-teal-700 transition line-clamp-1">
+              Ders Programı
+            </h4>
+            <p className="text-[11px] sm:text-xs text-slate-500 leading-snug line-clamp-2 mt-0.5">
+              Hoca, şube ve oda anlık durum sorgusu.
+            </p>
+          </div>
         </div>
 
         {/* Shortcut 4 - Not Hesaplayıcı */}
         <div 
           onClick={() => { setActiveTab('tools'); setSelectedTool('grade'); }}
-          className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-emerald-400 hover:shadow-md transition cursor-pointer space-y-2 group"
+          className="bg-white p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:border-emerald-400 hover:shadow-md transition active:scale-95 cursor-pointer space-y-1.5 sm:space-y-2 group flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
-            <Calculator className="w-5 h-5 text-emerald-700" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center font-bold group-hover:scale-105 transition">
+            <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-700" />
           </div>
-          <h4 className="font-bold text-sm text-slate-900 group-hover:text-emerald-700 transition">
-            Harf Notu & Çan Hesaplama
-          </h4>
-          <p className="text-xs text-slate-500 leading-snug">
-            Vize-final yüzdelerine göre ADÜ bağıl harf notu ve katsayı hesabı.
-          </p>
+          <div>
+            <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-emerald-700 transition line-clamp-1">
+              Not Hesaplama
+            </h4>
+            <p className="text-[11px] sm:text-xs text-slate-500 leading-snug line-clamp-2 mt-0.5">
+              Vize-final yüzdelerine göre harf notu simülatörü.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -121,18 +129,18 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Left (2 cols): 5 Academic Units */}
-        <div className="lg:col-span-2 bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-4">
+        <div className="lg:col-span-2 bg-white rounded-3xl p-4 sm:p-6 border border-slate-200/80 shadow-xs space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-bold text-base text-slate-900">Yüksekokulumuz Akademik Birimleri</h3>
-              <p className="text-xs text-slate-500">Birimlerimizin faaliyetleri, komisyon kararları ve Drive arşivleri.</p>
+              <h3 className="font-bold text-sm sm:text-base text-slate-900">Yüksekokulumuz Akademik Birimleri</h3>
+              <p className="text-[11px] sm:text-xs text-slate-500">Birimlerimizin faaliyetleri, komisyon kararları ve Drive arşivleri.</p>
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
-              Modüler Yapı
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 hidden xs:inline-block">
+              Modüler
             </span>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2.5 sm:space-y-3">
             {ACADEMIC_UNITS.map((unit) => {
               const isCpd = unit.id === 'cpd';
               const targetCode = unitCodeMap[unit.id] || unit.code;
@@ -141,10 +149,10 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                 <div
                   key={unit.id}
                   onClick={() => setSelectedUnitCode(targetCode)}
-                  className="p-4 rounded-2xl border border-slate-200/90 bg-white hover:border-blue-400 hover:shadow-md transition cursor-pointer flex items-center justify-between group"
+                  className="p-3 sm:p-4 rounded-2xl border border-slate-200/90 bg-white hover:border-blue-400 hover:shadow-md transition active:scale-[0.99] cursor-pointer flex items-center justify-between group"
                 >
-                  <div className="flex items-center space-x-3.5 truncate">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold flex-shrink-0 transition ${
+                  <div className="flex items-center space-x-3 truncate">
+                    <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0 transition ${
                       isCpd 
                         ? 'bg-blue-800 text-white group-hover:scale-105' 
                         : 'bg-blue-50 text-blue-800 border border-blue-200 group-hover:scale-105'
@@ -157,26 +165,28 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                           {unit.name}
                         </span>
                         {isCpd ? (
-                          <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 uppercase">
-                            Pilot Modül
+                          <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 uppercase flex-shrink-0">
+                            Pilot
                           </span>
-                        ) : (
-                          <span className="text-[9px] font-medium px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">
-                            {unit.managerName ? `Sorumlu: ${unit.managerName}` : ''}
+                        ) : unit.managerName ? (
+                          <span className="text-[9px] font-medium px-1.5 py-0.2 rounded bg-slate-100 text-slate-600 hidden sm:inline-block">
+                            {unit.managerName.split(' ')[0]}
                           </span>
-                        )}
+                        ) : null}
                       </div>
-                      <p className="text-xs text-slate-500 truncate mt-0.5">
+                      <p className="text-[11px] sm:text-xs text-slate-500 truncate mt-0.5">
                         {unit.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-2 flex-shrink-0 pl-3">
-                    <span className="text-xs font-bold text-blue-700 group-hover:translate-x-0.5 transition flex items-center">
-                      <span>Görev & Bilgi</span>
-                      <ChevronRight className="w-4 h-4 ml-0.5" />
+                  <div className="flex items-center space-x-1 flex-shrink-0 pl-2">
+                    <span className="text-xs font-bold text-blue-700 group-hover:translate-x-0.5 transition hidden sm:inline">
+                      Görev & Bilgi
                     </span>
+                    <div className="w-7 h-7 sm:w-auto sm:h-auto rounded-lg bg-slate-50 sm:bg-transparent flex items-center justify-center text-blue-700">
+                      <ChevronRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </div>
               );

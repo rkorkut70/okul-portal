@@ -79,10 +79,10 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
     <div className="space-y-6">
 
       {/* Google Drive Status & Notice Card */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-[#0f2942] rounded-3xl p-6 text-white shadow-md relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-[#0f2942] rounded-3xl p-4 sm:p-6 text-white shadow-md relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-2">
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="p-1.5 bg-blue-500/20 border border-blue-400/30 rounded-lg">
                 <HardDrive className="w-4 h-4 text-amber-300" />
               </span>
@@ -93,7 +93,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                 ID: {GOOGLE_DRIVE_FOLDER_ID}
               </span>
             </div>
-            <h3 className="text-lg sm:text-xl font-bold">Resmi Evrak ve Paylaşım Dizini</h3>
+            <h3 className="text-base sm:text-xl font-bold">Resmi Evrak ve Paylaşım Dizini</h3>
             <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
               YDYO akademik birimlerinin ortak klasör yapısı bu Google Drive dizini üzerinde toplanmıştır. 
               Aşağıdaki canlı gezgin üzerinden klasör ağacını inceleyebilir veya doğrudan Google Drive'da açabilirsiniz.
@@ -104,7 +104,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
               href={GOOGLE_DRIVE_FOLDER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold shadow-md transition active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold shadow-md transition active:scale-95 cursor-pointer"
             >
               <span>Google Drive'da Aç</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -114,30 +114,30 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
       </div>
 
       {/* View Switcher: Live Drive vs Document List */}
-      <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-        <div className="inline-flex p-1 bg-slate-100 rounded-2xl text-xs font-semibold">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
+        <div className="inline-flex p-1 bg-slate-100 rounded-2xl text-xs font-semibold overflow-x-auto no-scrollbar w-full sm:w-auto">
           <button
             onClick={() => setViewMode('live')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition cursor-pointer ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center space-x-2 px-3 sm:px-4 py-2.5 rounded-xl transition cursor-pointer active:scale-95 ${
               viewMode === 'live'
                 ? 'bg-white text-slate-900 shadow-xs font-bold'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <FolderTree className="w-3.5 h-3.5 text-blue-700" />
-            <span>Canlı Google Drive Gezgini</span>
+            <span>Canlı Drive Gezgini</span>
           </button>
 
           <button
             onClick={() => setViewMode('list')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition cursor-pointer ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center space-x-2 px-3 sm:px-4 py-2.5 rounded-xl transition cursor-pointer active:scale-95 ${
               viewMode === 'list'
                 ? 'bg-white text-slate-900 shadow-xs font-bold'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <FileText className="w-3.5 h-3.5 text-indigo-700" />
-            <span>Kayıtlı Önemli Belgeler ({documents.length})</span>
+            <span>Belgeler ({documents.length})</span>
           </button>
         </div>
 
@@ -145,7 +145,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
           href={GOOGLE_DRIVE_FOLDER_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-bold text-blue-700 hover:underline inline-flex items-center space-x-1 hidden sm:inline-flex cursor-pointer"
+          className="text-xs font-bold text-blue-700 hover:underline inline-flex items-center space-x-1 self-end sm:self-auto cursor-pointer"
         >
           <span>Yeni Sekmede Tam Ekran</span>
           <Maximize2 className="w-3.5 h-3.5" />
@@ -154,12 +154,12 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
 
       {/* MODE 1: LIVE GOOGLE DRIVE EMBED */}
       {viewMode === 'live' && (
-        <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xs p-4 sm:p-5 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs bg-slate-50 p-3.5 rounded-2xl border border-slate-200/70">
+        <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xs p-3.5 sm:p-5 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs bg-slate-50 p-3 sm:p-3.5 rounded-2xl border border-slate-200/70">
             <div className="flex items-center space-x-2.5">
               <Folder className="w-4 h-4 text-blue-700 flex-shrink-0" />
               <span className="text-slate-700">
-                Klasör Yolu: <strong>YDYO Paylaşım Dizini</strong> (<span className="font-mono text-[11px] text-slate-500">{GOOGLE_DRIVE_FOLDER_ID}</span>)
+                Klasör: <strong>YDYO Paylaşım Dizini</strong>
               </span>
             </div>
             <a
@@ -173,11 +173,11 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
             </a>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 overflow-hidden bg-slate-100 relative min-h-[550px]">
+          <div className="rounded-2xl border border-slate-200 overflow-hidden bg-slate-100 relative min-h-[440px] sm:min-h-[550px]">
             <iframe
               src={GOOGLE_DRIVE_EMBED_URL}
               title="Kurumsal Google Drive Dizini"
-              className="w-full h-[620px] border-0"
+              className="w-full h-[460px] sm:h-[620px] border-0"
               loading="lazy"
             />
           </div>

@@ -104,14 +104,14 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
   return (
     <div className="space-y-6">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 rounded-3xl p-6 text-white shadow-md relative overflow-hidden">
+      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 rounded-3xl p-4 sm:p-6 text-white shadow-md relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-blue-800/80 text-[11px] font-bold text-blue-200 border border-blue-700/50">
               <Users className="w-3.5 h-3.5 text-blue-300" />
               <span>Akademik Personel, Dahili Rehber ve Kurullar</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white">
+            <h2 className="text-lg sm:text-2xl font-black tracking-tight text-white">
               Kadro, Telefon Rehberi ve Kurullar
             </h2>
             <p className="text-xs text-blue-200/80 max-w-xl leading-relaxed">
@@ -119,11 +119,11 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
             </p>
           </div>
 
-          {/* Subtabs */}
-          <div className="flex items-center p-1 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 overflow-x-auto">
+          {/* Subtabs (Pusula & Piksel Mobil Ergonomi) */}
+          <div className="flex items-center p-1 bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 overflow-x-auto no-scrollbar -mx-1 px-1 sm:mx-0 sm:px-1">
             <button
               onClick={() => setActiveSubTab('staff')}
-              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-2 sm:py-2.5 min-h-[40px] sm:min-h-[42px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
                 activeSubTab === 'staff'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
@@ -133,7 +133,7 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
             </button>
             <button
               onClick={() => setActiveSubTab('phones')}
-              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-2 sm:py-2.5 min-h-[40px] sm:min-h-[42px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
                 activeSubTab === 'phones'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
@@ -143,7 +143,7 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
             </button>
             <button
               onClick={() => setActiveSubTab('advisors')}
-              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-2 sm:py-2.5 min-h-[40px] sm:min-h-[42px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
                 activeSubTab === 'advisors'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
@@ -153,7 +153,7 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
             </button>
             <button
               onClick={() => setActiveSubTab('duties')}
-              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-2 sm:py-2.5 min-h-[40px] sm:min-h-[42px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
                 activeSubTab === 'duties'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
@@ -163,7 +163,7 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
             </button>
             <button
               onClick={() => setActiveSubTab('boards')}
-              className={`px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-2 sm:py-2.5 min-h-[40px] sm:min-h-[42px] rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer active:scale-95 ${
                 activeSubTab === 'boards'
                   ? 'bg-white text-slate-900 shadow-xs'
                   : 'text-white/80 hover:text-white'
@@ -297,9 +297,13 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
                         <div className="flex items-center space-x-1.5 text-xs">
                           <Phone className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                           <span className="text-slate-400 font-medium">Dahili Tel:</span>
-                          <span className="font-mono font-bold text-slate-900 bg-emerald-50 text-emerald-800 px-1.5 py-0.2 rounded border border-emerald-200/60">
-                            {staff.phone}
-                          </span>
+                          <a
+                            href={`tel:${staff.phone}`}
+                            className="font-mono font-bold text-slate-900 bg-emerald-50 hover:bg-emerald-100 active:scale-95 text-emerald-800 px-2 py-0.5 rounded border border-emerald-200/60 transition inline-flex items-center"
+                            title="Dahili numarayı ara"
+                          >
+                            <span>{staff.phone}</span>
+                          </a>
                         </div>
                       )}
                     </div>
@@ -386,23 +390,31 @@ export const AdvisorDirectoryView: React.FC<AdvisorDirectoryViewProps> = ({ init
                 </div>
 
                 <div className="pt-2 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
-                  <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                  <a
+                    href={`tel:${p.extension}`}
+                    className="bg-slate-50 hover:bg-emerald-50 active:scale-95 p-2.5 rounded-xl border border-slate-100 hover:border-emerald-200 transition group block"
+                    title="Dahili numarayı ara"
+                  >
+                    <span className="text-[10px] font-bold text-slate-400 group-hover:text-emerald-700 uppercase tracking-wider block">
                       Dahili No
                     </span>
-                    <span className="font-mono font-black text-sm text-emerald-700">
+                    <span className="font-mono font-black text-sm text-emerald-700 group-hover:underline">
                       {p.extension}
                     </span>
-                  </div>
+                  </a>
 
-                  <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                  <a
+                    href={`tel:${p.externalPhone.replace(/\s+/g, '')}`}
+                    className="bg-slate-50 hover:bg-blue-50 active:scale-95 p-2.5 rounded-xl border border-slate-100 hover:border-blue-200 transition group block"
+                    title="Harici santral hattını ara"
+                  >
+                    <span className="text-[10px] font-bold text-slate-400 group-hover:text-blue-700 uppercase tracking-wider block">
                       Harici Hat
                     </span>
-                    <span className="font-mono font-bold text-xs text-slate-800 truncate block">
+                    <span className="font-mono font-bold text-xs text-slate-800 group-hover:text-blue-800 group-hover:underline truncate block">
                       {p.externalPhone}
                     </span>
-                  </div>
+                  </a>
                 </div>
 
                 {p.email && (

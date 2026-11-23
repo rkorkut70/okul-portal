@@ -57,33 +57,34 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAuth, activeTab: _activeTa
 
             {/* User Auth Info */}
             {isAuthenticated && user ? (
-              <div className="flex items-center space-x-2.5 bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-xl border border-white/20 transition">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shadow-xs flex-shrink-0">
+              <div className="flex items-center space-x-2 bg-white/10 hover:bg-white/15 px-2.5 sm:px-3 py-1.5 rounded-xl border border-white/20 transition">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shadow-xs flex-shrink-0">
                   {user.name.charAt(0)}
                 </div>
-                <div className="text-left">
-                  <div className="text-xs sm:text-sm font-bold text-white leading-tight">
-                    {user.title ? `${user.title} ${user.name}` : user.name}
+                <div className="text-left hidden xs:block sm:block">
+                  <div className="text-xs sm:text-sm font-bold text-white leading-tight truncate max-w-[110px] sm:max-w-none">
+                    {user.name}
                   </div>
                   <div className="text-[10px] text-slate-300 hidden sm:block">
-                    {user.department || 'Yabancı Diller Yüksekokulu'}
+                    {user.department || 'YDYO'}
                   </div>
                 </div>
                 <button
                   onClick={logout}
-                  className="p-1.5 rounded-lg text-slate-300 hover:text-rose-300 hover:bg-white/10 transition ml-1 cursor-pointer"
+                  className="p-1 rounded-lg text-slate-300 hover:text-rose-300 hover:bg-white/10 transition cursor-pointer"
                   title="Çıkış Yap"
                 >
-                  <LogOut className="w-4 h-4" />
+                  <LogOut className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </button>
               </div>
             ) : (
               <button
                 onClick={onOpenAuth}
-                className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-md transition active:scale-95 cursor-pointer"
+                className="inline-flex items-center space-x-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-md transition active:scale-95 cursor-pointer whitespace-nowrap"
               >
-                <UserIcon className="w-4 h-4" />
-                <span>Giriş Yap (@adu.edu.tr)</span>
+                <UserIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Giriş</span>
+                <span className="hidden sm:inline"> Yap (@adu.edu.tr)</span>
               </button>
             )}
 

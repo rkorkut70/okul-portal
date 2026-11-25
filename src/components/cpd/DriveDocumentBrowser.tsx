@@ -20,7 +20,6 @@ import {
   X,
   FileCheck,
   FolderTree,
-  Maximize2,
   ChevronRight,
   ArrowLeft,
   Home,
@@ -230,16 +229,6 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
             <span>Canlı Drive Penceresi</span>
           </button>
         </div>
-
-        <a
-          href={GOOGLE_DRIVE_FOLDER_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs font-bold text-blue-700 hover:underline inline-flex items-center space-x-1 self-end sm:self-auto cursor-pointer"
-        >
-          <span>Yeni Sekmede Drive</span>
-          <Maximize2 className="w-3.5 h-3.5" />
-        </a>
       </div>
 
       {/* MODE 1 (DEFAULT): NATIVE MOBILE-FRIENDLY WEB FOLDER EXPLORER */}
@@ -414,15 +403,6 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                 <span>
                   <strong>{currentDirs.length}</strong> klasör, <strong>{currentFiles.length}</strong> dosya
                 </span>
-                <a
-                  href={GOOGLE_DRIVE_FOLDER_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] font-bold text-blue-700 hover:underline inline-flex items-center space-x-1"
-                >
-                  <span>Dosyayı İndir / Aç (Drive)</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
               </div>
 
               {/* Folders & Files List */}
@@ -484,16 +464,9 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                         </div>
                       </div>
 
-                      <a
-                        href={GOOGLE_DRIVE_FOLDER_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-100 text-slate-700 hover:text-blue-800 text-[11px] font-bold inline-flex items-center space-x-1 flex-shrink-0 transition active:scale-95"
-                        title="Dosyayı Google Drive üzerinden aç"
-                      >
-                        <span className="hidden sm:inline">Drive&apos;da Aç</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
+                      <span className="text-[10px] font-bold uppercase px-2 py-1 rounded-lg bg-slate-100 text-slate-500 flex-shrink-0">
+                        {file.e || 'DOSYA'}
+                      </span>
                     </div>
                   ))}
                 </div>

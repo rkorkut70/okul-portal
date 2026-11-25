@@ -176,50 +176,60 @@ def sync_school_data():
     ws_cpd = wb['CPD Faaliyetleri'] if 'CPD Faaliyetleri' in wb.sheetnames else None
     cpd_activities = []
     if ws_cpd:
-        valid_categories = {
-            'Eğitim & Atölye',
-            'Seminer & Konferans',
-            'Akreditasyon',
-            'Toplantı & Karar',
-            'Yayın & Rehber',
-        }
         for idx, row in enumerate(list(ws_cpd.iter_rows(values_only=True))[1:], start=1):
-            if not row or not row[1]:
+            if not row or len(row) < 8 or not row[7]:
                 continue
-            raw_status = str(row[4]).strip().lower() if len(row) > 4 and row[4] else "yaklaşan"
+            academic_year = str(row[0]).strip() if row[0] else "2026-2027"
+            raw_status = str(row[1]).strip().lower() if row[1] else "planlandı"
             status = "completed" if any(k in raw_status for k in ["tamam", "completed", "bitti"]) else "upcoming"
-
-            raw_cat = str(row[3]).strip() if len(row) > 3 and row[3] else "Eğitim & Atölye"
-            category = raw_cat if raw_cat in valid_categories else "Eğitim & Atölye"
+            sort_date = str(row[2]).strip() if row[2] else ""
+            date_str = str(row[3]).strip() if row[3] else ""
+            category = str(row[4]).strip() if row[4] else "Atölye"
+            scope = str(row[5]).strip() if row[5] else "Kurum İçi"
+            location = str(row[6]).strip() if row[6] else ""
+            title = str(row[7]).strip()
+            trainers = str(row[8]).strip() if len(row) > 8 and row[8] else ""
 
             participant_count = None
-            if len(row) > 5 and row[5] is not None and str(row[5]).strip() != "":
+            if len(row) > 9 and row[9] is not None and str(row[9]).strip() != "":
                 try:
-                    val = int(float(str(row[5]).strip()))
+                    val = int(float(str(row[9]).strip()))
                     if val > 0:
                         participant_count = val
                 except ValueError:
                     participant_count = None
 
+            participants = str(row[10]).strip() if len(row) > 10 and row[10] else ""
+            doc_title = str(row[11]).strip() if len(row) > 11 and row[11] else ""
+            doc_url = str(row[12]).strip() if len(row) > 12 and row[12] else ""
+            summary = str(row[13]).strip() if len(row) > 13 and row[13] else ""
+
             item = {
-                "id": str(row[0]).strip() if row[0] else f"cpd-act-{idx}",
+                "id": f"cpd-{academic_year}-{idx}",
                 "unitId": "cpd",
-                "title": str(row[1]).strip(),
-                "date": str(row[2]).strip() if len(row) > 2 and row[2] else "",
+                "academicYear": academic_year,
+                "title": title,
+                "date": date_str,
+                "sortDate": sort_date,
                 "category": category,
-                "summary": str(row[6]).strip() if len(row) > 6 and row[6] else "",
-                "targetAudience": str(row[7]).strip() if len(row) > 7 and row[7] else "Tüm Öğretim Elemanları",
+                "scope": scope,
+                "summary": summary,
+                "targetAudience": "Tüm Öğretim Elemanları" if scope == "Kurum İçi" else (participants or "Öğretim Elemanları"),
                 "status": status,
-                "organizer": str(row[8]).strip() if len(row) > 8 and row[8] else "Sürekli Mesleki Gelişim Birimi (CPD)",
+                "organizer": trainers if trainers else "Sürekli Mesleki Gelişim Birimi (CPD)",
             }
+            if trainers:
+                item["trainers"] = trainers
             if participant_count is not None:
                 item["participantCount"] = participant_count
-            if len(row) > 9 and row[9] and str(row[9]).strip():
-                item["location"] = str(row[9]).strip()
-            if len(row) > 10 and row[10] and str(row[10]).strip():
-                item["driveDocTitle"] = str(row[10]).strip()
-            if len(row) > 11 and row[11] and str(row[11]).strip():
-                item["driveDocUrl"] = str(row[11]).strip()
+            if participants:
+                item["participants"] = participants
+            if location:
+                item["location"] = location
+            if doc_title:
+                item["driveDocTitle"] = doc_title
+            if doc_url:
+                item["driveDocUrl"] = doc_url
 
             cpd_activities.append(item)
 

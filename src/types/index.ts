@@ -43,12 +43,17 @@ export interface DriveDocument {
 export interface ActivityItem {
   id: string;
   unitId: string;
+  academicYear?: string;
   title: string;
   date: string;
-  category: 'Eğitim & Atölye' | 'Seminer & Konferans' | 'Akreditasyon' | 'Toplantı & Karar' | 'Yayın & Rehber';
+  sortDate?: string;
+  category: string;
+  scope?: 'Kurum İçi' | 'Kurum Dışı' | string;
   summary: string;
   targetAudience: string;
   participantCount?: number;
+  participants?: string;
+  trainers?: string;
   status: 'completed' | 'upcoming';
   driveDocUrl?: string;
   driveDocTitle?: string;

@@ -1794,56 +1794,38 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "category": "Konferans / Sempozyum",
     "scope": "Kurum Dışı",
     "summary": "Muğla Sıtkı Koçman Üniversitesi YDYO ev sahipliğinde düzenlenen Language and Fun Day etkinliğine kurum dışı katılım.",
-    "targetAudience": "Öğr. Gör. Dilek Ateş, Öğr. Gör. Burak Okşar",
+    "targetAudience": "Öğr. Gör. Dilek Ateş, Öğr. Gör. Burak Okşar, Öğr. Gör. Hayri Argunat, Öğr. Gör. İrem Gül Okşar",
     "status": "completed",
     "organizer": "MSKÜ YDYO",
     "trainers": "MSKÜ YDYO",
-    "participantCount": 2,
-    "participants": "Öğr. Gör. Dilek Ateş, Öğr. Gör. Burak Okşar",
+    "participantCount": 4,
+    "participants": "Öğr. Gör. Dilek Ateş, Öğr. Gör. Burak Okşar, Öğr. Gör. Hayri Argunat, Öğr. Gör. İrem Gül Okşar",
     "location": "Muğla Sıtkı Koçman Üniversitesi YDYO",
-    "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
+    "driveDocTitle": "Bireysel Katılım Raporları (4 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
     "id": "cpd-2025-2026-8",
     "unitId": "cpd",
     "academicYear": "2025-2026",
-    "title": "Unifest 2026",
-    "date": "2026 (Bahar)",
-    "sortDate": "2026-05-15",
-    "category": "Konferans / Sempozyum",
+    "title": "18. Türkiye YDYO Yöneticiler Toplantısı",
+    "date": "7–8 Mayıs 2026",
+    "sortDate": "2026-05-07",
+    "category": "Toplantı",
     "scope": "Kurum Dışı",
-    "summary": "Unifest 2026 etkinliği kapsamında mesleki gelişim faaliyeti bireysel katılımı.",
-    "targetAudience": "Öğr. Gör. Hasan Ulvi Evren",
+    "summary": "18. Türkiye Yabancı Diller Yüksekokulları Yöneticiler Toplantısı katılımı ve değerlendirme raporu.",
+    "targetAudience": "Öğr. Gör. Dr. Hasan Ulvi Evren",
     "status": "completed",
-    "organizer": "Sürekli Mesleki Gelişim Birimi (CPD)",
+    "organizer": "Akdeniz Üniversitesi YDYO (Ev Sahibi)",
+    "trainers": "Akdeniz Üniversitesi YDYO (Ev Sahibi)",
     "participantCount": 1,
-    "participants": "Öğr. Gör. Hasan Ulvi Evren",
-    "location": "Kurum Dışı",
+    "participants": "Öğr. Gör. Dr. Hasan Ulvi Evren",
+    "location": "Akdeniz Üniversitesi / Antalya",
     "driveDocTitle": "Bireysel Katılım Raporu (PDF)",
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
     "id": "cpd-2025-2026-9",
-    "unitId": "cpd",
-    "academicYear": "2025-2026",
-    "title": "18. YDYO Yöneticiler Toplantısı",
-    "date": "2026 (Bahar)",
-    "sortDate": "2026-05-01",
-    "category": "Toplantı",
-    "scope": "Kurum Dışı",
-    "summary": "18. Yabancı Diller Yüksekokulları Yöneticiler Toplantısı katılımı ve değerlendirme raporu.",
-    "targetAudience": "Öğr. Gör. Hasan Ulvi Evren",
-    "status": "completed",
-    "organizer": "Sürekli Mesleki Gelişim Birimi (CPD)",
-    "participantCount": 1,
-    "participants": "Öğr. Gör. Hasan Ulvi Evren",
-    "location": "Kurum Dışı",
-    "driveDocTitle": "Bireysel Katılım Raporu (PDF)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
-  },
-  {
-    "id": "cpd-2025-2026-10",
     "unitId": "cpd",
     "academicYear": "2025-2026",
     "title": "Empowering Teachers for Classroom Impact",
@@ -1860,6 +1842,26 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Bilge Sevim Soykut, Öğr. Gör. Dilek Ateş, Öğr. Gör. Hatice Kurt",
     "location": "Muğla Sıtkı Koçman Üniversitesi (AKM)",
     "driveDocTitle": "Bireysel Katılım Raporları (3 kişi)",
+    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+  },
+  {
+    "id": "cpd-2025-2026-10",
+    "unitId": "cpd",
+    "academicYear": "2025-2026",
+    "title": "UES UNIFEST 2026 – Future Fluent",
+    "date": "17–19 Nisan 2026",
+    "sortDate": "2026-04-17",
+    "category": "Konferans / Sempozyum",
+    "scope": "Kurum Dışı",
+    "summary": "UES (Unlimited Educational Services) tarafından Antalya’da düzenlenen Future Fluent eğitim konferansı katılımı.",
+    "targetAudience": "Öğr. Gör. Dr. Hasan Ulvi Evren",
+    "status": "completed",
+    "organizer": "Dr. Lou McLaughlin, Jamie Keddie (UES)",
+    "trainers": "Dr. Lou McLaughlin, Jamie Keddie (UES)",
+    "participantCount": 1,
+    "participants": "Öğr. Gör. Dr. Hasan Ulvi Evren",
+    "location": "Titanic Lara Hotel / Antalya",
+    "driveDocTitle": "Bireysel Katılım Raporu (PDF)",
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
@@ -1976,6 +1978,26 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "id": "cpd-2024-2025-17",
     "unitId": "cpd",
     "academicYear": "2024-2025",
+    "title": "Future-ready ELT: Differentiation and sustainability in English, German and French programs",
+    "date": "2–3 Mayıs 2025",
+    "sortDate": "2025-05-02",
+    "category": "Konferans / Sempozyum",
+    "scope": "Kurum Dışı",
+    "summary": "Farklılaştırılmış öğretim uygulamaları, arabuluculuk (mediation) becerisi ve sürdürülebilir dil eğitimi üzerine Uludağ Üniversitesi’nde düzenlenen sempozyum.",
+    "targetAudience": "Öğr. Gör. Özlem Madak",
+    "status": "completed",
+    "organizer": "Prof. Dr. Ayşegül Amanda Yeşilbursa, Lutka Kotarska, Prof. Dr. Esin Çağlayan",
+    "trainers": "Prof. Dr. Ayşegül Amanda Yeşilbursa, Lutka Kotarska, Prof. Dr. Esin Çağlayan",
+    "participantCount": 1,
+    "participants": "Öğr. Gör. Özlem Madak",
+    "location": "Uludağ Üniversitesi Merkez Kampüs / Bursa",
+    "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
+    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+  },
+  {
+    "id": "cpd-2024-2025-18",
+    "unitId": "cpd",
+    "academicYear": "2024-2025",
     "title": "Bridging Ideas, Building Solutions (UES Eğitim Hizmetleri)",
     "date": "25–27 Nisan 2025",
     "sortDate": "2025-04-25",
@@ -1993,7 +2015,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-18",
+    "id": "cpd-2024-2025-19",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Yapay Zekâ Tabanlı Dil Öğretimi ve Etkinlik Tasarımı Deneyimleri (Sharing Session)",
@@ -2011,7 +2033,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-19",
+    "id": "cpd-2024-2025-20",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Leadership in the AI Era – Practical & Transformative Tools for Administrative Teams",
@@ -2031,7 +2053,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-20",
+    "id": "cpd-2024-2025-21",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Sınav Hazırlamada ve Yazma Becerisinin Değerlendirilmesinde Yapay Zekâ Kullanımı (Use of AI for Exam Prep & Writing Assessment)",
@@ -2050,7 +2072,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-21",
+    "id": "cpd-2024-2025-22",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Designing Framework for Language Learning",
@@ -2070,7 +2092,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-22",
+    "id": "cpd-2024-2025-23",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Looking for Evidence of Learning & Cultivating Connections: Social Emotional Classroom Management",
@@ -2089,7 +2111,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-23",
+    "id": "cpd-2024-2025-24",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Biçimlendirici Değerlendirme ve Sonuç Odaklı Değerlendirme (Formative & Summative Assessment)",
@@ -2108,7 +2130,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-24",
+    "id": "cpd-2024-2025-25",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Syllabus Design in Practice (Oxford University Press)",
@@ -2128,7 +2150,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-25",
+    "id": "cpd-2024-2025-26",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "Ölçme ve Değerlendirmede Madde Analizi (Language Assessment and Item Analysis in Exams)",
@@ -2147,7 +2169,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-26",
+    "id": "cpd-2024-2025-27",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "15. Uluslararası Eğitimde Yeni Yönelimler Kongresi – Eğitimde Yapay Zekâ",
@@ -2167,7 +2189,26 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-27",
+    "id": "cpd-2024-2025-28",
+    "unitId": "cpd",
+    "academicYear": "2024-2025",
+    "title": "Etkili Program Tasarımı (Effective Program Design / CEFR Literacy & Mapping)",
+    "date": "6 Aralık 2024",
+    "sortDate": "2024-12-06",
+    "category": "Atölye",
+    "scope": "Kurum İçi",
+    "summary": "CEFR okuryazarlığı, program haritalama ve etkili program tasarımı üzerine düzenlenen kurum içi hizmet içi eğitim ve 30 sertifikalı atölye.",
+    "targetAudience": "Tüm Öğretim Elemanları",
+    "status": "completed",
+    "organizer": "Dr. Öğr. Üyesi Esin Çağlayan (İzmir Ekonomi Üniversitesi)",
+    "trainers": "Dr. Öğr. Üyesi Esin Çağlayan (İzmir Ekonomi Üniversitesi)",
+    "participantCount": 30,
+    "location": "YDYO Üst Kat Seminer Salonu",
+    "driveDocTitle": "CEFR Literacy and Mapping Seminer Raporu & 30 Sertifika (Drive Arşivi)",
+    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+  },
+  {
+    "id": "cpd-2024-2025-29",
     "unitId": "cpd",
     "academicYear": "2024-2025",
     "title": "3rd Symposium of Schools of Foreign Languages in the Aegean Region",
@@ -2176,37 +2217,18 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "category": "Konferans / Sempozyum",
     "scope": "Kurum Dışı",
     "summary": "Ege Bölgesi Yabancı Diller Yüksekokulları 3. Sempozyumu katılımı ve kurumsal paylaşım raporu.",
-    "targetAudience": "Öğr. Gör. Cansın Çalışkan, Öğr. Gör. Dilek Ateş",
+    "targetAudience": "Öğr. Gör. Cansın Çalışkan, Öğr. Gör. Dilek Ateş, Öğr. Gör. Özlem Dilaver",
     "status": "completed",
     "organizer": "Yaşar Üniversitesi YDYO",
     "trainers": "Yaşar Üniversitesi YDYO",
-    "participantCount": 2,
-    "participants": "Öğr. Gör. Cansın Çalışkan, Öğr. Gör. Dilek Ateş",
+    "participantCount": 3,
+    "participants": "Öğr. Gör. Cansın Çalışkan, Öğr. Gör. Dilek Ateş, Öğr. Gör. Özlem Dilaver",
     "location": "Yaşar Üniversitesi YDYO / İzmir",
-    "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
+    "driveDocTitle": "Bireysel Katılım Raporları (3 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2024-2025-28",
-    "unitId": "cpd",
-    "academicYear": "2024-2025",
-    "title": "Etkili Program Tasarımı (Effective Program Design)",
-    "date": "2024–2025 Güz",
-    "sortDate": "2024-10-01",
-    "category": "Atölye",
-    "scope": "Kurum İçi",
-    "summary": "2024–2025 akademik yılı 1. hizmet içi eğitim modülü kapsamında düzenlenen etkili program tasarımı atölyesi.",
-    "targetAudience": "Tüm Öğretim Elemanları",
-    "status": "completed",
-    "organizer": "CPD Birimi",
-    "trainers": "CPD Birimi",
-    "participantCount": 30,
-    "location": "YDYO",
-    "driveDocTitle": "30 Katılım Sertifikası (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
-  },
-  {
-    "id": "cpd-2023-2024-29",
+    "id": "cpd-2023-2024-30",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Atölye 5: Ders Gözlemi Eğitimi ve Mesleki Öğrenme Toplulukları",
@@ -2224,7 +2246,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-30",
+    "id": "cpd-2023-2024-31",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Atölye 4: Yabancı Dil Öğretiminde Teknoloji ve Yapay Zekâ Kullanımı",
@@ -2242,7 +2264,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-31",
+    "id": "cpd-2023-2024-32",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "FOCI XXV — Choosing Between In-house & Published Materials",
@@ -2262,7 +2284,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-32",
+    "id": "cpd-2023-2024-33",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Defining Institutional Effectiveness: Agility & Adaptability",
@@ -2282,7 +2304,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-33",
+    "id": "cpd-2023-2024-34",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Atölye 3: Yabancı Dil Öğretiminde Yapay Zekâ Kullanımı",
@@ -2300,7 +2322,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-34",
+    "id": "cpd-2023-2024-35",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Ders Gözlemi Aşamaları ve Süreç Takvimi Bilgilendirme Toplantısı",
@@ -2319,7 +2341,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-35",
+    "id": "cpd-2023-2024-36",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Sınıfta Yapay Zekâ ve Socrative Kullanımı (Meslektaş Paylaşımı)",
@@ -2337,7 +2359,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-36",
+    "id": "cpd-2023-2024-37",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Akran Gözlemi ve Geri Bildirim Sanatı (Peer Observation and the Art of Giving Feedback)",
@@ -2355,7 +2377,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-37",
+    "id": "cpd-2023-2024-38",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "(Re)Defining Institutional Effectiveness: AI in the Classroom",
@@ -2375,7 +2397,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-38",
+    "id": "cpd-2023-2024-39",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Sınıf İçi Öz Yansıtma Teknikleri (Self-Reflection Workshop)",
@@ -2393,7 +2415,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-39",
+    "id": "cpd-2023-2024-40",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "(Re)Defining Institutional Effectiveness: Testing & Assessment",
@@ -2413,7 +2435,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-40",
+    "id": "cpd-2023-2024-41",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "FOCI XXIV — Collaboration of Wits and Wires: AI in Curriculum Development",
@@ -2433,7 +2455,7 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
   },
   {
-    "id": "cpd-2023-2024-41",
+    "id": "cpd-2023-2024-42",
     "unitId": "cpd",
     "academicYear": "2023-2024",
     "title": "Erasmus+ Proje Yazma Eğitimi (1. ve 2. Aşama)",

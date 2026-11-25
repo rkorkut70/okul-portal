@@ -16,18 +16,17 @@ export const AppContent: React.FC = () => {
   const [selectedTool, setSelectedTool] = useState<string>('forms');
   const [isAuthOpen, setIsAuthOpen] = useState<boolean>(false);
 
-  // Persistent activities in localStorage (ensure official 2026-2027 workshops are included)
+  // Excel'den gelen resmi faaliyetler her zaman güncel tutulur; kullanıcının arayüzden eklediği özel kayıtlar v2 anahtarında saklanır
   const [activities, setActivities] = useState<ActivityItem[]>(() => {
-    const saved = localStorage.getItem('adu_portal_activities');
+    localStorage.removeItem('adu_portal_activities');
+    const saved = localStorage.getItem('adu_portal_activities_v2');
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          // Remove old mock/dummy activity items if previously stored in browser
-          const cleanSaved = parsed.filter((a: ActivityItem) => !['act-1', 'act-2', 'act-3', 'act-4', 'act-5'].includes(a.id));
-          const existingIds = new Set(cleanSaved.map((a: ActivityItem) => a.id));
-          const missing = CPD_ACTIVITIES.filter(a => !existingIds.has(a.id));
-          return [...missing, ...cleanSaved];
+        if (Array.isArray(parsed)) {
+          const excelIds = new Set(CPD_ACTIVITIES.map(a => a.id));
+          const customSaved = parsed.filter((a: ActivityItem) => !excelIds.has(a.id));
+          return [...customSaved, ...CPD_ACTIVITIES];
         }
       } catch {
         return CPD_ACTIVITIES;
@@ -40,7 +39,9 @@ export const AppContent: React.FC = () => {
   const [documents] = useState<DriveDocument[]>(CPD_DRIVE_DOCUMENTS);
 
   useEffect(() => {
-    localStorage.setItem('adu_portal_activities', JSON.stringify(activities));
+    const excelIds = new Set(CPD_ACTIVITIES.map(a => a.id));
+    const customOnly = activities.filter(a => !excelIds.has(a.id));
+    localStorage.setItem('adu_portal_activities_v2', JSON.stringify(customOnly));
   }, [activities]);
 
   const handleAddActivity = (newActivity: ActivityItem) => {

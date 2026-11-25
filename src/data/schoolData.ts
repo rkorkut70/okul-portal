@@ -1,6 +1,8 @@
 // Bu dosya docs/okul_bilgi.xlsx dosyasından scripts/sync_school_data.py ile otomatik üretilmiştir.
 // Manuel düzenleme yapmayınız.
 
+import type { ActivityItem } from '../types';
+
 export interface AcademicStaff {
   id: number;
   title: string;
@@ -1670,5 +1672,64 @@ export const PHONE_DIRECTORY: PhoneDirectoryItem[] = [
     "extension": "4650",
     "externalPhone": "0 256 220 4650",
     "email": "ulviye.berak@adu.edu.tr"
+  }
+];
+
+export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
+  {
+    "id": "cpd-ws-1",
+    "unitId": "cpd",
+    "title": "From Passive Screens to Active Minds: Designing Interactive Language Tasks with AI, H5P, and Canva",
+    "date": "11 Aralık 2026, Cuma (13:30 - 15:30)",
+    "category": "Eğitim & Atölye",
+    "summary": "Yapay zekâ ve etkileşimli dijital araçlarla (AI, H5P, Canva) öğrenci merkezli materyal tasarımı. 2026–2027 İhtiyaç Analizi Anketi verilerine (%48,4 dijital materyal, %45,2 yapay zekâ) dayalı 1. öncelikli uygulamalı atölye.",
+    "targetAudience": "Tüm Yabancı Dil Öğretim Elemanları (İngilizce, Almanca, Fransızca)",
+    "status": "upcoming",
+    "organizer": "Sürekli Mesleki Gelişim Birimi (CPD) & Yayınevi İş Birliği",
+    "location": "YDYO Seminer / Toplantı Salonu (Uygulamalı 2 Seans • 2x45 dk)",
+    "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
+  },
+  {
+    "id": "cpd-ws-2",
+    "unitId": "cpd",
+    "title": "Smart & Instant Feedback: Automated Feedback Tools for Writing & Speaking",
+    "date": "26 Şubat 2027, Cuma (13:30 - 15:30)",
+    "category": "Eğitim & Atölye",
+    "summary": "Yapay zekâ destekli otomatik geri bildirim araçları ile yazma (Brisk Teaching, Cambridge Write & Improve) ve konuşma (ELSA Speech Analyzer, Speakable, Yoodli, ChatGPT/Gemini Voice) becerilerinde anında kişiselleştirilmiş dönüt uygulamaları.",
+    "targetAudience": "Tüm Yabancı Dil Öğretim Elemanları (İngilizce, Almanca, Fransızca)",
+    "status": "upcoming",
+    "organizer": "Sürekli Mesleki Gelişim Birimi (CPD) & Yayınevi İş Birliği",
+    "location": "YDYO Seminer / Toplantı Salonu (Uygulamalı 2 Seans • 2x45 dk)",
+    "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
+  },
+  {
+    "id": "cpd-ws-3",
+    "unitId": "cpd",
+    "title": "Activating the Quiet Classroom: Task-Based Learning (TBL) & Dynamic Pair/Group Rotations",
+    "date": "26 Mart 2027, Cuma (13:30 - 15:30)",
+    "category": "Eğitim & Atölye",
+    "summary": "Çekingen öğrencileri aktifleştirme, görev temelli öğrenme (TBL) ve dinamik grup/eşli çalışma kurgusu. İhtiyaç analizi (%41,9 aktif öğrenme, %35,5 TBL) ve eşli ders gözlemi raporlarına dayalı 3. öncelikli atölye.",
+    "targetAudience": "Tüm Yabancı Dil Öğretim Elemanları (İngilizce, Almanca, Fransızca)",
+    "status": "upcoming",
+    "organizer": "Sürekli Mesleki Gelişim Birimi (CPD) & Yayınevi İş Birliği",
+    "location": "YDYO Seminer / Toplantı Salonu (Uygulamalı 2 Seans • 2x45 dk)",
+    "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
+  },
+  {
+    "id": "cpd-ws-4",
+    "unitId": "cpd",
+    "title": "Crystal-Clear Setups & Smart Feedback: Mastering ICQs, CCQs, and Peer Correction Without Killing Fluency",
+    "date": "07 Mayıs 2027, Cuma (13:30 - 15:30)",
+    "category": "Eğitim & Atölye",
+    "summary": "Yönerge netliği (ICQ/CCQ), kontrol listeleri ile süreç odaklı akran geri bildirimi ve gecikmeli tahta dönütü ile akıcılığı bozmadan hata düzeltme teknikleri. Ders gözlem raporlarındaki pedagojik ihtiyaçlara yönelik 4. öncelikli atölye.",
+    "targetAudience": "Tüm Yabancı Dil Öğretim Elemanları (İngilizce, Almanca, Fransızca)",
+    "status": "upcoming",
+    "organizer": "Sürekli Mesleki Gelişim Birimi (CPD) & Yayınevi İş Birliği",
+    "location": "YDYO Seminer / Toplantı Salonu (Uygulamalı 2 Seans • 2x45 dk)",
+    "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
   }
 ];

@@ -79,7 +79,7 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
             <Users className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-xl font-extrabold text-slate-900">{totalParticipants}+</div>
+            <div className="text-xl font-extrabold text-slate-900">{totalParticipants}</div>
             <div className="text-[11px] text-slate-500 font-medium">Toplam Katılımcı</div>
           </div>
         </div>

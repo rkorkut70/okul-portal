@@ -1,319 +1,492 @@
 import React, { useState } from 'react';
-import { GRADE_SCALE_STANDARD } from '../../data/mockData';
-import { 
-  Calculator, 
-  Sparkles, 
-  CheckCircle2, 
-  AlertTriangle, 
-  HelpCircle,
-  RotateCcw
+import {
+  Calculator,
+  CheckCircle2,
+  AlertTriangle,
+  RotateCcw,
+  BookOpen,
+  Clock,
+  Award,
+  Info
 } from 'lucide-react';
 
+type LangKey = 'en' | 'de' | 'fr';
+type LevelKey = '4A' | '4B';
+type ProgramType = 'lisans' | 'onlisans';
+
+interface CourseDistribution {
+  name: string;
+  hours: number;
+}
+
+interface ExamComponent {
+  key: 'midterm' | 'quiz' | 'project' | 'online';
+  label: string;
+  count: number;
+  weight: number;
+}
+
+interface LevelConfig {
+  cefr: string;
+  totalHours: number;
+  courses: CourseDistribution[];
+  components: ExamComponent[];
+  finalWeight: number;
+}
+
+interface LanguageConfig {
+  label: string;
+  flag: string;
+  projectDesc: string;
+  levels: Record<LevelKey, LevelConfig>;
+}
+
+const PREP_SYSTEM: Record<LangKey, LanguageConfig> = {
+  en: {
+    label: 'İngilizce',
+    flag: '🇬🇧',
+    projectDesc: 'Derse katılım performansınız ve verilen ödevleri yerine getirme performansınız öğretim elemanları tarafından notlandırılır.',
+    levels: {
+      '4A': {
+        cefr: 'A2 → B1+ (Başlangıç)',
+        totalHours: 26,
+        courses: [
+          { name: 'Temel İngilizce (Main Course)', hours: 16 },
+          { name: 'Yazma (Writing)', hours: 6 },
+          { name: 'Konuşma (Speaking)', hours: 4 },
+        ],
+        components: [
+          { key: 'midterm', label: 'Ara Sınav', count: 6, weight: 30 },
+          { key: 'quiz', label: 'Quiz (Kısa Sınav)', count: 6, weight: 18 },
+          { key: 'project', label: 'Proje', count: 2, weight: 4 },
+          { key: 'online', label: 'Online Ödev', count: 2, weight: 8 },
+        ],
+        finalWeight: 40,
+      },
+      '4B': {
+        cefr: 'B1 → B1+ (Alt-Orta)',
+        totalHours: 20,
+        courses: [
+          { name: 'Temel İngilizce (Main Course)', hours: 11 },
+          { name: 'Yazma (Writing)', hours: 6 },
+          { name: 'Konuşma (Speaking)', hours: 3 },
+        ],
+        components: [
+          { key: 'midterm', label: 'Ara Sınav', count: 4, weight: 28 },
+          { key: 'quiz', label: 'Quiz (Kısa Sınav)', count: 4, weight: 16 },
+          { key: 'project', label: 'Proje', count: 2, weight: 6 },
+          { key: 'online', label: 'Online Ödev', count: 2, weight: 10 },
+        ],
+        finalWeight: 40,
+      },
+    },
+  },
+  de: {
+    label: 'Almanca',
+    flag: '🇩🇪',
+    projectDesc: 'Hazırlık eğitimi boyunca gerçekleştireceğiniz Sunum ve Sınıf İçi Performans notlarınızın ortalaması proje notu olarak kaydedilir.',
+    levels: {
+      '4A': {
+        cefr: 'A1 → B1 (Başlangıç)',
+        totalHours: 26,
+        courses: [
+          { name: 'Temel Almanca (Grundkenntnisse)', hours: 26 },
+        ],
+        components: [
+          { key: 'midterm', label: 'Ara Sınav', count: 6, weight: 36 },
+          { key: 'quiz', label: 'Quiz (Kısa Sınav)', count: 6, weight: 18 },
+          { key: 'project', label: 'Proje', count: 2, weight: 6 },
+        ],
+        finalWeight: 40,
+      },
+      '4B': {
+        cefr: 'A2 → B1 (Alt-Orta)',
+        totalHours: 20,
+        courses: [
+          { name: 'Temel Almanca (Grundkenntnisse)', hours: 20 },
+        ],
+        components: [
+          { key: 'midterm', label: 'Ara Sınav', count: 4, weight: 36 },
+          { key: 'quiz', label: 'Quiz (Kısa Sınav)', count: 4, weight: 16 },
+          { key: 'project', label: 'Proje', count: 2, weight: 8 },
+        ],
+        finalWeight: 40,
+      },
+    },
+  },
+  fr: {
+    label: 'Fransızca',
+    flag: '🇫🇷',
+    projectDesc: 'Hazırlık eğitimi boyunca Sınıf İçi Performans notlarınızın ve Fiil Çekim Sınavlarının ortalaması proje notu olarak kaydedilir.',
+    levels: {
+      '4A': {
+        cefr: 'A1 → B1 (Başlangıç)',
+        totalHours: 26,
+        courses: [
+          { name: 'Temel Fransızca (Méthode)', hours: 18 },
+          { name: 'Dilbilgisi (Grammaire)', hours: 4 },
+          { name: 'Okuma & Yazma (Comp. & Expr. Écrite)', hours: 2 },
+          { name: 'Konuşma (Expression Orale)', hours: 2 },
+        ],
+        components: [
+          { key: 'midterm', label: 'Ara Sınav', count: 6, weight: 36 },
+          { key: 'quiz', label: 'Quiz (Kısa Sınav)', count: 6, weight: 18 },
+          { key: 'project', label: 'Proje', count: 2, weight: 6 },
+        ],
+        finalWeight: 40,
+      },
+      '4B': {
+        cefr: 'A2 → B1 (Alt-Orta)',
+        totalHours: 20,
+        courses: [
+          { name: 'Temel Fransızca (Méthode)', hours: 12 },
+          { name: 'Dilbilgisi (Grammaire)', hours: 4 },
+          { name: 'Okuma & Yazma (Comp. & Expr. Écrite)', hours: 2 },
+          { name: 'Konuşma (Expression Orale)', hours: 2 },
+        ],
+        components: [
+          { key: 'midterm', label: 'Ara Sınav', count: 4, weight: 32 },
+          { key: 'quiz', label: 'Quiz (Kısa Sınav)', count: 4, weight: 16 },
+          { key: 'project', label: 'Proje', count: 2, weight: 12 },
+        ],
+        finalWeight: 40,
+      },
+    },
+  },
+};
+
 export const GradeCalculator: React.FC = () => {
-  const [midtermScore, setMidtermScore] = useState<number>(65);
-  const [midtermWeight, setMidtermWeight] = useState<number>(40);
+  const [lang, setLang] = useState<LangKey>('en');
+  const [level, setLevel] = useState<LevelKey>('4A');
+  const [programType, setProgramType] = useState<ProgramType>('lisans');
 
+  const [scores, setScores] = useState<Record<'midterm' | 'quiz' | 'project' | 'online', number>>({
+    midterm: 70,
+    quiz: 75,
+    project: 80,
+    online: 85,
+  });
   const [finalScore, setFinalScore] = useState<number>(70);
-  const [finalWeight, setFinalWeight] = useState<number>(60);
 
-  const [hasQuiz, setHasQuiz] = useState<boolean>(false);
-  const [quizScore, setQuizScore] = useState<number>(80);
-  const [quizWeight, setQuizWeight] = useState<number>(10);
+  const langConfig = PREP_SYSTEM[lang];
+  const levelConfig = langConfig.levels[level];
+  const passThreshold = programType === 'lisans' ? 70 : 50;
+  const finalThreshold = 50; // Öğrenci El Kitabı: Final en az 50 olmalı
 
-  const [finalThreshold] = useState<number>(50); // ADÜ Final Barajı
+  // Yıl içi katkı hesaplama
+  const inYearContribution = levelConfig.components.reduce((sum, comp) => {
+    const val = scores[comp.key] ?? 0;
+    return sum + val * (comp.weight / 100);
+  }, 0);
 
-  // Calculate actual weights sum
-  const effectiveMidtermWeight = hasQuiz ? midtermWeight - quizWeight : midtermWeight;
-  
-  // Total weighted average
-  let totalScore = 0;
-  if (hasQuiz) {
-    totalScore = (midtermScore * (effectiveMidtermWeight / 100)) + (quizScore * (quizWeight / 100)) + (finalScore * (finalWeight / 100));
-  } else {
-    totalScore = (midtermScore * (midtermWeight / 100)) + (finalScore * (finalWeight / 100));
-  }
-  totalScore = Math.round(totalScore * 10) / 10;
+  const finalContribution = finalScore * (levelConfig.finalWeight / 100);
+  const totalScore = Math.round((inYearContribution + finalContribution) * 10) / 10;
 
-  // Determine letter grade
-  const finalPassedBaraj = finalScore >= finalThreshold;
-  let calculatedGrade = GRADE_SCALE_STANDARD.find(g => totalScore >= g.minScore) || GRADE_SCALE_STANDARD[GRADE_SCALE_STANDARD.length - 1];
-  
-  if (!finalPassedBaraj && totalScore >= 50) {
-    // Failed due to final threshold baraj
-    calculatedGrade = {
-      letter: 'FF',
-      gpa: 0.00,
-      minScore: 0,
-      status: 'Final Barajı Altında (Kaldı)',
-      color: 'text-rose-700 bg-rose-50 border-rose-200'
-    };
-  }
+  const passedFinalBaraj = finalScore >= finalThreshold;
+  const passedOverall = passedFinalBaraj && totalScore >= passThreshold;
 
-  // Simulator: Needed final score for target grade
-  const [targetLetter, setTargetLetter] = useState<string>('CB');
-  const targetObj = GRADE_SCALE_STANDARD.find(g => g.letter === targetLetter);
-  const targetMin = targetObj ? targetObj.minScore : 75;
-
-  let neededFinal = 0;
-  if (hasQuiz) {
-    const currentBase = (midtermScore * (effectiveMidtermWeight / 100)) + (quizScore * (quizWeight / 100));
-    neededFinal = Math.ceil((targetMin - currentBase) / (finalWeight / 100));
-  } else {
-    const currentBase = midtermScore * (midtermWeight / 100);
-    neededFinal = Math.ceil((targetMin - currentBase) / (finalWeight / 100));
-  }
-  if (neededFinal < finalThreshold) neededFinal = finalThreshold;
+  // Hedef geçme notu için gereken minimum final puanı
+  const rawNeededFinal = Math.ceil((passThreshold - inYearContribution) / (levelConfig.finalWeight / 100));
+  const neededFinal = Math.max(finalThreshold, rawNeededFinal);
 
   const handleReset = () => {
-    setMidtermScore(65);
-    setMidtermWeight(40);
+    setScores({ midterm: 70, quiz: 75, project: 80, online: 85 });
     setFinalScore(70);
-    setFinalWeight(60);
-    setHasQuiz(false);
   };
 
   return (
     <div className="space-y-6">
 
       {/* Header */}
-      <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-white p-4 sm:p-5 rounded-3xl border border-slate-200/80 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
+          <div className="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center font-bold flex-shrink-0">
             <Calculator className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="font-bold text-base text-slate-900">ADÜ Not & Harf Notu Hesaplama Aracı</h3>
-            <p className="text-xs text-slate-500">
-              Yarıyıl içi vize, ödev ve final oranlarına göre bağıl ve standart başarı notu simülatörü.
+            <div className="flex items-center space-x-2">
+              <h3 className="font-black text-base sm:text-lg text-slate-900">
+                Hazırlık Not Hesaplama & Kur Sistemi
+              </h3>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                2026–2027 El Kitabı
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 mt-0.5">
+              İngilizce, Almanca ve Fransızca 4A/4B kurlarına göre resmi sınav sayıları, ağırlıklar ve başarı simülatörü.
             </p>
           </div>
         </div>
         <button
           onClick={handleReset}
-          className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 self-start sm:self-auto cursor-pointer"
+          className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 active:scale-95 self-start sm:self-auto cursor-pointer transition"
         >
           <RotateCcw className="w-3.5 h-3.5" />
-          <span>Sıfırla</span>
+          <span>Puanları Sıfırla</span>
         </button>
       </div>
 
+      {/* Selector Bar: Language, Kur (4A/4B), Program Type */}
+      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs grid grid-cols-1 md:grid-cols-3 gap-3">
+        {/* Dil Seçimi */}
+        <div className="space-y-1.5">
+          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+            Yabancı Dil
+          </label>
+          <div className="grid grid-cols-3 gap-1 p-1 bg-slate-100 rounded-xl">
+            {(['en', 'de', 'fr'] as LangKey[]).map((k) => (
+              <button
+                key={k}
+                onClick={() => setLang(k)}
+                className={`py-2 px-2 rounded-lg text-xs font-bold transition cursor-pointer active:scale-95 flex items-center justify-center space-x-1 ${
+                  lang === k
+                    ? 'bg-white text-slate-900 shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <span>{PREP_SYSTEM[k].flag}</span>
+                <span>{PREP_SYSTEM[k].label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Kur Seçimi */}
+        <div className="space-y-1.5">
+          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+            Kur Seviyesi
+          </label>
+          <div className="grid grid-cols-2 gap-1 p-1 bg-slate-100 rounded-xl">
+            {(['4A', '4B'] as LevelKey[]).map((lv) => (
+              <button
+                key={lv}
+                onClick={() => setLevel(lv)}
+                className={`py-2 px-3 rounded-lg text-xs font-bold transition cursor-pointer active:scale-95 ${
+                  level === lv
+                    ? 'bg-blue-900 text-white shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                {lv} Kuru ({langConfig.levels[lv].totalHours} Saat)
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Program Türü */}
+        <div className="space-y-1.5">
+          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+            Program Başarı Barajı
+          </label>
+          <div className="grid grid-cols-2 gap-1 p-1 bg-slate-100 rounded-xl">
+            <button
+              onClick={() => setProgramType('lisans')}
+              className={`py-2 px-2 rounded-lg text-xs font-bold transition cursor-pointer active:scale-95 ${
+                programType === 'lisans'
+                  ? 'bg-emerald-700 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Lisans (Min. 70)
+            </button>
+            <button
+              onClick={() => setProgramType('onlisans')}
+              className={`py-2 px-2 rounded-lg text-xs font-bold transition cursor-pointer active:scale-95 ${
+                programType === 'onlisans'
+                  ? 'bg-emerald-700 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              Ön-Lisans (Min. 50)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Grid: Inputs + Result */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Inputs Column (2 cols on large) */}
-        <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-5">
-          
-          <h4 className="font-bold text-xs uppercase tracking-wider text-slate-400">
-            Sınav ve Ağırlık Bilgileri
-          </h4>
+        <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+          <div className="flex items-center justify-between">
+            <h4 className="font-bold text-xs uppercase tracking-wider text-slate-500">
+              {langConfig.flag} {langConfig.label} • {level} Kuru Sınav Ortalamaları
+            </h4>
+            <span className="text-[11px] font-semibold text-blue-800 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+              Yıl İçi %60 + Final %40
+            </span>
+          </div>
 
-          {/* Vize Input */}
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/80 space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-800">Ara Sınav (Vize) Notu</span>
-              <span className="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                Ağırlık: %{hasQuiz ? effectiveMidtermWeight : midtermWeight}
-              </span>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="block text-[11px] text-slate-500 mb-1">Puan (0 - 100)</label>
-                <input
-                  type="number"
-                  min={0}
-                  max={100}
-                  value={midtermScore}
-                  onChange={(e) => setMidtermScore(Math.min(100, Math.max(0, Number(e.target.value))))}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm font-bold text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </div>
-              <div>
-                <label className="block text-[11px] text-slate-500 mb-1">Vize Ağırlığı (%)</label>
-                <input
-                  type="number"
-                  min={10}
-                  max={90}
-                  value={midtermWeight}
-                  onChange={(e) => {
-                    const val = Number(e.target.value);
-                    setMidtermWeight(val);
-                    setFinalWeight(100 - val);
-                  }}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm font-bold text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </div>
-            </div>
+          {/* Dynamic Exam Components */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {levelConfig.components.map((comp) => {
+              const val = scores[comp.key] ?? 0;
+              return (
+                <div key={comp.key} className="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-slate-900 block">
+                        {comp.count} {comp.label}
+                      </span>
+                      <span className="text-[10px] text-slate-500">
+                        Toplam Etki: <strong>%{comp.weight}</strong> (Adet: %{(comp.weight / comp.count).toFixed(1).replace('.0', '')})
+                      </span>
+                    </div>
+                    <span className="text-sm font-black font-mono text-blue-800 bg-white px-2 py-0.5 rounded-lg border border-slate-200">
+                      {val}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    value={val}
+                    onChange={(e) => setScores(prev => ({ ...prev, [comp.key]: Number(e.target.value) }))}
+                    className="w-full accent-blue-800 cursor-pointer"
+                  />
+                </div>
+              );
+            })}
           </div>
 
           {/* Final Input */}
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/80 space-y-3">
+          <div className="bg-amber-50/50 p-4 rounded-xl border border-amber-200/80 space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-800">Genel Sınav (Final / Büt) Notu</span>
-              <span className="text-xs font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">
-                Ağırlık: %{finalWeight}
-              </span>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-[11px] text-slate-500 mb-1">Puan (0 - 100)</label>
-                <input
-                  type="number"
-                  min={0}
-                  max={100}
-                  value={finalScore}
-                  onChange={(e) => setFinalScore(Math.min(100, Math.max(0, Number(e.target.value))))}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm font-bold text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </div>
-              <div>
-                <label className="block text-[11px] text-slate-500 mb-1">Final Ağırlığı (%)</label>
-                <input
-                  type="number"
-                  min={10}
-                  max={90}
-                  value={finalWeight}
-                  onChange={(e) => {
-                    const val = Number(e.target.value);
-                    setFinalWeight(val);
-                    setMidtermWeight(100 - val);
-                  }}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-300 text-sm font-bold text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </div>
-            </div>
-
-            {finalScore < finalThreshold && (
-              <div className="p-2.5 bg-rose-50 rounded-lg border border-rose-200 text-rose-800 text-xs flex items-center space-x-2">
-                <AlertTriangle className="w-4 h-4 flex-shrink-0" />
-                <span>ADÜ Yönetmeliği gereği final sınavından en az <strong>50</strong> alma şartı bulunmaktadır.</span>
-              </div>
-            )}
-          </div>
-
-          {/* Optional Quiz/Homework Checkbox */}
-          <div className="border border-slate-200 rounded-xl p-3.5 space-y-3">
-            <div className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                id="quizCheck"
-                checked={hasQuiz}
-                onChange={(e) => setHasQuiz(e.target.checked)}
-                className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
-              />
-              <label htmlFor="quizCheck" className="text-xs font-semibold text-slate-800 cursor-pointer">
-                Kısa Sınav (Quiz) / Dönem Ödevi / Proje Ekle
-              </label>
-            </div>
-
-            {hasQuiz && (
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <div>
-                  <label className="block text-[11px] text-slate-500 mb-1">Ödev/Quiz Puanı</label>
-                  <input
-                    type="number"
-                    min={0}
-                    max={100}
-                    value={quizScore}
-                    onChange={(e) => setQuizScore(Math.min(100, Math.max(0, Number(e.target.value))))}
-                    className="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[11px] text-slate-500 mb-1">Ödev Payı (% Vizeden Düşülür)</label>
-                  <input
-                    type="number"
-                    min={5}
-                    max={30}
-                    value={quizWeight}
-                    onChange={(e) => setQuizWeight(Number(e.target.value))}
-                    className="w-full px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold bg-white"
-                  />
-                </div>
-              </div>
-            )}
-          </div>
-
-        </div>
-
-        {/* Result & Target Simulator Column */}
-        <div className="space-y-4">
-          
-          {/* Main Grade Result Card */}
-          <div className="bg-[#0f2942] rounded-2xl p-5 text-white shadow-lg space-y-4 text-center">
-            <span className="text-[11px] uppercase tracking-wider font-bold text-slate-300">
-              Ağırlıklı Başarı Ortalaması
-            </span>
-            
-            <div className="text-5xl font-black text-amber-400 tracking-tight">
-              {totalScore}
-            </div>
-
-            <div className="py-3 px-4 rounded-xl bg-white/10 backdrop-blur-xs border border-white/20 flex items-center justify-around">
-              <div>
-                <div className="text-[10px] text-slate-300 uppercase">Harf Notu</div>
-                <div className="text-2xl font-black text-white">{calculatedGrade.letter}</div>
-              </div>
-              <div className="h-8 w-[1px] bg-white/20" />
-              <div>
-                <div className="text-[10px] text-slate-300 uppercase">4'lük Katsayı</div>
-                <div className="text-2xl font-black text-white">{calculatedGrade.gpa.toFixed(2)}</div>
-              </div>
-            </div>
-
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-white">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{calculatedGrade.status}</span>
-            </div>
-          </div>
-
-          {/* Final Simulator */}
-          <div className="bg-amber-50/70 rounded-2xl p-4 border border-amber-200/80 space-y-3">
-            <div className="flex items-center space-x-2 text-amber-900 font-bold text-xs">
-              <Sparkles className="w-4 h-4 text-amber-600" />
-              <span>Hedef Harf Notu Simülatörü</span>
-            </div>
-            <p className="text-[11px] text-amber-800 leading-tight">
-              Öğrencinin bu vize notuyla hedeflediği harf notunu alması için finalden kaç alması gerekir?
-            </p>
-
-            <div className="flex items-center space-x-2">
-              <select
-                value={targetLetter}
-                onChange={(e) => setTargetLetter(e.target.value)}
-                className="w-24 px-2 py-1.5 rounded-lg border border-amber-300 bg-white text-xs font-bold text-amber-900"
-              >
-                <option value="AA">AA (90)</option>
-                <option value="BA">BA (85)</option>
-                <option value="BB">BB (80)</option>
-                <option value="CB">CB (75)</option>
-                <option value="CC">CC (65)</option>
-                <option value="DC">DC (58)</option>
-                <option value="DD">DD (50)</option>
-              </select>
-
-              <div className="flex-1 bg-white p-2 rounded-lg border border-amber-200 text-center">
-                <span className="text-[10px] text-slate-400 block">Gereken Final Notu</span>
-                <span className={`text-base font-extrabold ${neededFinal > 100 ? 'text-rose-600' : 'text-emerald-700'}`}>
-                  {neededFinal > 100 ? 'İmkansız (>100)' : `${neededFinal} puan`}
+                <span className="text-sm font-bold text-slate-900 block">
+                  Yıl Sonu (Final) Sınavı
+                </span>
+                <span className="text-[11px] text-amber-900">
+                  Ağırlık: <strong>%{levelConfig.finalWeight}</strong> • Final Barajı: <strong>En az 50 puan</strong>
                 </span>
               </div>
+              <span className={`text-base font-black font-mono px-2.5 py-1 rounded-lg border ${
+                passedFinalBaraj
+                  ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                  : 'bg-rose-50 text-rose-700 border-rose-200'
+              }`}>
+                {finalScore}
+              </span>
             </div>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={finalScore}
+              onChange={(e) => setFinalScore(Number(e.target.value))}
+              className="w-full accent-amber-600 cursor-pointer"
+            />
           </div>
 
-          {/* Information Card */}
-          <div className="p-3 bg-slate-100 rounded-xl text-[11px] text-slate-500 space-y-1">
-            <div className="font-semibold text-slate-700 flex items-center space-x-1">
-              <HelpCircle className="w-3.5 h-3.5 text-slate-400" />
-              <span>ADÜ Bağıl Not Baremi:</span>
+          {/* Proje Notu & Devam Notu */}
+          <div className="bg-blue-50/70 p-3.5 rounded-xl border border-blue-100 text-xs text-blue-950 space-y-1.5">
+            <div className="font-bold flex items-center space-x-1.5">
+              <Info className="w-4 h-4 text-blue-700 flex-shrink-0" />
+              <span>{langConfig.label} Proje Notu Nedir?</span>
             </div>
-            <p>
-              CC (65+) ve üzeri doğrudan başarılı, DC ve DD şartlı başarılıdır. Final barajı asgari 50'dir.
-            </p>
+            <p className="text-blue-900/90 leading-relaxed">{langConfig.projectDesc}</p>
           </div>
-
         </div>
 
+        {/* Result Column */}
+        <div className="space-y-4">
+          <div className={`p-6 rounded-3xl border shadow-sm space-y-4 ${
+            passedOverall
+              ? 'bg-gradient-to-br from-emerald-50 to-white border-emerald-300'
+              : 'bg-gradient-to-br from-rose-50 to-white border-rose-300'
+          }`}>
+            <div className="text-center space-y-1">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Yıl Sonu Başarı Notu
+              </span>
+              <div className="text-5xl font-black text-slate-900 tracking-tight">
+                {totalScore}
+              </div>
+              <div className="text-xs text-slate-500">
+                Yıl İçi Katkı: <strong>{inYearContribution.toFixed(1)}</strong> + Final: <strong>{finalContribution.toFixed(1)}</strong>
+              </div>
+            </div>
+
+            <div className={`p-3 rounded-2xl border text-xs font-bold flex items-center justify-center space-x-2 ${
+              passedOverall
+                ? 'bg-emerald-600 text-white border-emerald-700'
+                : 'bg-rose-600 text-white border-rose-700'
+            }`}>
+              {passedOverall ? (
+                <>
+                  <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                  <span>BAŞARILI (Hazırlığı Geçer)</span>
+                </>
+              ) : (
+                <>
+                  <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+                  <span>
+                    {!passedFinalBaraj
+                      ? 'BAŞARISIZ (Final 50 Barajı Altı)'
+                      : `BAŞARISIZ (${passThreshold} Puan Barajı Altı)`}
+                  </span>
+                </>
+              )}
+            </div>
+
+            {/* Simulator */}
+            <div className="bg-white/90 p-3.5 rounded-2xl border border-slate-200/80 space-y-1.5 text-xs">
+              <div className="font-bold text-slate-800 flex items-center space-x-1.5">
+                <Award className="w-4 h-4 text-amber-600" />
+                <span>Hedef Simülatörü ({passThreshold} Puan)</span>
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Mevcut yıl içi puanlarınızla ({inYearContribution.toFixed(1)} katkı) geçebilmek için Finalden en az{' '}
+                <strong className={neededFinal > 100 ? 'text-rose-700' : 'text-blue-800'}>
+                  {neededFinal > 100 ? `${neededFinal} (Mümkün değil)` : `${neededFinal} puan`}
+                </strong>{' '}
+                almalısınız.
+              </p>
+            </div>
+          </div>
+
+          {/* Devam Zorunluluğu Kartı */}
+          <div className="bg-slate-900 text-white p-4 rounded-2xl text-xs space-y-1.5">
+            <div className="font-bold text-amber-400 flex items-center space-x-1.5">
+              <Clock className="w-4 h-4" />
+              <span>%80 Devam Zorunluluğu</span>
+            </div>
+            <p className="text-slate-300 leading-relaxed">
+              Öğretim yılı boyunca okutulan derslerin en az <strong>%80</strong>&apos;ine devam etmeyen öğrenciler final sınavına alınmaz ve hazırlık sınıfında başarısız sayılır.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Kur & Ders Saatleri Bilgi Kartı (2026-2027 El Kitabı) */}
+      <div className="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div className="flex items-center space-x-2">
+            <BookOpen className="w-5 h-5 text-blue-800" />
+            <h4 className="font-bold text-sm sm:text-base text-slate-900">
+              {langConfig.flag} {langConfig.label} — {level} Kuru Haftalık Ders Dağılımı
+            </h4>
+          </div>
+          <div className="flex items-center gap-2 text-xs">
+            <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-800 font-bold">
+              Hedef Seviye: {levelConfig.cefr}
+            </span>
+            <span className="px-2.5 py-1 rounded-full bg-blue-100 text-blue-900 font-bold">
+              Toplam {levelConfig.totalHours} Saat/Hafta
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {levelConfig.courses.map((c) => (
+            <div key={c.name} className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+              <span className="text-xs font-semibold text-slate-800 pr-2">{c.name}</span>
+              <span className="text-sm font-black text-blue-800 bg-white px-2.5 py-1 rounded-xl border border-slate-200 flex-shrink-0">
+                {c.hours} sa
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
 
     </div>

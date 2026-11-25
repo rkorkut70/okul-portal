@@ -7,8 +7,8 @@ echo   OKUL PORTAL - EXCEL VERI SENKRONIZASYONU
 echo ========================================================
 echo.
 
-:: 1. Python ile Excel okunuyor
-echo 1. Excel dosyasindaki degisiklikler okunuyor...
+:: 1. Python ile Excel ve Drive dizini okunuyor
+echo 1. Excel ve Ortak Drive dizinindeki degisiklikler okunuyor...
 py scripts/sync_school_data.py
 if %ERRORLEVEL% NEQ 0 (
     python scripts/sync_school_data.py
@@ -20,10 +20,11 @@ if %ERRORLEVEL% NEQ 0 (
     pause
     exit /b 1
 )
+py scripts/sync_drive_tree.py 2>nul
 
 echo.
 echo 2. Degisiklikler kontrol ediliyor...
-git add docs/okul_bilgi.xlsx src/data/schoolData.ts
+git add docs/okul_bilgi.xlsx src/data/schoolData.ts src/data/driveTreeData.ts
 
 :: Degisiklik var mi kontrol et
 git diff --cached --quiet

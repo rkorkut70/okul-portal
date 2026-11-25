@@ -33,7 +33,7 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
   const [yearFilter, setYearFilter] = useState<string>('all');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [collapsedYears, setCollapsedYears] = useState<Record<string, boolean>>({});
+  const [openYears, setOpenYears] = useState<Record<string, boolean>>({});
 
   // Dynamic academic years sorted descending (e.g. 2026-2027, 2025-2026, ...)
   const academicYears = useMemo(() => {
@@ -114,7 +114,7 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
   }, [filteredActivities]);
 
   const toggleYear = (year: string) => {
-    setCollapsedYears(prev => ({ ...prev, [year]: !prev[year] }));
+    setOpenYears(prev => ({ ...prev, [year]: !prev[year] }));
   };
 
   return (
@@ -303,7 +303,8 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
           </div>
         ) : (
           groupedByYear.map(({ year, items, completedCount, upcomingCount, participantSum }) => {
-            const isCollapsed = collapsedYears[year] ?? false;
+            const isOpen = openYears[year] ?? (yearFilter !== 'all' || searchTerm.trim() !== '');
+            const isCollapsed = !isOpen;
 
             return (
               <div key={year} className="space-y-3">

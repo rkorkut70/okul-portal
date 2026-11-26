@@ -16,15 +16,17 @@ import {
   Globe,
   UserCheck,
   ChevronDown,
-  GraduationCap
+  GraduationCap,
+  FolderOpen
 } from 'lucide-react';
 
 interface ActivityTimelineProps {
   activities: ActivityItem[];
   onOpenAddModal: () => void;
+  onOpenFolder?: (path: string[]) => void;
 }
 
-export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, onOpenAddModal }) => {
+export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, onOpenAddModal, onOpenFolder }) => {
   const { user } = useAuth();
   const isCpdManager = user?.role === 'cpd_manager' || user?.role === 'admin';
 
@@ -481,7 +483,7 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
                             </div>
 
                             {/* Right Column: Attached Document Link */}
-                            {act.driveDocUrl && (
+                            {(act.driveFolderPath || act.driveDocUrl) && (
                               <div className="md:w-64 flex-shrink-0 pt-2 md:pt-0">
                                 <div className="bg-blue-50/80 p-3 rounded-xl border border-blue-100 space-y-2">
                                   <div className="text-[10px] font-bold text-blue-900 uppercase tracking-wider flex items-center space-x-1">
@@ -491,15 +493,28 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
                                   <p className="text-xs font-semibold text-slate-800 line-clamp-2 leading-tight">
                                     {act.driveDocTitle || 'Faaliyet Raporu & Belgeleri'}
                                   </p>
-                                  <a
-                                    href={act.driveDocUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center space-x-1.5 text-xs font-bold text-blue-700 hover:text-blue-900 hover:underline pt-1"
-                                  >
-                                    <span>Ortak Drive'da Aç</span>
-                                    <ExternalLink className="w-3.5 h-3.5" />
-                                  </a>
+                                  <div className="flex flex-wrap items-center gap-2 pt-1">
+                                    {act.driveFolderPath && onOpenFolder && (
+                                      <button
+                                        onClick={() => onOpenFolder(act.driveFolderPath!)}
+                                        className="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-blue-800 hover:bg-blue-900 text-white text-[11px] font-bold transition active:scale-95 cursor-pointer"
+                                      >
+                                        <FolderOpen className="w-3.5 h-3.5" />
+                                        <span>Klasörü Aç</span>
+                                      </button>
+                                    )}
+                                    {act.driveDocUrl && (
+                                      <a
+                                        href={act.driveDocUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center space-x-1 text-[11px] font-bold text-blue-700 hover:text-blue-900 hover:underline"
+                                      >
+                                        <span>Drive&apos;da Aç</span>
+                                        <ExternalLink className="w-3 h-3" />
+                                      </a>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
                             )}

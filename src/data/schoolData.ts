@@ -1692,7 +1692,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi & Yayınevi İş Birliği",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
-    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2026-27",
+      "2026-2027_Planli-Workshop-Programi"
+    ]
   },
   {
     "id": "cpd-2026-2027-2",
@@ -1710,7 +1719,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi & Yayınevi İş Birliği",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
-    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2026-27",
+      "2026-2027_Planli-Workshop-Programi"
+    ]
   },
   {
     "id": "cpd-2026-2027-3",
@@ -1728,7 +1746,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi & Yayınevi İş Birliği",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
-    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2026-27",
+      "2026-2027_Planli-Workshop-Programi"
+    ]
   },
   {
     "id": "cpd-2026-2027-4",
@@ -1746,7 +1773,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi & Yayınevi İş Birliği",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
-    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf"
+    "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2026-27",
+      "2026-2027_Planli-Workshop-Programi"
+    ]
   },
   {
     "id": "cpd-2026-2027-5",
@@ -1764,7 +1800,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Öğr. Gör. Dr. Mehmet Abi (MSKÜ YDYO)",
     "location": "YDYO Üst Kat Seminer Salonu",
     "driveDocTitle": "Madde Analizi Kurumsal Etkinlik Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2026-27",
+      "2026-11-06_Madde-Analizi-Sinavdan-Kanita-MUSE"
+    ]
   },
   {
     "id": "cpd-2026-2027-6",
@@ -1782,7 +1827,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Kübra Cengiz",
     "location": "Çevrimiçi (Online)",
     "driveDocTitle": "Kurumsal Eğitim Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2026-27",
+      "2026-10-19_Kalite-Guvencesi-Ders-Gozlemi-ve-Veri-Toplama"
+    ]
   },
   {
     "id": "cpd-2025-2026-7",
@@ -1802,7 +1856,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Dilek Ateş, Öğr. Gör. M. Burak Okşar, Öğr. Gör. Rıdvan Korkut, Öğr. Gör. Bilge Sevim Soykut, Öğr. Gör. Hatice Kurt, Öğr. Gör. Hayri Argunat, Öğr. Gör. İrem Gül Okşar",
     "location": "Muğla Sıtkı Koçman Üniversitesi YDYO",
     "driveDocTitle": "Bireysel Katılım Raporları (7 kişi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2026-06-09_MSKU-YDYO-Language-and-Fun-Day"
+    ]
   },
   {
     "id": "cpd-2025-2026-8",
@@ -1822,7 +1885,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Dr. Hasan Ulvi Evren, Öğr. Gör. Rıdvan Korkut",
     "location": "Akdeniz Üniversitesi / Antalya",
     "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2026-05-01_18-YDYO-Yoneticiler-Toplantisi"
+    ]
   },
   {
     "id": "cpd-2025-2026-9",
@@ -1842,7 +1914,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Bilge Sevim Soykut, Öğr. Gör. Dilek Ateş, Öğr. Gör. Hatice Kurt, Öğr. Gör. Rıdvan Korkut",
     "location": "Muğla Sıtkı Koçman Üniversitesi (AKM)",
     "driveDocTitle": "Bireysel Katılım Raporları (4 kişi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2026-04-24_Empowering-Teachers-for-Classroom-Impact-Mugla"
+    ]
   },
   {
     "id": "cpd-2025-2026-10",
@@ -1862,7 +1943,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Dr. Hasan Ulvi Evren, Öğr. Gör. Rıdvan Korkut",
     "location": "Titanic Lara Hotel / Antalya",
     "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2026-05-15_Unifest-2026"
+    ]
   },
   {
     "id": "cpd-2025-2026-11",
@@ -1880,7 +1970,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "Workshop 4 Etkinlik Raporu & Sunum (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2026-04-01_Ogrenci-Ozerkligi-Nasil-Saglanir"
+    ]
   },
   {
     "id": "cpd-2025-2026-12",
@@ -1898,7 +1997,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "Workshop 3 Etkinlik Raporu, Sunum & Test (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2026-02-27_Sinif-Yonetimi-Sanati-Classroom-Management"
+    ]
   },
   {
     "id": "cpd-2025-2026-13",
@@ -1916,7 +2024,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Duygu Özler (Teacher Trainer)",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "Kurumsal Eğitim Raporu 2 (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2025-12-26_Etkili-Ders-Planlama-Lesson-Planning"
+    ]
   },
   {
     "id": "cpd-2025-2026-14",
@@ -1934,7 +2051,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "Workshop 1 Raporu, Sunum & Fotoğraflar (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2025-10-31_Ogrenci-Konusma-Suresinin-Artirilmasi"
+    ]
   },
   {
     "id": "cpd-2025-2026-15",
@@ -1953,7 +2079,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Tüm akademik personel",
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "Kurum İçi Eğitim Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2025-26",
+      "2025-10-10_Yeni-Pacing-Formati-Kullanim-Onerileri"
+    ]
   },
   {
     "id": "cpd-2024-2025-16",
@@ -1972,7 +2107,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participantCount": 31,
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-06-17_SARSing-for-Effective-Learning-Objectives"
+    ]
   },
   {
     "id": "cpd-2024-2025-17",
@@ -1992,7 +2136,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Özlem Madak",
     "location": "Uludağ Üniversitesi Merkez Kampüs / Bursa",
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-05-02_Future-Ready-ELT-Uludag-Uni"
+    ]
   },
   {
     "id": "cpd-2024-2025-18",
@@ -2012,7 +2165,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Hasan Ulvi Evren, Öğr. Gör. Rıdvan Korkut",
     "location": "Belek / Antalya",
     "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-04-25_Bridging-Ideas-Building-Solutions-Antalya"
+    ]
   },
   {
     "id": "cpd-2024-2025-19",
@@ -2030,7 +2192,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Öğr. Gör. Dilek Ateş, Öğr. Gör. Lütfi Saraç, Öğr. Gör. Bilge Sevim Soykut",
     "location": "Çevrimiçi (Zoom)",
     "driveDocTitle": "Kurumsal Etkinlik Raporu TR/EN (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-04-10_AI-Based-Language-Teaching-Sharing-Session"
+    ]
   },
   {
     "id": "cpd-2024-2025-20",
@@ -2050,7 +2221,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Bilge Sevim Soykut",
     "location": "İzmir Ekonomi Üniversitesi / İzmir",
     "driveDocTitle": "Katılım Raporu & Sunum (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-03-21_Leadership-in-the-AI-Era-Izmir"
+    ]
   },
   {
     "id": "cpd-2024-2025-21",
@@ -2069,7 +2249,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participantCount": 31,
     "location": "YDYO Alt Kat Toplantı Salonu",
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-03-21_Use-of-AI-for-Exam-Preparation-and-Writing-Assessment"
+    ]
   },
   {
     "id": "cpd-2024-2025-22",
@@ -2089,7 +2278,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Lütfi Saraç",
     "location": "İstinye Üniversitesi / İstanbul",
     "driveDocTitle": "Bireysel Katılım Raporu & Sunum (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-03-19_Designing-Framework-for-Language-Learning-Istanbul"
+    ]
   },
   {
     "id": "cpd-2024-2025-23",
@@ -2108,7 +2306,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Lütfi Saraç",
     "location": "İzmir Türk Koleji / İzmir",
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-03-01_Looking-for-Evidence-of-Learning-Izmir"
+    ]
   },
   {
     "id": "cpd-2024-2025-24",
@@ -2127,7 +2334,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participantCount": 31,
     "location": "YDYO Seminer Salonu",
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-02-28_Formative-and-Summative-Assessment"
+    ]
   },
   {
     "id": "cpd-2024-2025-25",
@@ -2147,7 +2363,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Bilge Sevim Soykut, Öğr. Gör. Rıdvan Korkut, Öğr. Gör. Lütfi Saraç",
     "location": "Yaşar Üniversitesi / İzmir",
     "driveDocTitle": "Bireysel Katılım Raporları (3 kişi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-02-22_Syllabus-Design-in-Practice-Izmir"
+    ]
   },
   {
     "id": "cpd-2024-2025-26",
@@ -2166,7 +2391,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participantCount": 31,
     "location": "Çevrimiçi (Online)",
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2025-01-24_Dil-Degerlendirme-ve-Madde-Analizi"
+    ]
   },
   {
     "id": "cpd-2024-2025-27",
@@ -2186,7 +2420,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Lütfi Saraç",
     "location": "ADÜ Eğitim Fakültesi / Aydın",
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2024-12-13_15-Uluslararasi-Egitimde-Yeni-Yonelimler-Kongresi"
+    ]
   },
   {
     "id": "cpd-2024-2025-28",
@@ -2205,7 +2448,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participantCount": 30,
     "location": "YDYO Üst Kat Seminer Salonu",
     "driveDocTitle": "CEFR Literacy and Mapping Seminer Raporu & 30 Sertifika (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2024-12-06_Etkili-Program-Tasarimi-CEFR-Mapping"
+    ]
   },
   {
     "id": "cpd-2024-2025-29",
@@ -2225,7 +2477,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Cansın Çalışkan, Öğr. Gör. Dilek Ateş, Öğr. Gör. Rıdvan Korkut, Öğr. Gör. Bilge Sevim Soykut, Öğr. Gör. Hatice Kurt, Öğr. Gör. Özlem Dilaver",
     "location": "Yaşar Üniversitesi YDYO / İzmir",
     "driveDocTitle": "Bireysel Katılım Raporları (6 kişi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2024-25",
+      "2024-11-22_3rd-Aegean-SoFL-Symposium-Yasar-Uni"
+    ]
   },
   {
     "id": "cpd-2023-2024-30",
@@ -2243,7 +2504,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Prof. Dr. Pınar Yengin Sarpkaya",
     "location": "ADÜ YDYO Binası",
     "driveDocTitle": "Kurumsal Etkinlik Raporu & Gözlem Materyalleri (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-06-11_Ders-Gozlemi-ve-Mesleki-Ogrenme-Topluluklari"
+    ]
   },
   {
     "id": "cpd-2023-2024-31",
@@ -2261,7 +2531,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "CPD Birimi",
     "location": "ADÜ YDYO Binası",
     "driveDocTitle": "Kurumsal Etkinlik Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-05-24_Yabanci-Dil-Ogretiminde-Teknoloji-ve-Yapay-Zeka"
+    ]
   },
   {
     "id": "cpd-2023-2024-32",
@@ -2281,7 +2560,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "ADÜ YDYO Ev Sahipliği (Lütfi Saraç, Özlem Madak ve tüm davetliler)",
     "location": "ADÜ YDYO (Ev Sahibi Kurum)",
     "driveDocTitle": "Program PDF, Davet Mektupları, Katılımcı Listeleri & Fotoğraflar (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-05-17_FOCI-XXV-ADU-YDYO"
+    ]
   },
   {
     "id": "cpd-2023-2024-33",
@@ -2301,7 +2589,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Hasan Ulvi Evren",
     "location": "Arkın İskele Hotel / KKTC",
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-05-09_Defining-Institutional-Effectiveness-KKTC"
+    ]
   },
   {
     "id": "cpd-2023-2024-34",
@@ -2319,7 +2616,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Emir Aydın (Teacher Trainer – UES)",
     "location": "ADÜ YDYO Binası",
     "driveDocTitle": "Kurumsal Etkinlik Raporu & 4 PDF Sunum/Şablon (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-05-03_Yabanci-Dil-Ogretiminde-Yapay-Zeka-Kullanimi"
+    ]
   },
   {
     "id": "cpd-2023-2024-35",
@@ -2338,7 +2644,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Müdür yardımcıları ve tüm öğretim elemanları",
     "location": "YDYO Alt Kat Toplantı Salonu",
     "driveDocTitle": "Kurumsal Toplantı Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-03-22_Ders-Gozlemi-Bilgilendirme-Toplantisi"
+    ]
   },
   {
     "id": "cpd-2023-2024-36",
@@ -2356,7 +2671,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Öğr. Gör. Bilge Sevim Soykut, Öğr. Gör. Ercan Yılmaz (Moderatör: Öğr. Gör. Pınar Uğur)",
     "location": "Çevrimiçi (Online)",
     "driveDocTitle": "Kurumsal Rapor, Video Kayıtları & Görseller (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-03-06_Sinifta-Yapay-Zeka-ve-Socrative-Kullanimi"
+    ]
   },
   {
     "id": "cpd-2023-2024-37",
@@ -2374,7 +2698,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Duygu Erdoğan (UES)",
     "location": "ADÜ YDYO Binası",
     "driveDocTitle": "Kurumsal Rapor, Sunumlar, Formlar & Örnek Videolar (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-03-01_Akran-Gozlemi-ve-Geri-Bildirim-Sanati"
+    ]
   },
   {
     "id": "cpd-2023-2024-38",
@@ -2394,7 +2727,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Bilge Sevim Soykut",
     "location": "Sheraton Hotel / Ankara",
     "driveDocTitle": "Bireysel Katılım Raporu & 6 Eğitim Dokümanı (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-02-23_AI-in-the-Classroom-Ankara"
+    ]
   },
   {
     "id": "cpd-2023-2024-39",
@@ -2412,7 +2754,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "Funda Çetin (UES)",
     "location": "ADÜ YDYO Binası",
     "driveDocTitle": "Kurumsal Rapor, Sunum, Video & Gözlem Formları (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-01-19_Sinif-Ici-Oz-Yansitma-Teknikleri"
+    ]
   },
   {
     "id": "cpd-2023-2024-40",
@@ -2432,7 +2783,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Lütfi Saraç",
     "location": "Ataköy Sheraton Hotel / İstanbul",
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2024-01-19_Agility-Adaptability-Testing-Assessment-Istanbul"
+    ]
   },
   {
     "id": "cpd-2023-2024-41",
@@ -2452,7 +2812,16 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "participants": "Öğr. Gör. Lütfi Saraç",
     "location": "Fatih Sultan Mehmet Vakıf Üniversitesi / İstanbul",
     "driveDocTitle": "Katılım Raporu, 2 Sunum & Grup Çıktıları (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2023-12-15_FOCI-XXIV-AI-in-Curriculum-Design-Istanbul"
+    ]
   },
   {
     "id": "cpd-2023-2024-42",
@@ -2470,6 +2839,15 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "trainers": "ADÜ YDYO & Aydın İl Milli Eğitim Müdürlüğü İş Birliği",
     "location": "ADÜ YDYO",
     "driveDocTitle": "Toplantı Tutanakları & Fotoğraflar (Drive Arşivi)",
-    "driveDocUrl": "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z"
+    "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
+    "driveFolderPath": [
+      "Kalite ve Akreditasyon",
+      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+      "Etkinlikler & Eğitimler - Events & Trainings",
+      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "2023-24",
+      "2023-07-12_ve_09-18_Erasmus-Proje-Yazma-Egitimi"
+    ]
   }
 ];

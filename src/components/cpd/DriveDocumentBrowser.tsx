@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { DriveDocument } from '../../types';
 import {
   GOOGLE_DRIVE_FOLDER_ID,
@@ -31,7 +31,17 @@ import {
 
 interface DriveDocumentBrowserProps {
   documents: DriveDocument[];
+  initialPath?: string[];
 }
+
+const formatDirName = (name: string) => {
+  return name
+    .replace(/^(\d{4})-(\d{2})-(\d{2})_/, '$1.$2.$3 ')
+    .replace(/^(\d{4})-(\d{2})$/, '$1 / $2')
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
 
 const formatBytes = (bytes?: number) => {
   if (!bytes || bytes <= 0) return '';
@@ -52,10 +62,18 @@ const getExtIcon = (ext?: string) => {
   return <FileText className="w-5 h-5 text-slate-500 flex-shrink-0" />;
 };
 
-export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ documents }) => {
+export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ documents, initialPath }) => {
   const [viewMode, setViewMode] = useState<'web' | 'live' | 'list'>('web');
-  const [currentPath, setCurrentPath] = useState<string[]>([]);
+  const [currentPath, setCurrentPath] = useState<string[]>(initialPath || []);
   const [treeSearch, setTreeSearch] = useState('');
+
+  useEffect(() => {
+    if (initialPath && initialPath.length > 0) {
+      setViewMode('web');
+      setCurrentPath(initialPath);
+      setTreeSearch('');
+    }
+  }, [initialPath]);
 
   // Mode 'list' states
   const [searchTerm, setSearchTerm] = useState('');
@@ -337,10 +355,10 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                         )}
                         <div className="min-w-0">
                           <div className="text-xs sm:text-sm font-bold text-slate-900 truncate">
-                            {res.node.n}
+                            {res.node.t === 'd' ? formatDirName(res.node.n) : res.node.n}
                           </div>
                           <div className="text-[10px] text-slate-400 truncate">
-                            {res.path.length > 0 ? res.path.join(' / ') : 'Ana Dizin'}
+                            {res.path.length > 0 ? res.path.map(formatDirName).join(' / ') : 'Ana Dizin'}
                           </div>
                         </div>
                       </div>
@@ -391,7 +409,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                             : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
                         }`}
                       >
-                        {seg}
+                        {formatDirName(seg)}
                       </button>
                     </React.Fragment>
                   );
@@ -427,7 +445,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                           </div>
                           <div className="min-w-0">
                             <div className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-blue-800 truncate">
-                              {dir.n}
+                              {formatDirName(dir.n)}
                             </div>
                             <div className="text-[10px] text-slate-400">
                               {childCount} öğe

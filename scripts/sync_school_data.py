@@ -175,6 +175,64 @@ def sync_school_data():
     # 10. CPD Faaliyetleri
     ws_cpd = wb['CPD Faaliyetleri'] if 'CPD Faaliyetleri' in wb.sheetnames else None
     cpd_activities = []
+    archive_prefix = [
+        "Kalite ve Akreditasyon",
+        "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
+        "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
+        "Etkinlikler & Eğitimler - Events & Trainings",
+        "Yıllık Kronolojik Arşiv (2023-2027)",
+    ]
+    year_folder_map = {
+        "2023-2024": "2023-24",
+        "2024-2025": "2024-25",
+        "2025-2026": "2025-26",
+        "2026-2027": "2026-27",
+    }
+    event_folder_lookup = {
+        ("2026-10-19", "Kurum İçi"): "2026-10-19_Kalite-Guvencesi-Ders-Gozlemi-ve-Veri-Toplama",
+        ("2026-11-06", "Kurum İçi"): "2026-11-06_Madde-Analizi-Sinavdan-Kanita-MUSE",
+        ("2026-12-11", "Kurum İçi"): "2026-2027_Planli-Workshop-Programi",
+        ("2027-02-26", "Kurum İçi"): "2026-2027_Planli-Workshop-Programi",
+        ("2027-03-26", "Kurum İçi"): "2026-2027_Planli-Workshop-Programi",
+        ("2027-05-07", "Kurum İçi"): "2026-2027_Planli-Workshop-Programi",
+        ("2025-10-10", "Kurum İçi"): "2025-10-10_Yeni-Pacing-Formati-Kullanim-Onerileri",
+        ("2025-10-31", "Kurum İçi"): "2025-10-31_Ogrenci-Konusma-Suresinin-Artirilmasi",
+        ("2025-12-26", "Kurum İçi"): "2025-12-26_Etkili-Ders-Planlama-Lesson-Planning",
+        ("2026-02-27", "Kurum İçi"): "2026-02-27_Sinif-Yonetimi-Sanati-Classroom-Management",
+        ("2026-04-01", "Kurum İçi"): "2026-04-01_Ogrenci-Ozerkligi-Nasil-Saglanir",
+        ("2026-04-17", "Kurum Dışı"): "2026-05-15_Unifest-2026",
+        ("2026-04-24", "Kurum Dışı"): "2026-04-24_Empowering-Teachers-for-Classroom-Impact-Mugla",
+        ("2026-05-07", "Kurum Dışı"): "2026-05-01_18-YDYO-Yoneticiler-Toplantisi",
+        ("2026-06-09", "Kurum Dışı"): "2026-06-09_MSKU-YDYO-Language-and-Fun-Day",
+        ("2024-11-22", "Kurum Dışı"): "2024-11-22_3rd-Aegean-SoFL-Symposium-Yasar-Uni",
+        ("2024-12-06", "Kurum İçi"): "2024-12-06_Etkili-Program-Tasarimi-CEFR-Mapping",
+        ("2024-12-13", "Kurum Dışı"): "2024-12-13_15-Uluslararasi-Egitimde-Yeni-Yonelimler-Kongresi",
+        ("2025-01-24", "Kurum İçi"): "2025-01-24_Dil-Degerlendirme-ve-Madde-Analizi",
+        ("2025-02-22", "Kurum Dışı"): "2025-02-22_Syllabus-Design-in-Practice-Izmir",
+        ("2025-02-28", "Kurum İçi"): "2025-02-28_Formative-and-Summative-Assessment",
+        ("2025-03-01", "Kurum Dışı"): "2025-03-01_Looking-for-Evidence-of-Learning-Izmir",
+        ("2025-03-19", "Kurum Dışı"): "2025-03-19_Designing-Framework-for-Language-Learning-Istanbul",
+        ("2025-03-21", "Kurum Dışı"): "2025-03-21_Leadership-in-the-AI-Era-Izmir",
+        ("2025-03-21", "Kurum İçi"): "2025-03-21_Use-of-AI-for-Exam-Preparation-and-Writing-Assessment",
+        ("2025-04-10", "Kurum İçi"): "2025-04-10_AI-Based-Language-Teaching-Sharing-Session",
+        ("2025-04-25", "Kurum Dışı"): "2025-04-25_Bridging-Ideas-Building-Solutions-Antalya",
+        ("2025-05-02", "Kurum Dışı"): "2025-05-02_Future-Ready-ELT-Uludag-Uni",
+        ("2025-06-17", "Kurum İçi"): "2025-06-17_SARSing-for-Effective-Learning-Objectives",
+        ("2023-09-18", "Kurum İçi"): "2023-07-12_ve_09-18_Erasmus-Proje-Yazma-Egitimi",
+        ("2023-12-15", "Kurum Dışı"): "2023-12-15_FOCI-XXIV-AI-in-Curriculum-Design-Istanbul",
+        ("2024-01-19", "Kurum Dışı"): "2024-01-19_Agility-Adaptability-Testing-Assessment-Istanbul",
+        ("2024-01-19", "Kurum İçi"): "2024-01-19_Sinif-Ici-Oz-Yansitma-Teknikleri",
+        ("2024-02-23", "Kurum Dışı"): "2024-02-23_AI-in-the-Classroom-Ankara",
+        ("2024-03-01", "Kurum İçi"): "2024-03-01_Akran-Gozlemi-ve-Geri-Bildirim-Sanati",
+        ("2024-03-06", "Kurum İçi"): "2024-03-06_Sinifta-Yapay-Zeka-ve-Socrative-Kullanimi",
+        ("2024-03-22", "Kurum İçi"): "2024-03-22_Ders-Gozlemi-Bilgilendirme-Toplantisi",
+        ("2024-05-03", "Kurum İçi"): "2024-05-03_Yabanci-Dil-Ogretiminde-Yapay-Zeka-Kullanimi",
+        ("2024-05-09", "Kurum Dışı"): "2024-05-09_Defining-Institutional-Effectiveness-KKTC",
+        ("2024-05-17", "Kurum İçi"): "2024-05-17_FOCI-XXV-ADU-YDYO",
+        ("2024-05-24", "Kurum İçi"): "2024-05-24_Yabanci-Dil-Ogretiminde-Teknoloji-ve-Yapay-Zeka",
+        ("2024-06-11", "Kurum İçi"): "2024-06-11_Ders-Gozlemi-ve-Mesleki-Ogrenme-Topluluklari",
+    }
+    CPD_EVENTS_DRIVE_URL = "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll"
     if ws_cpd:
         for idx, row in enumerate(list(ws_cpd.iter_rows(values_only=True))[1:], start=1):
             if not row or len(row) < 8 or not row[7]:
@@ -202,6 +260,8 @@ def sync_school_data():
             participants = str(row[10]).strip() if len(row) > 10 and row[10] else ""
             doc_title = str(row[11]).strip() if len(row) > 11 and row[11] else ""
             doc_url = str(row[12]).strip() if len(row) > 12 and row[12] else ""
+            if doc_url == "https://drive.google.com/drive/folders/12u9Lgl5DngydJAwf3BrxNp-I8Catbt_z":
+                doc_url = CPD_EVENTS_DRIVE_URL
             summary = str(row[13]).strip() if len(row) > 13 and row[13] else ""
 
             item = {
@@ -230,6 +290,10 @@ def sync_school_data():
                 item["driveDocTitle"] = doc_title
             if doc_url:
                 item["driveDocUrl"] = doc_url
+            y_dir = year_folder_map.get(academic_year)
+            ev_dir = event_folder_lookup.get((sort_date, scope))
+            if y_dir and ev_dir:
+                item["driveFolderPath"] = archive_prefix + [y_dir, ev_dir]
 
             cpd_activities.append(item)
 

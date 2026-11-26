@@ -57,6 +57,7 @@ export interface ActivityItem {
   status: 'completed' | 'upcoming';
   driveDocUrl?: string;
   driveDocTitle?: string;
+  driveFolderPath?: string[];
   organizer: string;
   location?: string;
 }

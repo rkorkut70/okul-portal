@@ -36,6 +36,7 @@ export const CpdModule: React.FC<CpdModuleProps> = ({
 
   const [activeSubTab, setActiveSubTab] = useState<'activities' | 'workshops' | 'documents' | 'about'>(defaultSubTab);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [initialDrivePath, setInitialDrivePath] = useState<string[]>([]);
 
   return (
     <div className="space-y-6">
@@ -158,6 +159,10 @@ export const CpdModule: React.FC<CpdModuleProps> = ({
         <ActivityTimeline
           activities={activities}
           onOpenAddModal={() => setIsAddModalOpen(true)}
+          onOpenFolder={(path) => {
+            setInitialDrivePath(path);
+            setActiveSubTab('documents');
+          }}
         />
       )}
 
@@ -352,7 +357,7 @@ export const CpdModule: React.FC<CpdModuleProps> = ({
       )}
 
       {activeSubTab === 'documents' && (
-        <DriveDocumentBrowser documents={documents} />
+        <DriveDocumentBrowser documents={documents} initialPath={initialDrivePath} />
       )}
 
       {activeSubTab === 'about' && (

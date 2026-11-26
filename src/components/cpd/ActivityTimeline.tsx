@@ -53,6 +53,31 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
   const totalParticipants = activities.reduce((acc, a) => acc + (a.participantCount || 0), 0);
   const externalCount = activities.filter(a => a.scope === 'Kurum Dışı').length;
 
+  // İsimleri kayıtlı olan etkinliklerden tekil (farklı) öğretim elemanı sayısını hesapla
+  const uniqueParticipantsCount = useMemo(() => {
+    const nameSet = new Set<string>();
+    activities.forEach(act => {
+      if (!act.participants) return;
+      const raw = act.participants;
+      if (/tüm akademik|tüm öğretim|müdür yardımcıları|ev sahipliği/i.test(raw)) {
+        return;
+      }
+      raw.split(',').forEach(part => {
+        const clean = part
+          .replace(/Öğr\.\s*Gör\.\s*(Dr\.\s*)?/gi, '')
+          .replace(/Prof\.\s*Dr\.\s*/gi, '')
+          .replace(/Dr\.\s*/gi, '')
+          .trim()
+          .toLocaleLowerCase('tr')
+          .replace(/^m\.\s+/, '');
+        if (clean && clean.length > 3) {
+          nameSet.add(clean);
+        }
+      });
+    });
+    return nameSet.size;
+  }, [activities]);
+
   // Filter and sort:
   // Order: 1. Durum (Planlandı / Tamamlandı), 2. Etkinlik Tarihi (Yeni -> Eski), 3. Kategori, 4. Etkinlik Yeri
   const filteredActivities = useMemo(() => {
@@ -146,9 +171,10 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
           <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold flex-shrink-0">
             <Users className="w-5 h-5" />
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="text-lg sm:text-xl font-extrabold text-slate-900">{totalParticipants}</div>
-            <div className="text-[11px] text-slate-500 font-medium">Kayıtlı Katılımcı</div>
+            <div className="text-[11px] text-slate-600 font-semibold">Toplam Katılım</div>
+            <div className="text-[10px] text-slate-400 truncate">Tekrarlı katılımlar dâhil</div>
           </div>
         </div>
 
@@ -156,9 +182,10 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
           <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold flex-shrink-0">
             <Globe className="w-5 h-5" />
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="text-lg sm:text-xl font-extrabold text-slate-900">{externalCount}</div>
-            <div className="text-[11px] text-slate-500 font-medium">Kurum Dışı Katılım</div>
+            <div className="text-[11px] text-slate-600 font-semibold">Kurum Dışı Etkinlik</div>
+            <div className="text-[10px] text-purple-700 font-semibold truncate">{uniqueParticipantsCount} farklı hoca</div>
           </div>
         </div>
       </div>
@@ -333,7 +360,7 @@ export const ActivityTimeline: React.FC<ActivityTimelineProps> = ({ activities, 
                       )}
                       {participantSum > 0 && (
                         <span className="px-2 py-0.5 rounded-full bg-white/10 text-blue-100 border border-white/15 font-semibold hidden sm:inline-block">
-                          {participantSum} Katılımcı
+                          {participantSum} Katılım
                         </span>
                       )}
                     </div>

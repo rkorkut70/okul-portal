@@ -50,6 +50,9 @@ const formatBytes = (bytes?: number) => {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 };
 
+const isImageExt = (ext?: string) =>
+  ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes((ext || '').toLowerCase());
+
 const getExtIcon = (ext?: string) => {
   const e = (ext || '').toLowerCase();
   if (e === 'pdf') return <FileText className="w-5 h-5 text-rose-600 flex-shrink-0" />;
@@ -80,6 +83,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
   const [selectedFolder, setSelectedFolder] = useState<string>('all');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [previewDoc, setPreviewDoc] = useState<DriveDocument | null>(null);
+  const [previewTreeFile, setPreviewTreeFile] = useState<DriveTreeNode | null>(null);
 
   // Navigate current folder node in SHARED_DRIVE_TREE
   const currentNode: DriveTreeNode = useMemo(() => {
@@ -196,7 +200,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
           </div>
           <div className="flex items-center space-x-2 flex-shrink-0">
             <a
-              href={GOOGLE_DRIVE_FOLDER_URL}
+              href={currentNode.id ? `https://drive.google.com/drive/folders/${currentNode.id}` : GOOGLE_DRIVE_FOLDER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold shadow-md transition active:scale-95 cursor-pointer"
@@ -346,6 +350,8 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                         if (res.node.t === 'd') {
                           setCurrentPath([...res.path, res.node.n]);
                           setTreeSearch('');
+                        } else if (res.node.id) {
+                          setPreviewTreeFile(res.node);
                         } else {
                           setCurrentPath(res.path);
                           setTreeSearch('');
@@ -356,6 +362,13 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                       <div className="flex items-center space-x-3 min-w-0">
                         {res.node.t === 'd' ? (
                           <Folder className="w-5 h-5 text-amber-500 fill-amber-100 flex-shrink-0" />
+                        ) : isImageExt(res.node.e) && res.node.id ? (
+                          <img
+                            src={`https://drive.google.com/thumbnail?id=${res.node.id}&sz=w120`}
+                            alt={res.node.n}
+                            className="w-10 h-10 rounded-lg object-cover border border-slate-200 flex-shrink-0 bg-slate-100"
+                            loading="lazy"
+                          />
                         ) : (
                           getExtIcon(res.node.e)
                         )}
@@ -369,7 +382,7 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                         </div>
                       </div>
                       <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-lg flex-shrink-0">
-                        {res.node.t === 'd' ? 'Klasöre Git' : 'Konuma Git'}
+                        {res.node.t === 'd' ? 'Klasöre Git' : res.node.id ? 'Aç / Önizle' : 'Konuma Git'}
                       </span>
                     </div>
                   ))}
@@ -464,35 +477,63 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                   })}
 
                   {/* Files */}
-                  {currentFiles.map((file) => (
-                    <div
-                      key={file.n}
-                      className="p-3.5 hover:bg-slate-50 transition flex items-center justify-between gap-3"
-                    >
-                      <div className="flex items-center space-x-3 min-w-0">
-                        <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0">
-                          {getExtIcon(file.e)}
+                  {currentFiles.map((file) => {
+                    const isImg = isImageExt(file.e);
+                    const fileUrl = file.id
+                      ? `https://drive.google.com/file/d/${file.id}/view`
+                      : currentNode.id
+                      ? `https://drive.google.com/drive/folders/${currentNode.id}`
+                      : GOOGLE_DRIVE_FOLDER_URL;
+
+                    return (
+                      <div
+                        key={file.n}
+                        onClick={() => {
+                          if (file.id) {
+                            setPreviewTreeFile(file);
+                          } else {
+                            window.open(fileUrl, '_blank', 'noopener,noreferrer');
+                          }
+                        }}
+                        className="p-3.5 hover:bg-blue-50/50 active:bg-blue-50 transition flex items-center justify-between gap-3 cursor-pointer group"
+                      >
+                        <div className="flex items-center space-x-3 min-w-0">
+                          {isImg && file.id ? (
+                            <img
+                              src={`https://drive.google.com/thumbnail?id=${file.id}&sz=w200`}
+                              alt={file.n}
+                              className="w-11 h-11 rounded-xl object-cover border border-slate-200 flex-shrink-0 bg-slate-100 group-hover:scale-105 transition"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <div className="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-blue-100/70 flex items-center justify-center flex-shrink-0 transition">
+                              {getExtIcon(file.e)}
+                            </div>
+                          )}
+                          <div className="min-w-0">
+                            <div className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-blue-800 truncate transition">
+                              {file.n}
+                            </div>
+                            <div className="flex items-center space-x-2 text-[10px] text-slate-400 mt-0.5">
+                              {file.e && (
+                                <span className="uppercase font-bold px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">
+                                  {file.e}
+                                </span>
+                              )}
+                              {file.s ? <span>{formatBytes(file.s)}</span> : null}
+                            </div>
+                          </div>
                         </div>
-                        <div className="min-w-0">
-                          <div className="text-xs sm:text-sm font-semibold text-slate-800 truncate">
-                            {file.n}
-                          </div>
-                          <div className="flex items-center space-x-2 text-[10px] text-slate-400 mt-0.5">
-                            {file.e && (
-                              <span className="uppercase font-bold px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">
-                                {file.e}
-                              </span>
-                            )}
-                            {file.s ? <span>{formatBytes(file.s)}</span> : null}
-                          </div>
+
+                        <div className="flex items-center space-x-1.5 flex-shrink-0">
+                          <span className="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg bg-blue-50 group-hover:bg-blue-700 text-blue-800 group-hover:text-white text-[11px] font-bold transition">
+                            <Eye className="w-3.5 h-3.5" />
+                            <span className="hidden sm:inline">{file.id ? 'Görüntüle' : 'Aç'}</span>
+                          </span>
                         </div>
                       </div>
-
-                      <span className="text-[10px] font-bold uppercase px-2 py-1 rounded-lg bg-slate-100 text-slate-500 flex-shrink-0">
-                        {file.e || 'DOSYA'}
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -648,6 +689,67 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
               className="w-full h-[460px] sm:h-[620px] border-0"
               loading="lazy"
             />
+          </div>
+        </div>
+      )}
+
+      {/* Web File Preview Modal (In-Page Viewer without opening Drive App) */}
+      {previewTreeFile && previewTreeFile.id && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/75 backdrop-blur-xs"
+          onClick={() => setPreviewTreeFile(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden flex flex-col max-h-[92vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 bg-slate-50 gap-3">
+              <div className="flex items-center space-x-2.5 min-w-0">
+                {getExtIcon(previewTreeFile.e)}
+                <div className="min-w-0">
+                  <h4 className="font-bold text-xs sm:text-sm text-slate-900 truncate">
+                    {previewTreeFile.n}
+                  </h4>
+                  {previewTreeFile.s ? (
+                    <span className="text-[10px] text-slate-400">{formatBytes(previewTreeFile.s)}</span>
+                  ) : null}
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 flex-shrink-0">
+                <a
+                  href={`https://drive.google.com/file/d/${previewTreeFile.id}/view`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-blue-800 hover:bg-blue-900 transition"
+                >
+                  <span>Yeni Sekmede Aç</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                <button
+                  onClick={() => setPreviewTreeFile(null)}
+                  className="p-1.5 rounded-xl bg-slate-200/70 hover:bg-slate-300 text-slate-700 cursor-pointer transition"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex-1 bg-slate-100 overflow-auto flex items-center justify-center min-h-[420px] sm:min-h-[560px]">
+              {isImageExt(previewTreeFile.e) ? (
+                <img
+                  src={`https://drive.google.com/thumbnail?id=${previewTreeFile.id}&sz=w1600`}
+                  alt={previewTreeFile.n}
+                  className="max-w-full max-h-[78vh] object-contain p-2"
+                />
+              ) : (
+                <iframe
+                  src={`https://drive.google.com/file/d/${previewTreeFile.id}/preview`}
+                  title={previewTreeFile.n}
+                  className="w-full h-[72vh] border-0 bg-white"
+                  allow="autoplay"
+                />
+              )}
+            </div>
           </div>
         </div>
       )}

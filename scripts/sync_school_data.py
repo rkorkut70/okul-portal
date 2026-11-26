@@ -176,11 +176,8 @@ def sync_school_data():
     ws_cpd = wb['CPD Faaliyetleri'] if 'CPD Faaliyetleri' in wb.sheetnames else None
     cpd_activities = []
     archive_prefix = [
-        "Kalite ve Akreditasyon",
-        "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-        "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-        "Etkinlikler & Eğitimler - Events & Trainings",
-        "Yıllık Kronolojik Arşiv (2023-2027)",
+        "01_CPD_Surekli_Mesleki_Gelisim",
+        "01_Etkinlikler_ve_Egitimler",
     ]
     year_folder_map = {
         "2023-2024": "2023-24",

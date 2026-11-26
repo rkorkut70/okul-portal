@@ -1694,11 +1694,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2026-27",
       "2026-2027_Planli-Workshop-Programi"
     ]
@@ -1721,11 +1718,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2026-27",
       "2026-2027_Planli-Workshop-Programi"
     ]
@@ -1748,11 +1742,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2026-27",
       "2026-2027_Planli-Workshop-Programi"
     ]
@@ -1775,11 +1766,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveDocUrl": "docs/2026-27 Akademik Yılı Workshop Programı.pdf",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2026-27",
       "2026-2027_Planli-Workshop-Programi"
     ]
@@ -1802,11 +1790,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Madde Analizi Kurumsal Etkinlik Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2026-27",
       "2026-11-06_Madde-Analizi-Sinavdan-Kanita-MUSE"
     ]
@@ -1829,11 +1814,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Eğitim Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2026-27",
       "2026-10-19_Kalite-Guvencesi-Ders-Gozlemi-ve-Veri-Toplama"
     ]
@@ -1858,11 +1840,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporları (7 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2026-06-09_MSKU-YDYO-Language-and-Fun-Day"
     ]
@@ -1887,11 +1866,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2026-05-01_18-YDYO-Yoneticiler-Toplantisi"
     ]
@@ -1916,11 +1892,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporları (4 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2026-04-24_Empowering-Teachers-for-Classroom-Impact-Mugla"
     ]
@@ -1945,11 +1918,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2026-05-15_Unifest-2026"
     ]
@@ -1972,11 +1942,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Workshop 4 Etkinlik Raporu & Sunum (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2026-04-01_Ogrenci-Ozerkligi-Nasil-Saglanir"
     ]
@@ -1999,11 +1966,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Workshop 3 Etkinlik Raporu, Sunum & Test (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2026-02-27_Sinif-Yonetimi-Sanati-Classroom-Management"
     ]
@@ -2026,11 +1990,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Eğitim Raporu 2 (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2025-12-26_Etkili-Ders-Planlama-Lesson-Planning"
     ]
@@ -2053,11 +2014,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Workshop 1 Raporu, Sunum & Fotoğraflar (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2025-10-31_Ogrenci-Konusma-Suresinin-Artirilmasi"
     ]
@@ -2081,11 +2039,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurum İçi Eğitim Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2025-26",
       "2025-10-10_Yeni-Pacing-Formati-Kullanim-Onerileri"
     ]
@@ -2109,11 +2064,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-06-17_SARSing-for-Effective-Learning-Objectives"
     ]
@@ -2138,11 +2090,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-05-02_Future-Ready-ELT-Uludag-Uni"
     ]
@@ -2167,11 +2116,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporları (2 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-04-25_Bridging-Ideas-Building-Solutions-Antalya"
     ]
@@ -2194,11 +2140,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Etkinlik Raporu TR/EN (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-04-10_AI-Based-Language-Teaching-Sharing-Session"
     ]
@@ -2223,11 +2166,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Katılım Raporu & Sunum (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-03-21_Leadership-in-the-AI-Era-Izmir"
     ]
@@ -2251,11 +2191,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-03-21_Use-of-AI-for-Exam-Preparation-and-Writing-Assessment"
     ]
@@ -2280,11 +2217,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporu & Sunum (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-03-19_Designing-Framework-for-Language-Learning-Istanbul"
     ]
@@ -2308,11 +2242,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-03-01_Looking-for-Evidence-of-Learning-Izmir"
     ]
@@ -2336,11 +2267,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-02-28_Formative-and-Summative-Assessment"
     ]
@@ -2365,11 +2293,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporları (3 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-02-22_Syllabus-Design-in-Practice-Izmir"
     ]
@@ -2393,11 +2318,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Rapor & 31 Katılım Sertifikası (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2025-01-24_Dil-Degerlendirme-ve-Madde-Analizi"
     ]
@@ -2422,11 +2344,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2024-12-13_15-Uluslararasi-Egitimde-Yeni-Yonelimler-Kongresi"
     ]
@@ -2450,11 +2369,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "CEFR Literacy and Mapping Seminer Raporu & 30 Sertifika (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2024-12-06_Etkili-Program-Tasarimi-CEFR-Mapping"
     ]
@@ -2479,11 +2395,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporları (6 kişi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2024-25",
       "2024-11-22_3rd-Aegean-SoFL-Symposium-Yasar-Uni"
     ]
@@ -2506,11 +2419,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Etkinlik Raporu & Gözlem Materyalleri (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-06-11_Ders-Gozlemi-ve-Mesleki-Ogrenme-Topluluklari"
     ]
@@ -2533,11 +2443,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Etkinlik Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-05-24_Yabanci-Dil-Ogretiminde-Teknoloji-ve-Yapay-Zeka"
     ]
@@ -2562,11 +2469,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Program PDF, Davet Mektupları, Katılımcı Listeleri & Fotoğraflar (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-05-17_FOCI-XXV-ADU-YDYO"
     ]
@@ -2591,11 +2495,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-05-09_Defining-Institutional-Effectiveness-KKTC"
     ]
@@ -2618,11 +2519,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Etkinlik Raporu & 4 PDF Sunum/Şablon (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-05-03_Yabanci-Dil-Ogretiminde-Yapay-Zeka-Kullanimi"
     ]
@@ -2646,11 +2544,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Toplantı Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-03-22_Ders-Gozlemi-Bilgilendirme-Toplantisi"
     ]
@@ -2673,11 +2568,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Rapor, Video Kayıtları & Görseller (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-03-06_Sinifta-Yapay-Zeka-ve-Socrative-Kullanimi"
     ]
@@ -2700,11 +2592,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Rapor, Sunumlar, Formlar & Örnek Videolar (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-03-01_Akran-Gozlemi-ve-Geri-Bildirim-Sanati"
     ]
@@ -2729,11 +2618,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporu & 6 Eğitim Dokümanı (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-02-23_AI-in-the-Classroom-Ankara"
     ]
@@ -2756,11 +2642,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Kurumsal Rapor, Sunum, Video & Gözlem Formları (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-01-19_Sinif-Ici-Oz-Yansitma-Teknikleri"
     ]
@@ -2785,11 +2668,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Bireysel Katılım Raporu (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2024-01-19_Agility-Adaptability-Testing-Assessment-Istanbul"
     ]
@@ -2814,11 +2694,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Katılım Raporu, 2 Sunum & Grup Çıktıları (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2023-12-15_FOCI-XXIV-AI-in-Curriculum-Design-Istanbul"
     ]
@@ -2841,11 +2718,8 @@ export const CPD_ACTIVITIES_DATA: ActivityItem[] = [
     "driveDocTitle": "Toplantı Tutanakları & Fotoğraflar (Drive Arşivi)",
     "driveDocUrl": "https://drive.google.com/drive/folders/1hsfoiUlaptt2ivMSr1vgISB2-XByh2ll",
     "driveFolderPath": [
-      "Kalite ve Akreditasyon",
-      "4. AKADEMIK BIRIMLER - ACADEMIC UNITS",
-      "5. SÜREKLİ MESLEKİ GELİŞİM BİRİMİ",
-      "Etkinlikler & Eğitimler - Events & Trainings",
-      "Yıllık Kronolojik Arşiv (2023-2027)",
+      "01_CPD_Surekli_Mesleki_Gelisim",
+      "01_Etkinlikler_ve_Egitimler",
       "2023-24",
       "2023-07-12_ve_09-18_Erasmus-Proje-Yazma-Egitimi"
     ]

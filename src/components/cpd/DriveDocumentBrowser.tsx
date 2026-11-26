@@ -286,28 +286,34 @@ export const DriveDocumentBrowser: React.FC<DriveDocumentBrowserProps> = ({ docu
                 Ana Dizin
               </button>
               <button
-                onClick={() => quickNavigate(['Kalite ve Akreditasyon', '4. AKADEMIK', '5. SÜREKLİ MESLEKİ'])}
+                onClick={() => quickNavigate(['01_CPD_Surekli_Mesleki_Gelisim'])}
                 className="px-2.5 py-1 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-semibold whitespace-nowrap cursor-pointer active:scale-95"
               >
                 CPD Birimi
               </button>
               <button
-                onClick={() => quickNavigate(['Kalite ve Akreditasyon', '4. AKADEMIK', '5. SÜREKLİ MESLEKİ', 'Etkinlikler'])}
+                onClick={() => quickNavigate(['01_CPD_Surekli_Mesleki_Gelisim', '01_Etkinlikler_ve_Egitimler'])}
                 className="px-2.5 py-1 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 font-semibold whitespace-nowrap cursor-pointer active:scale-95"
               >
-                CPD Etkinlikler & Arşiv
+                CPD Etkinlikler
               </button>
               <button
-                onClick={() => quickNavigate(['Kalite ve Akreditasyon', '3. EL KITAPLARI'])}
+                onClick={() => quickNavigate(['00_Genel_Formlar_ve_Sablonlar'])}
                 className="px-2.5 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 font-semibold whitespace-nowrap cursor-pointer active:scale-95"
               >
-                El Kitapları
+                Genel Formlar
               </button>
               <button
-                onClick={() => quickNavigate(['Kalite ve Akreditasyon', '4. AKADEMIK'])}
+                onClick={() => quickNavigate(['02_KAB'])}
                 className="px-2.5 py-1 rounded-full bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 font-semibold whitespace-nowrap cursor-pointer active:scale-95"
               >
-                Akademik Birimler
+                KAB
+              </button>
+              <button
+                onClick={() => quickNavigate(['03_Testing'])}
+                className="px-2.5 py-1 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 font-semibold whitespace-nowrap cursor-pointer active:scale-95"
+              >
+                Sınav Birimi
               </button>
             </div>
           </div>

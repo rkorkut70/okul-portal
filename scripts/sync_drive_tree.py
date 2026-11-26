@@ -1,7 +1,7 @@
 import os
 import json
 
-ROOT_DIR = r"Y:\Drive'ım\OKUL\paylaş"
+ROOT_DIR = r"G:\Drive'ım\Portal Belge Deposu"
 OUT_PATH = os.path.join("src", "data", "driveTreeData.ts")
 
 

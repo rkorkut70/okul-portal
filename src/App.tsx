@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
 import { BottomNav } from './components/layout/BottomNav';
 import { AuthModal } from './components/auth/AuthModal';
+import { LoginPage } from './components/auth/LoginPage';
 import { HomeDashboard } from './components/dashboard/HomeDashboard';
 import { CpdModule } from './components/cpd/CpdModule';
 import { DriveDocumentBrowser } from './components/cpd/DriveDocumentBrowser';
@@ -12,6 +13,7 @@ import { CPD_ACTIVITIES, CPD_DRIVE_DOCUMENTS } from './data/mockData';
 import type { ActivityItem, DriveDocument } from './types';
 
 export const AppContent: React.FC = () => {
+  const { isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState<string>('home');
   const [selectedTool, setSelectedTool] = useState<string>('forms');
   const [isAuthOpen, setIsAuthOpen] = useState<boolean>(false);
@@ -47,6 +49,10 @@ export const AppContent: React.FC = () => {
   const handleAddActivity = (newActivity: ActivityItem) => {
     setActivities(prev => [newActivity, ...prev]);
   };
+
+  if (!isAuthenticated) {
+    return <LoginPage />;
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col text-slate-800">

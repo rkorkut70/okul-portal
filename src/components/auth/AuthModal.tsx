@@ -148,7 +148,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                 <p className="text-xs text-slate-500">{user.email}</p>
                 <div className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 mt-2">
                   <ShieldCheck className="w-3.5 h-3.5 mr-1" />
-                  {user.role === 'cpd_manager' ? 'CPD Birim Sorumlusu' : 'Öğretim Elemanı'}
+                  {user.role === 'admin'
+                    ? 'Sistem Yöneticisi (Admin)'
+                    : user.role === 'cpd_manager'
+                    ? 'CPD Birim Sorumlusu'
+                    : 'Öğretim Elemanı'}
                 </div>
               </div>
               <div className="pt-4 border-t border-slate-100 flex space-x-3">

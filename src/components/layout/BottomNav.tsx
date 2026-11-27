@@ -5,7 +5,8 @@ import {
   GraduationCap, 
   HardDrive, 
   Wrench, 
-  User as UserIcon 
+  User as UserIcon,
+  ShieldCheck
 } from 'lucide-react';
 
 interface BottomNavProps {
@@ -19,7 +20,8 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   setActiveTab,
   onOpenAuth
 }) => {
-  const { isAuthenticated } = useAuth();
+  const { user, isAuthenticated } = useAuth();
+  const isAdmin = user?.role === 'admin';
 
   return (
     <nav 
@@ -81,6 +83,21 @@ export const BottomNav: React.FC<BottomNavProps> = ({
         <Wrench className={`w-5 h-5 transition-transform ${activeTab === 'tools' ? 'text-blue-900 scale-105 stroke-[2.5]' : 'text-slate-400'}`} />
         <span className="text-[10px] mt-0.5 tracking-tight">Araçlar</span>
       </button>
+
+      {/* Admin Paneli (Yalnızca Admin) */}
+      {isAdmin && (
+        <button
+          onClick={() => setActiveTab('admin')}
+          className={`flex-1 min-h-[48px] flex flex-col items-center justify-center py-1 px-1 rounded-2xl transition-all duration-150 active:scale-90 cursor-pointer ${
+            activeTab === 'admin' 
+              ? 'bg-amber-50 text-amber-900 font-bold shadow-2xs' 
+              : 'text-slate-500 hover:text-slate-800'
+          }`}
+        >
+          <ShieldCheck className={`w-5 h-5 transition-transform ${activeTab === 'admin' ? 'text-amber-700 scale-105 stroke-[2.5]' : 'text-amber-600'}`} />
+          <span className="text-[10px] mt-0.5 tracking-tight">Admin</span>
+        </button>
+      )}
 
       {/* Profil / Giriş */}
       <button

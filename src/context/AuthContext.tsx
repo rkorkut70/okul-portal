@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { User, UserRole } from '../types';
 import { ACADEMIC_STAFF, ADMINISTRATIVE_STAFF } from '../data/schoolData';
+import { upsertRegisteredUser, getStoredUserRole, addAuditLog } from '../utils/auditLog';
 
 const USER_STORAGE_KEY = 'adu_portal_user_v2';
 const CREDENTIALS_STORAGE_KEY = 'adu_portal_credentials_v1';
@@ -107,6 +108,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     if (user) {
       localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user));
+      upsertRegisteredUser(user);
     } else {
       localStorage.removeItem(USER_STORAGE_KEY);
     }
@@ -149,6 +151,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
       .join(' ');
     const isCpdManager = cleanEmail.includes('cpd') || cleanEmail === 'pinar.ugur@adu.edu.tr';
+    const storedRole = getStoredUserRole(cleanEmail);
 
     const newUser: User = {
       id: 'usr-' + Date.now(),
@@ -156,9 +159,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       email: cleanEmail,
       title: staff?.title || 'Öğr. Gör.',
       department: staff?.department || 'Yabancı Diller Yüksekokulu',
-      role: staff?.role || (isCpdManager ? 'cpd_manager' : 'instructor'),
+      role: storedRole || staff?.role || (isCpdManager ? 'cpd_manager' : 'instructor'),
       isFirstLogin: false
     };
+
+    upsertRegisteredUser(newUser, { isLogin: true });
+    addAuditLog({
+      userEmail: newUser.email,
+      userName: newUser.name,
+      userRole: newUser.role,
+      action: 'login',
+      description: 'Portala giriş yapıldı',
+    });
 
     setUser(newUser);
     return { success: true };
@@ -206,6 +218,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const staff = findStaffByEmail(cleanEmail);
     const isCpdManager = cleanEmail.includes('cpd') || cleanEmail === 'pinar.ugur@adu.edu.tr';
+    const storedRole = getStoredUserRole(cleanEmail);
 
     const newUser: User = {
       id: 'usr-' + Date.now(),
@@ -213,9 +226,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       email: cleanEmail,
       title: title.trim() || staff?.title || 'Öğr. Gör.',
       department: department.trim() || staff?.department || 'Yabancı Diller Yüksekokulu',
-      role: staff?.role || (isCpdManager ? 'cpd_manager' : 'instructor'),
+      role: storedRole || staff?.role || (isCpdManager ? 'cpd_manager' : 'instructor'),
       isFirstLogin: false
     };
+
+    upsertRegisteredUser(newUser, { isRegister: true, isLogin: true });
+    addAuditLog({
+      userEmail: newUser.email,
+      userName: newUser.name,
+      userRole: newUser.role,
+      action: 'register',
+      description: 'İlk kez şifre oluşturuldu ve portala giriş yapıldı',
+    });
 
     setUser(newUser);
     sessionStorage.removeItem('pending_verification_code');
@@ -225,11 +247,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
+    if (user) {
+      addAuditLog({
+        userEmail: user.email,
+        userName: user.name,
+        userRole: user.role,
+        action: 'logout',
+        description: 'Portaldan çıkış yapıldı',
+      });
+    }
     setUser(null);
   };
 
   const switchRole = (role: UserRole) => {
     if (!user) return;
+    addAuditLog({
+      userEmail: user.email,
+      userName: user.name,
+      userRole: role,
+      action: 'role_change',
+      description: `Kullanıcı rolü değiştirildi: ${role}`,
+    });
     setUser({
       ...user,
       role

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ACADEMIC_UNITS } from '../../data/mockData';
+import { useAuth } from '../../context/AuthContext';
 import { 
   Home, 
   GraduationCap, 
@@ -13,7 +14,8 @@ import {
   Layers,
   Clock,
   Globe,
-  Users
+  Users,
+  ShieldCheck
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -29,6 +31,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
   selectedTool: _selectedTool,
   setSelectedTool
 }) => {
+  const { user } = useAuth();
+  const isAdmin = user?.role === 'admin';
+
   return (
     <aside className="w-64 bg-white border-r border-slate-200 hidden md:flex md:flex-col justify-between h-[calc(100vh-5rem)] sticky top-20 select-none overflow-y-auto">
       <div className="p-4 space-y-6">
@@ -69,6 +74,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 Aktif
               </span>
             </button>
+
+            {isAdmin && (
+              <button
+                onClick={() => setActiveTab('admin')}
+                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+                  activeTab === 'admin'
+                    ? 'bg-[#0f2942] text-white shadow-sm'
+                    : 'text-slate-700 hover:bg-amber-50/70'
+                }`}
+              >
+                <div className="flex items-center space-x-3 truncate">
+                  <ShieldCheck className={`w-4 h-4 ${activeTab === 'admin' ? 'text-amber-400' : 'text-amber-600'}`} />
+                  <span className="truncate">Admin Paneli</span>
+                </div>
+                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
+                  activeTab === 'admin' ? 'bg-amber-400 text-slate-900' : 'bg-amber-100 text-amber-900'
+                }`}>
+                  Yönetim
+                </span>
+              </button>
+            )}
           </div>
         </div>
 

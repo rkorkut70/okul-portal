@@ -82,3 +82,33 @@ export interface CalendarEvent {
   term: string;
   isImportant?: boolean;
 }
+
+export type AuditActionType =
+  | 'login'
+  | 'register'
+  | 'logout'
+  | 'role_change'
+  | 'cpd_activity_add'
+  | 'navigation';
+
+export interface AuditLogEntry {
+  id: string;
+  timestamp: string;
+  userEmail: string;
+  userName: string;
+  userRole: UserRole;
+  action: AuditActionType;
+  description: string;
+  details?: string;
+}
+
+export interface RegisteredUserRecord {
+  email: string;
+  name: string;
+  title: string;
+  department: string;
+  role: UserRole;
+  registeredAt: string;
+  lastLoginAt: string;
+  loginCount: number;
+}

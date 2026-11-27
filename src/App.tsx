@@ -5,6 +5,8 @@ import { Sidebar } from './components/layout/Sidebar';
 import { BottomNav } from './components/layout/BottomNav';
 import { AuthModal } from './components/auth/AuthModal';
 import { LoginPage } from './components/auth/LoginPage';
+import { AdminPanel } from './components/admin/AdminPanel';
+import { addAuditLog } from './utils/auditLog';
 import { HomeDashboard } from './components/dashboard/HomeDashboard';
 import { CpdModule } from './components/cpd/CpdModule';
 import { DriveDocumentBrowser } from './components/cpd/DriveDocumentBrowser';
@@ -13,7 +15,7 @@ import { CPD_ACTIVITIES, CPD_DRIVE_DOCUMENTS } from './data/mockData';
 import type { ActivityItem, DriveDocument } from './types';
 
 export const AppContent: React.FC = () => {
-  const { isAuthenticated } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState<string>('home');
   const [selectedTool, setSelectedTool] = useState<string>('forms');
   const [isAuthOpen, setIsAuthOpen] = useState<boolean>(false);
@@ -46,8 +48,37 @@ export const AppContent: React.FC = () => {
     localStorage.setItem('adu_portal_activities_v2', JSON.stringify(customOnly));
   }, [activities]);
 
+  const handleSetActiveTab = (tab: string) => {
+    setActiveTab(tab);
+    if (user && tab !== activeTab) {
+      const tabLabels: Record<string, string> = {
+        home: 'Genel Bakış & Pano',
+        cpd: 'CPD Birimi',
+        documents: 'Ortak Belge Deposu',
+        tools: 'Faydalı Araçlar',
+        admin: 'Admin Paneli',
+      };
+      addAuditLog({
+        userEmail: user.email,
+        userName: user.name,
+        userRole: user.role,
+        action: 'navigation',
+        description: `Modül görüntülendi: ${tabLabels[tab] || tab}`,
+      });
+    }
+  };
+
   const handleAddActivity = (newActivity: ActivityItem) => {
     setActivities(prev => [newActivity, ...prev]);
+    if (user) {
+      addAuditLog({
+        userEmail: user.email,
+        userName: user.name,
+        userRole: user.role,
+        action: 'cpd_activity_add',
+        description: `Yeni CPD faaliyeti eklendi: ${newActivity.title}`,
+      });
+    }
   };
 
   if (!isAuthenticated) {
@@ -60,7 +91,7 @@ export const AppContent: React.FC = () => {
       {/* Sticky Header */}
       <Header
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={handleSetActiveTab}
         onOpenAuth={() => setIsAuthOpen(true)}
       />
 
@@ -70,7 +101,7 @@ export const AppContent: React.FC = () => {
         {/* Desktop Sidebar */}
         <Sidebar
           activeTab={activeTab}
-          setActiveTab={setActiveTab}
+          setActiveTab={handleSetActiveTab}
           selectedTool={selectedTool}
           setSelectedTool={setSelectedTool}
         />
@@ -79,7 +110,7 @@ export const AppContent: React.FC = () => {
         <main className="flex-1 min-w-0 pb-24 md:pb-8">
           {activeTab === 'home' && (
             <HomeDashboard
-              setActiveTab={setActiveTab}
+              setActiveTab={handleSetActiveTab}
               setSelectedTool={setSelectedTool}
               onOpenAuth={() => setIsAuthOpen(true)}
             />
@@ -104,6 +135,8 @@ export const AppContent: React.FC = () => {
               setSelectedTool={setSelectedTool}
             />
           )}
+
+          {activeTab === 'admin' && <AdminPanel />}
         </main>
 
       </div>
@@ -111,7 +144,7 @@ export const AppContent: React.FC = () => {
       {/* Mobile Bottom Navigation */}
       <BottomNav
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={handleSetActiveTab}
         onOpenAuth={() => setIsAuthOpen(true)}
       />
 
